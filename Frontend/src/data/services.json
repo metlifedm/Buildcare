@@ -1,0 +1,175 @@
+{
+  "services": [
+    {
+      "id": "residential-interior",
+      "title": "Residential Interior",
+      "slug": "residential-interior",
+      "shortDescription": "Transform your home into a luxurious sanctuary with our bespoke residential interior design services.",
+      "description": "Our residential interior design service encompasses complete home transformations, from conceptual design to final execution. We specialize in creating personalized living spaces that reflect your unique style and personality. Our team handles everything from space planning, furniture selection, color consultation, lighting design, to final styling and decor placement.",
+      "icon": "home",
+      "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+      "features": [
+        "Complete Home Makeover",
+        "Space Planning & Layout",
+        "Custom Furniture Design",
+        "Color Consultation",
+        "Lighting Design",
+        "Smart Home Integration"
+      ],
+      "priceRange": "₹8L - ₹50L+",
+      "duration": "45-90 Days"
+    },
+    {
+      "id": "commercial-interior",
+      "title": "Commercial Interior",
+      "slug": "commercial-interior",
+      "shortDescription": "Create inspiring commercial spaces that boost productivity and impress clients.",
+      "description": "We design commercial interiors that align with your brand identity and business objectives. From corporate offices and retail stores to restaurants and hotels, our designs optimize workflow, enhance customer experience, and create memorable brand environments.",
+      "icon": "building",
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      "features": [
+        "Office Space Design",
+        "Retail Store Design",
+        "Restaurant & Hospitality",
+        "Brand Integration",
+        "Ergonomic Planning",
+        "Green Building Design"
+      ],
+      "priceRange": "₹15L - ₹2Cr+",
+      "duration": "60-120 Days"
+    },
+    {
+      "id": "tile-flooring",
+      "title": "Tile Flooring Works",
+      "slug": "tile-flooring-works",
+      "shortDescription": "Premium tile and flooring solutions for residential and commercial spaces.",
+      "description": "From Italian marble to porcelain tiles, we offer comprehensive flooring solutions that combine durability with aesthetic excellence. Our expert team ensures precision installation with premium materials and finishes.",
+      "icon": "grid3x3",
+      "image": "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&q=80",
+      "features": [
+        "Italian Marble Flooring",
+        "Porcelain & Ceramic Tiles",
+        "Wooden Flooring",
+        "Epoxy Flooring",
+        "Stone Cladding",
+        "Waterproof Flooring"
+      ],
+      "priceRange": "₹50/sqft - ₹500/sqft",
+      "duration": "15-45 Days"
+    },
+    {
+      "id": "false-ceiling",
+      "title": "Gypsum/PVC False Ceiling",
+      "slug": "gypsum-pvc-false-ceiling",
+      "shortDescription": "Elegant false ceiling designs that add dimension and character to any space.",
+      "description": "Our false ceiling solutions include gypsum board, PVC panels, wooden finishes, and designer ceilings with integrated lighting. We create stunning overhead designs that transform the entire ambiance of your space.",
+      "icon": "layers",
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "features": [
+        "Gypsum Board Ceiling",
+        "PVC Panel Ceiling",
+        "Wooden False Ceiling",
+        "Stretch Ceiling",
+        "Cove Lighting Integration",
+        "Acoustic Ceiling"
+      ],
+      "priceRange": "₹65/sqft - ₹250/sqft",
+      "duration": "7-21 Days"
+    },
+    {
+      "id": "modular-kitchen",
+      "title": "Modular Kitchen",
+      "slug": "modular-kitchen",
+      "shortDescription": "Sleek, functional modular kitchens designed for modern living and culinary excellence.",
+      "description": "Our modular kitchen designs combine European aesthetics with Indian cooking requirements. We offer customized solutions with premium hardware, soft-close mechanisms, and optimized storage to make your kitchen the heart of your home.",
+      "icon": "chefHat",
+      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+      "features": [
+        "L-Shape & U-Shape Layouts",
+        "Island Kitchen Design",
+        "Soft-Close Hardware",
+        "Granite/Quartz Countertops",
+        "Built-in Appliances",
+        "Chimney & Hob Integration"
+      ],
+      "priceRange": "₹1.5L - ₹15L+",
+      "duration": "25-45 Days"
+    },
+    {
+      "id": "painting-works",
+      "title": "Painting Works",
+      "slug": "painting-works",
+      "shortDescription": "Professional painting services with premium finishes and artistic textures.",
+      "description": "From basic emulsions to luxury texture finishes, our painting services cover interior and exterior painting, wallpaper installation, and decorative wall treatments. We use only premium branded paints for lasting beauty.",
+      "icon": "paintbrush",
+      "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&q=80",
+      "features": [
+        "Interior & Exterior Painting",
+        "Texture Painting",
+        "Wallpaper Installation",
+        "Wood & Metal Painting",
+        "Waterproofing Coating",
+        "Decorative Wall Art"
+      ],
+      "priceRange": "₹18/sqft - ₹120/sqft",
+      "duration": "5-20 Days"
+    },
+    {
+      "id": "fabrication-works",
+      "title": "Fabrication Works",
+      "slug": "fabrication-works",
+      "shortDescription": "Custom metal fabrication for gates, railings, structures, and architectural elements.",
+      "description": "Our fabrication division handles custom metalwork including gates, railings, structural steel, MS/SS fabrication, canopies, and architectural metal elements. We combine strength with aesthetic design.",
+      "icon": "wrench",
+      "image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+      "features": [
+        "MS & SS Gates",
+        "Staircase Railings",
+        "Structural Steel Work",
+        "Canopy & Pergola",
+        "Custom Metal Furniture",
+        "Industrial Fabrication"
+      ],
+      "priceRange": "₹200/kg - ₹800/kg",
+      "duration": "10-30 Days"
+    },
+    {
+      "id": "aluminum-glass",
+      "title": "Aluminum Sliding Doors & Glass Partitions",
+      "slug": "aluminum-sliding-doors-glass-partitions",
+      "shortDescription": "Modern aluminum and glass solutions for a contemporary, open-space aesthetic.",
+      "description": "We specialize in premium aluminum sliding doors, glass partitions, shower enclosures, and curtain walls. Our solutions use high-quality profiles and toughened glass for safety, elegance, and energy efficiency.",
+      "icon": "doorOpen",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "features": [
+        "Sliding & Folding Doors",
+        "Glass Partitions",
+        "Shower Enclosures",
+        "Curtain Wall Systems",
+        "uPVC Windows & Doors",
+        "Frameless Glass Solutions"
+      ],
+      "priceRange": "₹450/sqft - ₹1500/sqft",
+      "duration": "10-25 Days"
+    },
+    {
+      "id": "plumbing-electrical",
+      "title": "Plumbing & Electrical Work",
+      "slug": "plumbing-electrical-work",
+      "shortDescription": "Complete plumbing and electrical solutions with modern technology and safety standards.",
+      "description": "Our plumbing and electrical services cover new installations, renovations, and maintenance. We use ISI-certified materials and follow all safety codes to ensure reliable, long-lasting infrastructure for your property.",
+      "icon": "zap",
+      "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
+      "features": [
+        "Complete Plumbing Setup",
+        "Electrical Wiring & Points",
+        "LED & Smart Lighting",
+        "Water Purifier Installation",
+        "Solar Panel Setup",
+        "CCTV & Security Systems"
+      ],
+      "priceRange": "₹50K - ₹10L+",
+      "duration": "7-30 Days"
+    }
+  ]
+}

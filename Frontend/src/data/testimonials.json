@@ -1,0 +1,64 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "designation": "Homeowner",
+      "location": "Mumbai",
+      "rating": 5,
+      "review": "Buildcare transformed our 3BHK into a dream home. The attention to detail was extraordinary. Every corner tells a story of craftsmanship and care. We couldn't be happier with the results!",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
+      "project": "Residential Interior"
+    },
+    {
+      "id": 2,
+      "name": "Rajesh Kapoor",
+      "designation": "CEO, TechStart Inc.",
+      "location": "Bangalore",
+      "rating": 5,
+      "review": "Our new office space designed by Buildcare has significantly improved team productivity and morale. The modern design perfectly represents our brand values. Exceptional work!",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
+      "project": "Commercial Interior"
+    },
+    {
+      "id": 3,
+      "name": "Anita Desai",
+      "designation": "Restaurant Owner",
+      "location": "Delhi",
+      "rating": 5,
+      "review": "The restaurant interior by Buildcare has become a talking point among our customers. The ambiance they created perfectly complements our cuisine. Revenue has increased by 40% since the renovation!",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
+      "project": "Commercial Interior"
+    },
+    {
+      "id": 4,
+      "name": "Vikram Malhotra",
+      "designation": "Architect",
+      "location": "Pune",
+      "rating": 5,
+      "review": "As a fellow architect, I'm impressed by Buildcare's execution quality. They turned our design concepts into reality with precision. Their modular kitchen work is world-class.",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80",
+      "project": "Modular Kitchen"
+    },
+    {
+      "id": 5,
+      "name": "Sneha Patel",
+      "designation": "Interior Designer",
+      "location": "Ahmedabad",
+      "rating": 4,
+      "review": "Collaborated with Buildcare on multiple projects. Their craftsmanship in false ceiling and fabrication work is outstanding. Professional team with great project management skills.",
+      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80",
+      "project": "False Ceiling"
+    },
+    {
+      "id": 6,
+      "name": "Arjun Nair",
+      "designation": "Homeowner",
+      "location": "Chennai",
+      "rating": 5,
+      "review": "From design consultation to final handover, Buildcare made the entire process seamless. Our villa looks straight out of a design magazine. Highly recommend their services!",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
+      "project": "Residential Interior"
+    }
+  ]
+}

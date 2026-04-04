@@ -1,0 +1,145 @@
+{
+  "categories": [
+    "All",
+    "Residential",
+    "Commercial",
+    "Kitchen",
+    "Bathroom",
+    "Office",
+    "Living Room"
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "Modern Minimalist Villa",
+      "category": "Residential",
+      "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "description": "A 4BHK villa redesigned with minimalist aesthetics, featuring clean lines and natural materials.",
+      "location": "Mumbai, Maharashtra",
+      "area": "3500 sqft",
+      "year": "2024",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Luxury Penthouse Suite",
+      "category": "Residential",
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "description": "Contemporary penthouse with panoramic views, custom Italian furniture, and smart home integration.",
+      "location": "Delhi NCR",
+      "area": "4200 sqft",
+      "year": "2024",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Corporate Tech Office",
+      "category": "Commercial",
+      "image": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+      "description": "An innovative workspace for a tech startup with collaborative zones and ergonomic design.",
+      "location": "Bangalore, Karnataka",
+      "area": "8000 sqft",
+      "year": "2024",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Italian Modular Kitchen",
+      "category": "Kitchen",
+      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+      "description": "U-shaped modular kitchen with quartz countertops, island, and European hardware.",
+      "location": "Pune, Maharashtra",
+      "area": "180 sqft",
+      "year": "2024",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Spa-Inspired Bathroom",
+      "category": "Bathroom",
+      "image": "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80",
+      "description": "Luxurious bathroom with rain shower, freestanding tub, and natural stone finishes.",
+      "location": "Hyderabad, Telangana",
+      "area": "120 sqft",
+      "year": "2023",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Creative Agency Workspace",
+      "category": "Office",
+      "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
+      "description": "Dynamic office space with vibrant colors, breakout areas, and artistic installations.",
+      "location": "Mumbai, Maharashtra",
+      "area": "5500 sqft",
+      "year": "2023",
+      "featured": true
+    },
+    {
+      "id": 7,
+      "title": "Contemporary Living Room",
+      "category": "Living Room",
+      "image": "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80",
+      "description": "Open-concept living area with designer furniture, ambient lighting, and premium finishes.",
+      "location": "Chennai, Tamil Nadu",
+      "area": "450 sqft",
+      "year": "2024",
+      "featured": false
+    },
+    {
+      "id": 8,
+      "title": "Boutique Hotel Lobby",
+      "category": "Commercial",
+      "image": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=800&q=80",
+      "description": "Elegant hotel lobby with marble flooring, brass accents, and custom chandelier.",
+      "location": "Goa",
+      "area": "2000 sqft",
+      "year": "2023",
+      "featured": true
+    },
+    {
+      "id": 9,
+      "title": "Scandinavian Apartment",
+      "category": "Residential",
+      "image": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "description": "Compact 2BHK apartment with Scandinavian design, maximized storage, and natural light.",
+      "location": "Bangalore, Karnataka",
+      "area": "1100 sqft",
+      "year": "2024",
+      "featured": false
+    },
+    {
+      "id": 10,
+      "title": "Premium Law Office",
+      "category": "Office",
+      "image": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
+      "description": "Sophisticated law office with wood paneling, leather furnishings, and conference rooms.",
+      "location": "Delhi NCR",
+      "area": "3000 sqft",
+      "year": "2023",
+      "featured": false
+    },
+    {
+      "id": 11,
+      "title": "Rustic Modern Kitchen",
+      "category": "Kitchen",
+      "image": "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80",
+      "description": "Open kitchen with exposed brick, wooden beams, and contemporary appliances.",
+      "location": "Jaipur, Rajasthan",
+      "area": "220 sqft",
+      "year": "2024",
+      "featured": false
+    },
+    {
+      "id": 12,
+      "title": "Art Deco Living Space",
+      "category": "Living Room",
+      "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
+      "description": "Art Deco inspired living room with geometric patterns, velvet upholstery, and gold accents.",
+      "location": "Mumbai, Maharashtra",
+      "area": "380 sqft",
+      "year": "2024",
+      "featured": false
+    }
+  ]
+}

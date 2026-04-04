@@ -1,0 +1,18 @@
+{
+  "mainNav": [
+    { "label": "Home", "path": "/", "id": "home" },
+    { "label": "About Us", "path": "/about", "id": "about" },
+    { "label": "Services", "path": "/services", "id": "services" },
+    { "label": "Portfolio", "path": "/portfolio", "id": "portfolio" },
+    { "label": "Clients", "path": "/clients", "id": "clients" },
+    { "label": "Blog", "path": "/blog", "id": "blog" },
+    { "label": "FAQ", "path": "/faq", "id": "faq" },
+    { "label": "Contact Us", "path": "/contact", "id": "contact" }
+  ],
+  "socialLinks": [
+    { "label": "Facebook", "url": "https://facebook.com/buildcare", "icon": "facebook" },
+    { "label": "Instagram", "url": "https://instagram.com/buildcare", "icon": "instagram" },
+    { "label": "LinkedIn", "url": "https://linkedin.com/company/buildcare", "icon": "linkedin" },
+    { "label": "YouTube", "url": "https://youtube.com/@buildcare", "icon": "youtube" }
+  ]
+}

@@ -1,0 +1,60 @@
+// src/App.jsx
+import { lazy, Suspense, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from '@components/layout/Layout';
+import { useLenis } from '@hooks/useLenis';
+import { EnquiryProvider } from '@hooks/useEnquiry';
+import EnquiryModalWrapper from '@components/forms/EnquiryModalWrapper';
+
+const Home = lazy(() => import('@pages/Home'));
+const About = lazy(() => import('@pages/About'));
+const Services = lazy(() => import('@pages/Services'));
+const ServiceDetail = lazy(() => import('@pages/ServiceDetail'));
+const Portfolio = lazy(() => import('@pages/Portfolio'));
+const Clients = lazy(() => import('@pages/Clients'));
+const Blog = lazy(() => import('@pages/Blog'));
+const BlogPost = lazy(() => import('@pages/BlogPost'));
+const FAQ = lazy(() => import('@pages/FAQ'));
+const Contact = lazy(() => import('@pages/Contact'));
+const NotFound = lazy(() => import('@pages/NotFound'));
+
+export default function App() {
+  useLenis();
+
+  useEffect(() => {
+    const loadGSAP = async () => {
+      const { gsap } = await import('gsap');
+      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      gsap.registerPlugin(ScrollTrigger);
+
+      ScrollTrigger.defaults({
+        toggleActions: 'play none none none',
+      });
+    };
+    loadGSAP();
+  }, []);
+
+  return (
+    <EnquiryProvider>
+      <Layout>
+        <Suspense fallback={null}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </Layout>
+      {/* Global Enquiry Modal */}
+      <EnquiryModalWrapper />
+    </EnquiryProvider>
+  );
+}

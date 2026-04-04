@@ -1,0 +1,20 @@
+{
+  "clients": [
+    { "id": 1, "name": "Tata Group", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=TATA" },
+    { "id": 2, "name": "Reliance Industries", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=RELIANCE" },
+    { "id": 3, "name": "Godrej Properties", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=GODREJ" },
+    { "id": 4, "name": "Oberoi Hotels", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=OBEROI" },
+    { "id": 5, "name": "DLF Limited", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=DLF" },
+    { "id": 6, "name": "Prestige Group", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=PRESTIGE" },
+    { "id": 7, "name": "Infosys", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=INFOSYS" },
+    { "id": 8, "name": "Wipro", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=WIPRO" },
+    { "id": 9, "name": "Mahindra Group", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=MAHINDRA" },
+    { "id": 10, "name": "ITC Hotels", "logo": "https://via.placeholder.com/200x80/1a1a2e/c9a96e?text=ITC" }
+  ],
+  "stats": [
+    { "label": "Projects Completed", "value": "500+", "icon": "briefcase" },
+    { "label": "Happy Clients", "value": "350+", "icon": "users" },
+    { "label": "Years Experience", "value": "12+", "icon": "award" },
+    { "label": "Expert Designers", "value": "45+", "icon": "palette" }
+  ]
+}
