@@ -1,14 +1,155 @@
 {
   "mainNav": [
-    { "label": "Home", "path": "/", "id": "home" },
-    { "label": "About Us", "path": "/about", "id": "about" },
-    { "label": "Services", "path": "/services", "id": "services" },
-    { "label": "Portfolio", "path": "/portfolio", "id": "portfolio" },
-    { "label": "Clients", "path": "/clients", "id": "clients" },
-    { "label": "Blog", "path": "/blog", "id": "blog" },
-    { "label": "FAQ", "path": "/faq", "id": "faq" },
-    { "label": "Contact Us", "path": "/contact", "id": "contact" }
+    { 
+      "label": "Home", 
+      "path": "/", 
+      "id": "home",
+      "dropdown": []
+    },
+    { 
+      "label": "About Us", 
+      "path": "/about", 
+      "id": "about",
+      "dropdown": [
+        { 
+          "id": "about-story", 
+          "label": "Our Story", 
+          "path": "/about/our-story",
+          "icon": "📖",
+          "description": "Learn about our journey"
+        },
+        { 
+          "id": "about-process", 
+          "label": "HOW IT WORKS", 
+          "path": "/about/process",
+          "icon": "⚙️",
+          "description": "How we work"
+        },
+        { 
+          "id": "about-testimonials", 
+          "label": "Testimonials", 
+          "path": "/about/testimonials",
+          "icon": "💬",
+          "description": "What our clients say"
+        },
+        { 
+          "id": "about-why-choose-us", 
+          "label": "Why Choose Us", 
+          "path": "/about/why-choose-us",
+          "icon": "⭐",
+          "description": "What makes us different"
+        }
+      ]
+    },
+    { 
+      "label": "Services", 
+      "path": "/services", 
+      "id": "services",
+      "dropdown": [
+        { 
+          "id": "all-services", 
+          "label": "All Services", 
+          "path": "/services",
+          "icon": "🛠 ️",
+          "description": "Explore all our services"
+        },
+        { 
+          "id": "services-residential", 
+          "label": "Residential Interior", 
+          "path": "/services/residential-interior",
+          "icon": "🏠",
+          "description": "Beautiful home interiors"
+        },
+        { 
+          "id": "services-commercial", 
+          "label": "Commercial Interior", 
+          "path": "/services/commercial-interior",
+          "icon": "🏢",
+          "description": "Professional workspaces"
+        },
+        { 
+          "id": "services-modular-kitchen", 
+          "label": "Modular Kitchen", 
+          "path": "/services/modular-kitchen",
+          "icon": "🍳",
+          "description": "Modern kitchen solutions"
+        },
+        { 
+          "id": "services-tile-flooring", 
+          "label": "Tile Flooring Works", 
+          "path": "/services/tile-flooring-works",
+          "icon": "🧱",
+          "description": "Premium tile flooring"
+        },
+        { 
+          "id": "gypsum-pvc-false-ceiling", 
+          "label": "Gypsum/PVC False Ceiling", 
+          "path": "/services/gypsum-pvc-false-ceiling",
+          "icon": "🔲",
+          "description": "Elegant ceiling designs"
+        },
+        { 
+          "id": "painting-works", 
+          "label": "Painting Works", 
+          "path": "/services/painting-works",
+          "icon": "🎨",
+          "description": "Professional interior painting"
+        },
+        { 
+          "id": "fabrication-works", 
+          "label": "Fabrication Works", 
+          "path": "/services/fabrication-works",
+          "icon": "🔧",
+          "description": "Professional fabrication services"
+        },
+        { 
+          "id": "aluminum-sliding-doors-glass-partitions", 
+          "label": "Aluminum Sliding Doors & Glass Partitions", 
+          "path": "/services/aluminum-sliding-doors-glass-partitions",
+          "icon": "�",
+          "description": "Modern door and partition solutions"
+        },
+        { 
+          "id": "plumbing-electrical-work", 
+          "label": "Plumbing & Electrical Work", 
+          "path": "/services/plumbing-electrical-work",
+          "icon": "⚡",
+          "description": "Professional plumbing and electrical services"
+        }
+      ]
+    },
+    { 
+      "label": "Portfolio", 
+      "path": "/portfolio", 
+      "id": "portfolio",
+      "dropdown": []
+    },
+    { 
+      "label": "Clients", 
+      "path": "/clients", 
+      "id": "clients",
+      "dropdown": []
+    },
+    { 
+      "label": "Blog", 
+      "path": "/blog", 
+      "id": "blog",
+      "dropdown": []
+    },
+    { 
+      "label": "FAQ", 
+      "path": "/faq", 
+      "id": "faq",
+      "dropdown": []
+    },
+    { 
+      "label": "Contact Us", 
+      "path": "/contact", 
+      "id": "contact",
+      "dropdown": []
+    }
   ],
+
   "socialLinks": [
     { "label": "Facebook", "url": "https://facebook.com/buildcare", "icon": "facebook" },
     { "label": "Instagram", "url": "https://instagram.com/buildcare", "icon": "instagram" },

@@ -1,4 +1,4 @@
-// src/components/layout/Navbar.jsx
+// src/components/layout/Navbar.jsx (Fixed - Complete)
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -6,6 +6,8 @@ import { Menu, X, Phone, Mail, ChevronRight, Send } from 'lucide-react';
 import { cn } from '@utils/helpers';
 import { COMPANY } from '@utils/constants';
 import Button from '@components/ui/Button';
+import DropdownMenu from '@components/ui/DropdownMenu';
+import MobileDropdownMenu from '@components/ui/MobileDropdownMenu';
 import { useEnquiry } from '@hooks/useEnquiry';
 import navigationData from '@data/navigation.json';
 
@@ -32,6 +34,15 @@ export default function Navbar() {
     document.body.style.overflow = isOpen ? 'hidden' : 'unset';
     return () => { document.body.style.overflow = 'unset'; };
   }, [isOpen]);
+
+  // Helper function to check if a path or its dropdown items is active
+  const isPathActive = (item) => {
+    if (location.pathname === item.path) return true;
+    if (item.dropdown && item.dropdown.length > 0) {
+      return item.dropdown.some(dropItem => location.pathname === dropItem.path);
+    }
+    return false;
+  };
 
   return (
     <>
@@ -88,26 +99,13 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1" aria-label="Primary navigation">
             {navigationData.mainNav.map((item) => (
-              <Link
+              <DropdownMenu
                 key={item.id}
-                to={item.path}
-                className={cn(
-                  'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 relative group',
-                  location.pathname === item.path
-                    ? 'text-primary-300'
-                    : 'text-dark-200 hover:text-primary-300'
-                )}
-              >
-                {item.label}
-                {location.pathname === item.path && (
-                  <motion.div
-                    layoutId="navbar-indicator"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary-400 rounded-full"
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                  />
-                )}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-400/50 rounded-full group-hover:w-6 transition-all duration-300" />
-              </Link>
+                label={item.label}
+                items={item.dropdown || []}
+                path={item.path}
+                isActive={isPathActive(item)}
+              />
             ))}
           </nav>
 
@@ -164,27 +162,15 @@ export default function Navbar() {
             >
               <div className="p-6 pt-20">
                 <div className="space-y-1">
-                  {navigationData.mainNav.map((item, index) => (
-                    <motion.div
+                  {navigationData.mainNav.map((item) => (
+                    <MobileDropdownMenu
                       key={item.id}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.05 }}
-                    >
-                      <Link
-                        to={item.path}
-                        className={cn(
-                          'flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all',
-                          location.pathname === item.path
-                            ? 'bg-primary-400/10 text-primary-300 border border-primary-400/20'
-                            : 'text-dark-200 hover:bg-dark-800 hover:text-primary-300'
-                        )}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.label}
-                        <ChevronRight className="w-4 h-4 opacity-40" />
-                      </Link>
-                    </motion.div>
+                      label={item.label}
+                      items={item.dropdown || []}
+                      path={item.path}
+                      isActive={isPathActive(item)}
+                      onClose={() => setIsOpen(false)}
+                    />
                   ))}
                 </div>
 
