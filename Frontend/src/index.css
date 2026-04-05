@@ -465,3 +465,103 @@ video {
 .animation-delay-4000 {
   animation-delay: 4s;
 }
+
+/* Enhanced Animations */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(201, 169, 110, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(201, 169, 110, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(201, 169, 110, 0);
+  }
+}
+
+/* Smooth Glass Morphism */
+.glass-premium {
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.8) 0%,
+    rgba(35, 35, 66, 0.6) 100%
+  );
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(201, 169, 110, 0.18);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Interactive Glow Effect */
+.interactive-glow {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.interactive-glow::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(201, 169, 110, 0.5),
+    transparent
+  );
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.interactive-glow:hover::before {
+  opacity: 1;
+}
+
+/* Shimmer Effect for Text */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    #c9a96e 0%,
+    #e8d5a8 25%,
+    #ffffff 50%,
+    #e8d5a8 75%,
+    #c9a96e 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer-text 3s linear infinite;
+}
+
+@keyframes shimmer-text {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Floating Animation Utility */
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+}

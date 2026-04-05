@@ -7,6 +7,7 @@ import { EnquiryProvider } from '@hooks/useEnquiry';
 import EnquiryModalWrapper from '@components/forms/EnquiryModalWrapper';
 
 const Home = lazy(() => import('@pages/Home'));
+const Process = lazy(() => import('@pages/Process'));
 const About = lazy(() => import('@pages/About'));
 const Services = lazy(() => import('@pages/Services'));
 const ServiceDetail = lazy(() => import('@pages/ServiceDetail'));
@@ -41,6 +42,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/process" element={<Process />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/portfolio" element={<Portfolio />} />
