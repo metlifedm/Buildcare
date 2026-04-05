@@ -43,7 +43,6 @@ export default function App() {
         <Suspense fallback={null}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
             <Route path="/about/process" element={<Process />} />
             <Route path="/about/our-story" element={<OurStory />} />
             <Route path="/about/why-choose-us" element={<WhyChooseUs />} />
