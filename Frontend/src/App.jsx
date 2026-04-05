@@ -7,7 +7,6 @@ import { EnquiryProvider } from '@hooks/useEnquiry';
 import EnquiryModalWrapper from '@components/forms/EnquiryModalWrapper';
 
 const Home = lazy(() => import('@pages/Home'));
-const About = lazy(() => import('@pages/About'));
 const Process = lazy(() => import('@pages/About/Process'));
 const OurStory = lazy(() => import('@pages/About/OurStory'));
 const WhyChooseUs = lazy(() => import('@pages/About/WhyChooseUs'));
