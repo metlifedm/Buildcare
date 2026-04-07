@@ -195,11 +195,11 @@ export default function EnquiryModalWrapper() {
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 p-6 relative overflow-hidden">
-              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/5" />
+              <div className="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
+<div className="pointer-events-none absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/5" />
               <button
                 onClick={handleClose}
-                className="absolute top-4 right-4 p-2 rounded-full bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition-all cursor-pointer"
+                className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition-all cursor-pointer"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />
@@ -218,7 +218,8 @@ export default function EnquiryModalWrapper() {
             </div>
 
             {/* Body */}
-            <div className="bg-dark-900 p-6 max-h-[70vh] overflow-y-auto">
+            <div className="bg-dark-900 p-6 h-[80vh] overflow-y-auto overscroll-contain"
+            onWheel={(e) => e.stopPropagation()}>
               <AnimatePresence mode="wait">
                 {isSubmitted ? (
                   <motion.div

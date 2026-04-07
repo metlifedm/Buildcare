@@ -13,6 +13,7 @@ import Agitation1 from '../../assets/images/agitation1.jpg';
 import Agitation2 from '../../assets/images/agitation1.jpg';
 import Agitation3 from '../../assets/images/agitation1.jpg';
 import Agitation4 from '../../assets/images/agitation1.jpg';
+import { useEnquiry } from '../../hooks/useEnquiry';
 
 const painPoints = [
   {
@@ -203,6 +204,8 @@ export default function AgitationSection() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
   const controls = useAnimation();
   const [imageErrors, setImageErrors] = useState({});
+
+  const { openEnquiry } = useEnquiry();
 
   useEffect(() => {
     if (isInView) {
@@ -625,15 +628,10 @@ export default function AgitationSection() {
 
                 {/* CTA Button */}
                 <motion.button 
-                  onClick={() => {
-                    const contactSection = document.getElementById('Enquiry Now');
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
+                  onClick={() => openEnquiry()}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex-shrink-0 group/btn relative px-8 py-4 rounded-xl bg-gradient-to-r from-primary-400 to-primary-500 hover:from-primary-500 hover:to-primary-600 transition-all shadow-gold overflow-hidden"
+                  className="flex-shrink-0 group/btn relative px-8 py-4 rounded-xl bg-gradient-to-r from-primary-400 to-primary-500 hover:from-primary-500 hover:to-primary-600 transition-all shadow-gold overflow-hidden cursor-pointer"
                 >
                   <span className="relative z-10 flex items-center gap-2 text-dark-950 font-bold">
                     Start Your Project
