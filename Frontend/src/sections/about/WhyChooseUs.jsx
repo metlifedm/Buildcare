@@ -52,8 +52,8 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 bg-dark-900 relative overflow-hidden" aria-label="Why choose Buildcare">
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-400/3 rounded-full blur-3xl" />
+    <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Why choose Buildcare">
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-30" />
       
       <div className="container-custom">
         <SectionHeading
@@ -74,15 +74,15 @@ export default function WhyChooseUs() {
               <Card
                 className="h-full text-center group"
                 padding="lg"
-                variant="gradient"
+                variant="solid"
               >
-                <div className="w-14 h-14 rounded-2xl bg-primary-400/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary-400/20 group-hover:scale-110 transition-all duration-300">
-                  <reason.icon className="w-7 h-7 text-primary-400" />
+                <div className="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary-100 group-hover:scale-110 transition-all duration-300">
+                  <reason.icon className="w-7 h-7 text-primary-600" />
                 </div>
-                <h3 className="font-heading text-lg font-semibold text-dark-50 mb-3 group-hover:text-primary-300 transition-colors">
+                <h3 className="font-heading text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                   {reason.title}
                 </h3>
-                <p className="text-dark-300 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {reason.description}
                 </p>
               </Card>

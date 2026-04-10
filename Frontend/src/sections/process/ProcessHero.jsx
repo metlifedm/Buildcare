@@ -40,7 +40,7 @@ export default function ProcessHero() {
               <span className="text-sm text-primary-300">Trusted by 500+ happy clients</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight text-white!">
               A Clear, Step-by-Step{' '}
               <span className="text-gradient bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 bg-clip-text">
                 Interior Process
@@ -61,7 +61,7 @@ export default function ProcessHero() {
                 whileTap={{ scale: 0.95 }}
                 className="group relative overflow-hidden px-8 py-4 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 text-dark-950 font-semibold flex items-center justify-center gap-2 shadow-gold hover:shadow-xl transition-all duration-300"
               >
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 flex items-center gap-2 text-white">
                   📞 Get Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -72,7 +72,7 @@ export default function ProcessHero() {
                 href="https://wa.me/"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 rounded-full glass-light border border-primary-500/30 text-primary-300 font-semibold flex items-center justify-center gap-2 hover:bg-primary-500/10 hover:border-primary-500/50 transition-all duration-300"
+                className="px-8 py-4 rounded-full glass-light border border-primary-500/30 text-primary-500 font-semibold flex items-center justify-center gap-2 bg-gray-50! hover:bg-primary-500 hover:border-primary-500 transition-all duration-300"
               >
                 💬 WhatsApp Now
               </motion.a>

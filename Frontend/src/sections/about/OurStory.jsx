@@ -43,8 +43,8 @@ export default function OurStory() {
   }, []);
 
   return (
-    <section className="py-24 bg-dark-950 relative overflow-hidden" aria-label="Our story">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-400/3 rounded-full blur-3xl" />
+    <section className="py-24 bg-white relative overflow-hidden" aria-label="Our story">
+      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-30" />
 
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
@@ -60,13 +60,13 @@ export default function OurStory() {
               description="Founded in 2012, Buildcare has grown from a small design studio into one of India's most trusted interior design firms. Our journey is defined by unwavering commitment to quality, innovation, and client satisfaction."
               align="left"
             />
-            <p className="text-dark-300 leading-relaxed mt-6">
+            <p className="text-gray-600 leading-relaxed mt-6">
               Every project we undertake is a canvas for creativity. We believe that great design 
               goes beyond aesthetics — it's about understanding how people live, work, and interact 
               with their spaces. Our multidisciplinary team brings together architecture, engineering, 
               and artistic vision to create environments that are both beautiful and functional.
             </p>
-            <p className="text-dark-300 leading-relaxed mt-4">
+            <p className="text-gray-600 leading-relaxed mt-4">
               From luxurious residential interiors to cutting-edge commercial spaces, we've built 
               our reputation on delivering projects that exceed expectations — on time, within budget, 
               and with meticulous attention to every detail.
@@ -82,7 +82,7 @@ export default function OurStory() {
           >
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
-                <div className="rounded-2xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
                     src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80"
                     alt="Buildcare luxury interior design project"
@@ -91,7 +91,7 @@ export default function OurStory() {
                     onLoad={(e) => e.target.classList.add('loaded')}
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
                     src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80"
                     alt="Modern modular kitchen by Buildcare"
@@ -102,7 +102,7 @@ export default function OurStory() {
                 </div>
               </div>
               <div className="space-y-4 pt-8">
-                <div className="rounded-2xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
                     src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80"
                     alt="Premium living room interior"
@@ -111,7 +111,7 @@ export default function OurStory() {
                     onLoad={(e) => e.target.classList.add('loaded')}
                   />
                 </div>
-                <div className="rounded-2xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
                     src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80"
                     alt="Modern commercial office interior"
@@ -122,17 +122,17 @@ export default function OurStory() {
                 </div>
               </div>
             </div>
-            <div className="absolute -inset-4 rounded-3xl border border-primary-400/5 -z-10" />
+            <div className="absolute -inset-4 rounded-3xl border border-primary-100 -z-10" />
           </motion.div>
         </div>
 
         {/* Timeline */}
         <div ref={timelineRef} className="relative">
-          <h3 className="font-heading text-2xl font-bold text-center text-gradient mb-16">Our Journey</h3>
+          <h3 className="font-heading text-2xl font-bold text-gray-900 text-center mb-16">Our Journey</h3>
           
           {/* Timeline line */}
-          <div className="absolute left-1/2 top-20 bottom-0 w-[2px] bg-dark-700/30 -translate-x-1/2 hidden md:block">
-            <div className="timeline-line-fill absolute inset-0 bg-gradient-to-b from-primary-400 to-primary-600 origin-top" />
+          <div className="absolute left-1/2 top-20 bottom-0 w-[2px] bg-gray-200 -translate-x-1/2 hidden md:block">
+            <div className="timeline-line-fill absolute inset-0 bg-primary-500 origin-top" />
           </div>
 
           <div className="space-y-12 md:space-y-0">
@@ -148,19 +148,19 @@ export default function OurStory() {
                 transition={{ duration: 0.5, delay: index * 0.08 }}
               >
                 <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                  <div className="glass-card rounded-xl p-6 hover:shadow-gold transition-all duration-300 inline-block">
-                    <span className="text-primary-400 font-heading text-2xl font-bold block mb-2">
+                  <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300 inline-block">
+                    <span className="text-primary-600 font-heading text-2xl font-bold block mb-2">
                       {milestone.year}
                     </span>
-                    <h4 className="font-heading text-lg font-semibold text-dark-50 mb-2">
+                    <h4 className="font-heading text-lg font-semibold text-gray-900 mb-2">
                       {milestone.title}
                     </h4>
-                    <p className="text-dark-300 text-sm">{milestone.description}</p>
+                    <p className="text-gray-600 text-sm">{milestone.description}</p>
                   </div>
                 </div>
 
                 {/* Center dot */}
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary-400 border-4 border-dark-950 z-10 shadow-gold" />
+                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary-500 border-4 border-white shadow-md z-10" />
 
                 <div className="md:w-1/2" />
               </motion.div>

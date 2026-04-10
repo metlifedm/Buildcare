@@ -9,9 +9,8 @@ const steps = [
     title: "Consultation",
     duration: "2 days",
     icon: Calendar,
-    gradient: "from-primary-500/20 to-primary-500/10",
-    color: "text-primary-400",
-    bgColor: "bg-primary-500/10",
+    color: "text-primary-600",
+    bgColor: "bg-primary-50",
     description: "We understand your space, needs, budget.",
     details: "Initial meeting to discuss your vision, measure the space, understand your lifestyle, and establish a realistic budget range that aligns with your goals.",
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80"
@@ -21,9 +20,8 @@ const steps = [
     title: "Design",
     duration: "7-15 days",
     icon: Palette,
-    gradient: "from-primary-500/20 to-primary-500/10",
-    color: "text-primary-400",
-    bgColor: "bg-primary-500/10",
+    color: "text-primary-600",
+    bgColor: "bg-primary-50",
     description: "Layout planning + design concept finalized.",
     details: "Our team creates 2D layouts, 3D renderings, and mood boards. You review and provide feedback until the design perfectly matches your vision.",
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
@@ -33,9 +31,8 @@ const steps = [
     title: "Material",
     duration: "with you",
     icon: Package,
-    gradient: "from-primary-500/20 to-primary-500/10",
-    color: "text-primary-400",
-    bgColor: "bg-primary-500/10",
+    color: "text-primary-600",
+    bgColor: "bg-primary-50",
     description: "You select materials with our guidance (no surprises).",
     details: "Visit our material library or browse curated options online. We explain pros/cons of each material and provide transparent pricing.",
     image: "https://images.unsplash.com/photo-1615529328331-f891f6b8fad8?w=800&q=80"
@@ -45,9 +42,8 @@ const steps = [
     title: "Execution",
     duration: "30-60 days",
     icon: Hammer,
-    gradient: "from-primary-500/20 to-primary-500/10",
-    color: "text-primary-400",
-    bgColor: "bg-primary-500/10",
+    color: "text-primary-600",
+    bgColor: "bg-primary-50",
     description: "Weekly updates. WhatsApp support. No delays.",
     details: "Dedicated project manager handles everything. Daily progress tracking, weekly photo updates, and direct WhatsApp support for quick questions.",
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
@@ -57,9 +53,8 @@ const steps = [
     title: "Handover",
     duration: "final",
     icon: CheckCircle,
-    gradient: "from-primary-500/20 to-primary-400/10",
-    color: "text-primary-400",
-    bgColor: "bg-primary-500/10",
+    color: "text-primary-600",
+    bgColor: "bg-primary-50",
     description: "Quality check + final walkthrough.",
     details: "Thorough quality inspection, final walkthrough with you, addressing any last-minute concerns, and handing over all warranties and documentation.",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
@@ -80,12 +75,9 @@ function StepCard({ step, index, isOpen, onToggle }) {
     >
       <div 
         className={`relative overflow-hidden rounded-2xl transition-all duration-500 cursor-pointer
-          ${isOpen ? 'glass-card border-primary-500/30' : 'glass-card border-primary-500/10 hover:border-primary-500/20'}`}
+          ${isOpen ? 'bg-white border-2 border-primary-300 shadow-lg' : 'bg-white border border-gray-200 hover:border-primary-300 shadow-sm'}`}
         onClick={onToggle}
       >
-        {/* Background gradient on hover */}
-        <div className={`absolute inset-0 bg-gradient-to-r ${step.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-        
         <div className="relative p-6">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-4 flex-1">
@@ -95,13 +87,13 @@ function StepCard({ step, index, isOpen, onToggle }) {
               
               <div className="flex-1">
                 <div className="flex items-center gap-3 flex-wrap mb-2">
-                  <span className="text-3xl font-heading font-bold text-primary-400">0{step.id}</span>
-                  <h3 className="text-xl font-semibold">{step.title}</h3>
+                  <span className="text-3xl font-heading font-bold text-primary-600">0{step.id}</span>
+                  <h3 className="text-xl font-semibold text-gray-900">{step.title}</h3>
                   <span className={`text-sm px-3 py-1 rounded-full ${step.bgColor} ${step.color}`}>
                     {step.duration}
                   </span>
                 </div>
-                <p className="text-dark-300">{step.description}</p>
+                <p className="text-gray-600">{step.description}</p>
               </div>
             </div>
             
@@ -123,16 +115,16 @@ function StepCard({ step, index, isOpen, onToggle }) {
                 transition={{ duration: 0.4 }}
                 className="overflow-hidden"
               >
-                <div className="mt-6 pt-6 border-t border-primary-500/10">
+                <div className="mt-6 pt-6 border-t border-gray-100">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <h4 className="font-semibold text-primary-400 mb-3 flex items-center gap-2">
+                      <h4 className="font-semibold text-primary-700 mb-3 flex items-center gap-2">
                         <Sparkles className="w-4 h-4" />
                         What happens?
                       </h4>
-                      <p className="text-dark-200 leading-relaxed">{step.details}</p>
+                      <p className="text-gray-700 leading-relaxed">{step.details}</p>
                       
-                      <div className="mt-4 flex items-center gap-2 text-sm text-primary-400">
+                      <div className="mt-4 flex items-center gap-2 text-sm text-primary-600">
                         <Award className="w-4 h-4" />
                         <span>100% transparency guaranteed</span>
                       </div>
@@ -143,7 +135,7 @@ function StepCard({ step, index, isOpen, onToggle }) {
                         alt={step.title}
                         className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-dark-950 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent" />
                     </div>
                   </div>
                 </div>
@@ -166,12 +158,12 @@ export default function VisualTimeline() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
   return (
-    <section ref={ref} className="py-24 relative overflow-hidden">
-      <div className="absolute inset-0">
+    <section ref={ref} className="py-24 bg-white relative overflow-hidden">
+      <div className="absolute inset-0 opacity-5">
         <img 
           src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=1920&q=80"
           alt="Timeline background"
-          className="w-full h-full object-cover opacity-10"
+          className="w-full h-full object-cover"
         />
       </div>
 
@@ -187,23 +179,23 @@ export default function VisualTimeline() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-6"
           >
-            <Sparkles className="w-4 h-4 text-primary-400" />
-            <span className="text-sm font-medium text-primary-300">Your Journey</span>
+            <Sparkles className="w-4 h-4 text-primary-600" />
+            <span className="text-sm font-medium text-primary-700">Your Journey</span>
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6">
-            Your <span className="text-gradient">5-Step Journey</span>
+            Your <span className="text-primary-600">5-Step Journey</span>
           </h2>
-          <p className="text-xl text-dark-200 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             A transparent, structured process designed to keep you informed and in control at every stage.
           </p>
         </motion.div>
 
         {/* Creative Timeline Visual */}
         <div className="hidden lg:flex justify-between mb-16 relative">
-          <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent" />
+          <div className="absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-primary-300 to-transparent" />
           
           {steps.map((step, idx) => (
             <motion.button
@@ -219,8 +211,8 @@ export default function VisualTimeline() {
                 whileHover={{ scale: 1.1 }}
                 className={`w-16 h-16 rounded-full flex items-center justify-center text-xl font-bold transition-all duration-300 mx-auto
                   ${openStep === step.id 
-                    ? 'bg-gradient-to-br from-primary-500 to-primary-600 text-dark-950 shadow-gold' 
-                    : 'bg-dark-800 text-dark-400 group-hover:bg-primary-500/20 group-hover:text-primary-400'
+                    ? 'bg-primary-600 text-white shadow-lg' 
+                    : 'bg-gray-100 text-gray-500 group-hover:bg-primary-100 group-hover:text-primary-600'
                   }`}
               >
                 {step.id}
@@ -228,17 +220,17 @@ export default function VisualTimeline() {
               
               <div className="mt-3">
                 <p className={`font-semibold transition-colors duration-300 ${
-                  openStep === step.id ? 'text-primary-400' : 'text-dark-400 group-hover:text-dark-200'
+                  openStep === step.id ? 'text-primary-700' : 'text-gray-500 group-hover:text-gray-700'
                 }`}>
                   {step.title}
                 </p>
-                <p className="text-xs text-dark-500">{step.duration}</p>
+                <p className="text-xs text-gray-400">{step.duration}</p>
               </div>
               
               {openStep === step.id && (
                 <motion.div
                   layoutId="activeTimeline"
-                  className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-primary-400 rounded-full"
+                  className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-0.5 bg-primary-600 rounded-full"
                 />
               )}
             </motion.button>

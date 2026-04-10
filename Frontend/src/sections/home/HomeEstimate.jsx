@@ -14,7 +14,7 @@ import { useEnquiry } from '@hooks/useEnquiry';
 import { cn } from '@utils/helpers';
 import Button from '@components/ui/Button';
 import FormField from '@components/ui/FormField';
-import ContactImg from '@assets/images/agitation1.jpg';
+import ContactImg from '@assets/images/contact-bg.jpg';
 
 // Form validation schema
 const estimateSchema = z.object({
@@ -43,15 +43,6 @@ const propertySizes = [
   '1500 - 2000 sq ft',
   '2000 - 3000 sq ft',
   'Above 3000 sq ft',
-];
-
-const budgetRanges = [
-  'Below ₹5 Lakhs',
-  '₹5 Lakhs - ₹10 Lakhs',
-  '₹10 Lakhs - ₹20 Lakhs',
-  '₹20 Lakhs - ₹35 Lakhs',
-  '₹35 Lakhs - ₹50 Lakhs',
-  'Above ₹50 Lakhs',
 ];
 
 const timelines = [
@@ -114,7 +105,7 @@ export default function HomeEstimate() {
     );
     
     if (data.propertySize) lines.push(`📐 *Property Size:* ${data.propertySize}`);
-    if (data.budget) lines.push(`💰 *Budget Range:* ${data.budget}`);
+    if (data.budget) lines.push(`💰 *Budget Range:* ₹${data.budget}`);
     if (data.timeline) lines.push(`⏱️ *Timeline:* ${data.timeline}`);
     
     lines.push(
@@ -168,15 +159,14 @@ export default function HomeEstimate() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative flex flex-col"
           >
-            {/* Main Image */}
-            <div className="relative rounded-2xl overflow-hidden shadow-xl mb-8">
+            {/* Main Image - Fixed height to match right column */}
+            <div className="relative rounded-2xl overflow-hidden shadow-xl mb-8 flex-shrink-0 h-[400px] lg:h-[600px]">
               <img
                 src={ContactImg}
                 alt="Luxury interior design consultation"
-                className="w-full h-[400px] object-cover"
-                // loading="lazy"
+                className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
               
@@ -206,6 +196,7 @@ export default function HomeEstimate() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex-shrink-0"
             >
               <h3 className="font-heading text-2xl font-bold text-gray-900 mb-4">
                 Get in Touch
@@ -243,7 +234,7 @@ export default function HomeEstimate() {
 
             {/* Trust Badges */}
             <motion.div
-              className="mt-6 flex items-center justify-start gap-6 pt-4 border-t border-gray-100"
+              className="mt-6 flex items-center justify-start gap-6 pt-4 border-t border-gray-100 flex-shrink-0"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -316,99 +307,99 @@ export default function HomeEstimate() {
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-4" noValidate>
-                  {/* Name */}
-                  <FormField label="Full Name" error={errors.name?.message} required>
-                    <div className="relative">
-                      <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <input
-                        type="text"
-                        placeholder="Enter your full name"
-                        className={cn(inputStyles, 'pl-10', errors.name && 'border-red-400')}
-                        {...register('name')}
-                      />
-                    </div>
-                  </FormField>
-
-                  {/* Phone */}
-                  <FormField label="Phone Number" error={errors.phone?.message} required>
-                    <div className="relative">
-                      <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <input
-                        type="tel"
-                        placeholder="+91 98765 43210"
-                        className={cn(inputStyles, 'pl-10', errors.phone && 'border-red-400')}
-                        {...register('phone')}
-                      />
-                    </div>
-                  </FormField>
-
-                  {/* Email */}
-                  <FormField label="Email Address" error={errors.email?.message} helpText="Optional">
-                    <div className="relative">
-                      <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <input
-                        type="email"
-                        placeholder="your@email.com"
-                        className={cn(inputStyles, 'pl-10', errors.email && 'border-red-400')}
-                        {...register('email')}
-                      />
-                    </div>
-                  </FormField>
-
-                  {/* Service Required */}
-                  <FormField label="Service Required" error={errors.service?.message} required>
-                    <div className="relative">
-                      <Building2 className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <select
-                        className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none', errors.service && 'border-red-400')}
-                        {...register('service')}
-                      >
-                        <option value="">Select a service</option>
-                        {SERVICE_OPTIONS.map((service) => (
-                          <option key={service} value={service}>{service}</option>
-                        ))}
-                      </select>
-                      <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-                        <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
+                  {/* Line 1: Name and Phone in one row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormField label="Full Name" error={errors.name?.message} required>
+                      <div className="relative">
+                        <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input
+                          type="text"
+                          placeholder="Enter your full name"
+                          className={cn(inputStyles, 'pl-10', errors.name && 'border-red-400')}
+                          {...register('name')}
+                        />
                       </div>
-                    </div>
-                  </FormField>
+                    </FormField>
 
-                  {/* Property Size */}
-                  <FormField label="Property Size" error={errors.propertySize?.message} helpText="Optional">
-                    <div className="relative">
-                      <Ruler className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <select
-                        className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
-                        {...register('propertySize')}
-                      >
-                        <option value="">Select property size</option>
-                        {propertySizes.map((size) => (
-                          <option key={size} value={size}>{size}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </FormField>
+                    <FormField label="Phone Number" error={errors.phone?.message} required>
+                      <div className="relative">
+                        <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input
+                          type="tel"
+                          placeholder="+91 98765 43210"
+                          className={cn(inputStyles, 'pl-10', errors.phone && 'border-red-400')}
+                          {...register('phone')}
+                        />
+                      </div>
+                    </FormField>
+                  </div>
 
-                  {/* Budget Range */}
-                  <FormField label="Budget Range" error={errors.budget?.message} helpText="Optional">
-                    <div className="relative">
-                      <IndianRupee className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                      <select
-                        className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
-                        {...register('budget')}
-                      >
-                        <option value="">Select budget range</option>
-                        {budgetRanges.map((budget) => (
-                          <option key={budget} value={budget}>{budget}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </FormField>
+                  {/* Line 2: Email and Service Required in one row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormField label="Email Address" error={errors.email?.message} helpText="Optional">
+                      <div className="relative">
+                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input
+                          type="email"
+                          placeholder="your@email.com"
+                          className={cn(inputStyles, 'pl-10', errors.email && 'border-red-400')}
+                          {...register('email')}
+                        />
+                      </div>
+                    </FormField>
 
-                  {/* Timeline */}
+                    <FormField label="Service Required" error={errors.service?.message} required>
+                      <div className="relative">
+                        <Building2 className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <select
+                          className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none', errors.service && 'border-red-400')}
+                          {...register('service')}
+                        >
+                          <option value="">Select a service</option>
+                          {SERVICE_OPTIONS.map((service) => (
+                            <option key={service} value={service}>{service}</option>
+                          ))}
+                        </select>
+                        <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
+                          <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </div>
+                    </FormField>
+                  </div>
+
+                  {/* Line 3: Property Size and Budget Range (manual input) in one row */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <FormField label="Property Size" error={errors.propertySize?.message} helpText="Optional">
+                      <div className="relative">
+                        <Ruler className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <select
+                          className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
+                          {...register('propertySize')}
+                        >
+                          <option value="">Select property size</option>
+                          {propertySizes.map((size) => (
+                            <option key={size} value={size}>{size}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </FormField>
+
+                    <FormField label="Budget (in INR)" error={errors.budget?.message} helpText="Optional - Enter amount in ₹">
+                      <div className="relative">
+                        <IndianRupee className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input
+                          type="number"
+                          placeholder="e.g., 500000"
+                          className={cn(inputStyles, 'pl-10', errors.budget && 'border-red-400')}
+                          {...register('budget')}
+                        />
+                      </div>
+                    </FormField>
+                  </div>
+
+                  {/* Line 4: Timeline */}
                   <FormField label="Timeline" error={errors.timeline?.message} helpText="Optional">
                     <div className="relative">
                       <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
@@ -424,7 +415,7 @@ export default function HomeEstimate() {
                     </div>
                   </FormField>
 
-                  {/* Message */}
+                  {/* Line 5: Project Details (Message) */}
                   <FormField label="Project Details" error={errors.message?.message} required>
                     <div className="relative">
                       <Home className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />

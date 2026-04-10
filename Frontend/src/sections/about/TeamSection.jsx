@@ -37,8 +37,8 @@ const team = [
 
 export default function TeamSection() {
   return (
-    <section className="py-24 bg-dark-950 relative overflow-hidden" aria-label="Our team">
-      <div className="absolute top-1/2 right-0 w-72 h-72 bg-primary-400/3 rounded-full blur-3xl" />
+    <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Our team">
+      <div className="absolute top-1/2 right-0 w-72 h-72 bg-primary-100 rounded-full blur-3xl opacity-30" />
       
       <div className="container-custom">
         <SectionHeading
@@ -57,7 +57,7 @@ export default function TeamSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[3/4]">
+              <div className="relative rounded-2xl overflow-hidden mb-5 aspect-[3/4] shadow-md">
                 <img
                   src={member.image}
                   alt={`${member.name} - ${member.role} at Buildcare`}
@@ -65,7 +65,7 @@ export default function TeamSection() {
                   loading="lazy"
                   onLoad={(e) => e.target.classList.add('loaded')}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 {/* Social overlay */}
                 <div className="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
@@ -73,14 +73,14 @@ export default function TeamSection() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:text-primary-400 transition-colors"
+                    className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-gray-700 hover:text-primary-600 transition-colors shadow-md"
                     aria-label={`${member.name} LinkedIn`}
                   >
                     <FaLinkedin className="w-4 h-4" />
                   </a>
                   <a
                     href={`mailto:${member.email}`}
-                    className="w-10 h-10 rounded-full glass flex items-center justify-center text-white hover:text-primary-400 transition-colors"
+                    className="w-10 h-10 rounded-full bg-white/90 flex items-center justify-center text-gray-700 hover:text-primary-600 transition-colors shadow-md"
                     aria-label={`Email ${member.name}`}
                   >
                     <Mail className="w-4 h-4" />
@@ -88,13 +88,13 @@ export default function TeamSection() {
                 </div>
 
                 {/* Border accent */}
-                <div className="absolute inset-0 rounded-2xl border border-primary-400/0 group-hover:border-primary-400/20 transition-colors duration-500" />
+                <div className="absolute inset-0 rounded-2xl border-2 border-primary-500/0 group-hover:border-primary-500/30 transition-colors duration-500" />
               </div>
               
-              <h3 className="font-heading text-lg font-semibold text-dark-50 group-hover:text-primary-300 transition-colors">
+              <h3 className="font-heading text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
                 {member.name}
               </h3>
-              <p className="text-primary-400/70 text-sm font-accent mt-1">{member.role}</p>
+              <p className="text-primary-600 text-sm font-accent mt-1">{member.role}</p>
             </motion.div>
           ))}
         </div>
