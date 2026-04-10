@@ -46,7 +46,7 @@ export default function Services() {
       />
 
       {/* Process */}
-      <section className="py-20 bg-dark-900" aria-label="Our process">
+      <section className="py-20 bg-gray-100" aria-label="Our process">
         <div className="container-custom">
           <SectionHeading
             subtitle="Our Process"
@@ -69,14 +69,14 @@ export default function Services() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="text-center h-full relative overflow-hidden group" padding="lg">
-                  <span className="absolute top-4 right-4 font-heading text-6xl font-bold text-primary-400/5 group-hover:text-primary-400/10 transition-colors">
+                  <span className="absolute top-4 right-4 font-heading text-6xl font-bold text-primary-100 group-hover:text-primary-200 transition-colors">
                     {item.step}
                   </span>
-                  <div className="w-12 h-12 rounded-full bg-primary-400/10 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-heading text-lg font-bold text-primary-400">{item.step}</span>
+                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mx-auto mb-4">
+                    <span className="font-heading text-lg font-bold text-primary-700">{item.step}</span>
                   </div>
-                  <h3 className="font-heading text-lg font-semibold text-dark-50 mb-3">{item.title}</h3>
-                  <p className="text-dark-300 text-sm">{item.desc}</p>
+                  <h3 className="font-heading text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
                 </Card>
               </motion.div>
             ))}
@@ -85,7 +85,7 @@ export default function Services() {
       </section>
 
       {/* All Services Grid */}
-      <section className="py-24 bg-dark-950" aria-label="All services">
+      <section className="py-24 bg-white" aria-label="All services">
         <div className="container-custom">
           <SectionHeading
             subtitle="All Services"
@@ -117,11 +117,11 @@ export default function Services() {
                           loading="lazy"
                           onLoad={(e) => e.target.classList.add('loaded')}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-dark-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         
                         {/* Price badge */}
-                        <div className="absolute bottom-3 left-3 glass rounded-lg px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                          <span className="text-primary-300 text-xs font-medium">{service.priceRange}</span>
+                        <div className="absolute bottom-3 left-3 bg-white rounded-lg px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
+                          <span className="text-primary-700 text-xs font-medium">{service.priceRange}</span>
                         </div>
                       </div>
                     </Link>
@@ -129,33 +129,33 @@ export default function Services() {
                     {/* Content */}
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex items-center gap-3 mb-3">
-                        <div className="w-11 h-11 rounded-xl bg-primary-400/10 flex items-center justify-center group-hover:bg-primary-400/20 transition-colors">
-                          <Icon className="w-5 h-5 text-primary-400" />
+                        <div className="w-11 h-11 rounded-xl bg-primary-50 flex items-center justify-center group-hover:bg-primary-100 transition-colors">
+                          <Icon className="w-5 h-5 text-primary-600" />
                         </div>
                         <div>
-                          <h3 className="font-heading text-lg font-semibold text-dark-50 group-hover:text-primary-300 transition-colors">
+                          <h3 className="font-heading text-lg font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
                             {service.title}
                           </h3>
-                          <span className="text-dark-500 text-xs">{service.duration}</span>
+                          <span className="text-gray-500 text-xs">{service.duration}</span>
                         </div>
                       </div>
 
-                      <p className="text-dark-300 text-sm leading-relaxed mb-4 flex-1">
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
                         {service.shortDescription}
                       </p>
 
                       {/* Top 3 features */}
                       <div className="space-y-1.5 mb-5">
                         {service.features.slice(0, 3).map((f) => (
-                          <div key={f} className="flex items-center gap-2 text-xs text-dark-400">
-                            <CheckCircle className="w-3 h-3 text-primary-400/60" />
+                          <div key={f} className="flex items-center gap-2 text-xs text-gray-500">
+                            <CheckCircle className="w-3 h-3 text-primary-500" />
                             {f}
                           </div>
                         ))}
                       </div>
 
                       {/* Actions */}
-                      <div className="flex gap-2 mt-auto pt-4 border-t border-dark-700/20">
+                      <div className="flex gap-2 mt-auto pt-4 border-t border-gray-100">
                         <Link to={`/services/${service.slug}`} className="flex-1">
                           <Button variant="outline" size="sm" className="w-full" icon={ArrowUpRight}>
                             View Details
@@ -184,7 +184,7 @@ export default function Services() {
         title="Not Sure Which Service You Need?"
         description="No worries! Send us an enquiry and our experts will guide you to the perfect solution for your space."
         primaryAction={{ label: 'Send Enquiry', link: '/contact' }}
-        variant="gold"
+        variant="default"
       />
     </>
   );

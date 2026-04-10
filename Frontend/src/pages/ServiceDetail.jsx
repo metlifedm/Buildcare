@@ -1,7 +1,7 @@
 // src/pages/ServiceDetail.jsx
 import { useMemo, useRef, useEffect, useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import * as LucideIcons from 'lucide-react';
 import {
   CheckCircle, ArrowRight, ArrowLeft, Send,
@@ -18,7 +18,6 @@ import { useEnquiry } from '@hooks/useEnquiry';
 import servicesData from '@data/services.json';
 import { COMPANY } from '@utils/constants';
 import { cn } from '../utils/helpers';
-import { AnimatePresence } from 'framer-motion';
 
 const iconMap = {
   home: 'Home', building: 'Building2', grid3x3: 'Grid3X3',
@@ -58,7 +57,7 @@ const serviceExtendedData = {
       { q: 'How much does residential interior design cost?', a: 'Our residential packages start from ₹8 lakhs for a 2BHK. The final cost depends on the scope, materials, and customization level. We offer packages for every budget.' },
       { q: 'Do you provide 3D designs before execution?', a: 'Yes! We provide detailed 3D renderings and virtual walkthroughs so you can visualize the final result before we begin execution.' },
       { q: 'What is the timeline for a complete home interior?', a: 'A typical 2-3 BHK takes 45-60 days. Larger homes may take 60-90 days. We provide a detailed timeline during planning.' },
-      { q: "Can I choose my own materials?', a: 'Absolutely! While we recommend premium materials, you're free to choose any material. We can also source specific materials on request." },
+      { q: 'Can I choose my own materials?', a: 'Absolutely! While we recommend premium materials, you\'re free to choose any material. We can also source specific materials on request.' },
     ],
   },
   'commercial-interior': {
@@ -223,6 +222,57 @@ const serviceExtendedData = {
   },
 };
 
+function FAQItem({ faq, index }) {
+  const [isOpen, setIsOpen] = useState(index === 0);
+
+  return (
+    <motion.div
+      className={cn(
+        'bg-white border rounded-xl overflow-hidden transition-all duration-300',
+        isOpen && 'border-primary-300 shadow-md'
+      )}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.4, delay: index * 0.05 }}
+    >
+      <button
+        className="w-full flex items-center justify-between p-6 text-left cursor-pointer group"
+        onClick={() => setIsOpen(!isOpen)}
+        aria-expanded={isOpen}
+      >
+        <span className={cn(
+          'font-heading font-semibold text-lg pr-4 transition-colors',
+          isOpen ? 'text-primary-700' : 'text-gray-900 group-hover:text-primary-700'
+        )}>
+          {faq.q}
+        </span>
+        <motion.span
+          animate={{ rotate: isOpen ? 45 : 0 }}
+          className={cn('flex-shrink-0 text-2xl font-light', isOpen ? 'text-primary-600' : 'text-gray-400')}
+        >
+          +
+        </motion.span>
+      </button>
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden"
+          >
+            <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
+              {faq.a}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
+  );
+}
+
 export default function ServiceDetail() {
   const { slug } = useParams();
   const { openEnquiry } = useEnquiry();
@@ -296,7 +346,7 @@ export default function ServiceDetail() {
       />
 
       {/* Hero Section with Parallax */}
-      <section ref={sectionRef} className="relative h-[70vh] min-h-[500px] flex items-end overflow-hidden">
+      <section ref={sectionRef} className="relative flex items-end overflow-hidden bg-gray-900 py-20">
         <div className="absolute inset-0">
           <img
             src={extended.heroImage || service.image}
@@ -304,17 +354,17 @@ export default function ServiceDetail() {
             className="parallax-img w-full h-[120%] object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/60 to-dark-950/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-dark-950/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-gray-900/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-transparent" />
         </div>
 
         <div className="container-custom relative z-10 pb-16">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm mb-6" aria-label="Breadcrumb">
-            <Link to="/" className="text-dark-400 hover:text-primary-400 transition-colors">Home</Link>
-            <span className="text-dark-600">/</span>
-            <Link to="/services" className="text-dark-400 hover:text-primary-400 transition-colors">Services</Link>
-            <span className="text-dark-600">/</span>
+            <Link to="/" className="text-gray-50 hover:text-primary-400 transition-colors">Home</Link>
+            <span className="text-gray-50">/</span>
+            <Link to="/services" className="text-gray-50 hover:text-primary-400 transition-colors">Services</Link>
+            <span className="text-gray-50">/</span>
             <span className="text-primary-400">{service.title}</span>
           </nav>
 
@@ -324,24 +374,24 @@ export default function ServiceDetail() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 rounded-2xl bg-primary-400/15 backdrop-blur-sm flex items-center justify-center border border-primary-400/20">
+              <div className="w-16 h-16 rounded-2xl bg-primary-500/15 backdrop-blur-sm flex items-center justify-center border border-primary-500/20">
                 <Icon className="w-8 h-8 text-primary-400" />
               </div>
               <div>
-                <span className="text-primary-400/70 text-sm font-accent tracking-wider uppercase">Service</span>
-                <h1 className="font-heading text-3xl md:text-5xl font-bold text-white">{service.title}</h1>
+                <span className="text-primary-400 text-sm font-accent tracking-wider uppercase">Service</span>
+                <h1 className="font-heading text-3xl md:text-5xl font-bold text-white!">{service.title}</h1>
               </div>
             </div>
-            <p className="text-dark-200 text-lg max-w-2xl mt-4">{service.shortDescription}</p>
+            <p className="text-gray-300 text-lg max-w-2xl mt-4">{service.shortDescription}</p>
 
             <div className="flex flex-wrap items-center gap-6 mt-8">
-              <div className="flex items-center gap-2 glass-card rounded-lg px-4 py-2">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/10">
                 <IndianRupee className="w-4 h-4 text-primary-400" />
-                <span className="text-dark-100 text-sm font-medium">{service.priceRange}</span>
+                <span className="text-white text-sm font-medium">{service.priceRange}</span>
               </div>
-              <div className="flex items-center gap-2 glass-card rounded-lg px-4 py-2">
+              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/10">
                 <Clock className="w-4 h-4 text-primary-400" />
-                <span className="text-dark-100 text-sm font-medium">{service.duration}</span>
+                <span className="text-white text-sm font-medium">{service.duration}</span>
               </div>
               <Button
                 variant="primary"
@@ -358,7 +408,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* Description Section */}
-      <section className="py-20 bg-dark-950">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-[1.3fr_0.7fr] gap-16">
             <motion.div
@@ -367,27 +417,27 @@ export default function ServiceDetail() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="font-heading text-2xl md:text-3xl font-bold text-gradient mb-6">
+              <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                 About This Service
               </h2>
-              <p className="text-dark-200 leading-relaxed text-lg mb-8">
+              <p className="text-gray-600 leading-relaxed text-lg mb-8">
                 {service.description}
               </p>
 
               {/* Features Grid */}
-              <h3 className="font-heading text-xl font-semibold text-dark-50 mb-4">What's Included</h3>
+              <h3 className="font-heading text-xl font-semibold text-gray-900 mb-4">What's Included</h3>
               <div className="grid sm:grid-cols-2 gap-3 mb-8">
                 {service.features.map((feature, i) => (
                   <motion.div
                     key={feature}
-                    className="flex items-center gap-3 p-3 rounded-xl glass-light hover:border-primary-400/20 transition-all"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:border-primary-200 hover:bg-gray-100 transition-all border border-gray-100"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.3, delay: i * 0.05 }}
                   >
-                    <CheckCircle className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                    <span className="text-dark-100 text-sm">{feature}</span>
+                    <CheckCircle className="w-5 h-5 text-primary-500 flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -395,31 +445,31 @@ export default function ServiceDetail() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <Card padding="lg" className="bg-gradient-to-br from-primary-900/20 to-dark-800 border-primary-400/15 sticky top-24">
-                <h3 className="font-heading text-lg font-semibold text-dark-50 mb-6 flex items-center gap-2">
-                  <Sparkles className="w-5 h-5 text-primary-400" />
+              <Card padding="lg" className="bg-gray-50 border-gray-200 sticky top-24">
+                <h3 className="font-heading text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+                  <Sparkles className="w-5 h-5 text-primary-600" />
                   Quick Enquiry
                 </h3>
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center gap-3 text-sm">
-                    <IndianRupee className="w-4 h-4 text-primary-400" />
-                    <span className="text-dark-300">Starting from</span>
-                    <span className="text-dark-50 font-semibold ml-auto">{service.priceRange}</span>
+                    <IndianRupee className="w-4 h-4 text-primary-600" />
+                    <span className="text-gray-600">Starting from</span>
+                    <span className="text-gray-900 font-semibold ml-auto">{service.priceRange}</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
-                    <Clock className="w-4 h-4 text-primary-400" />
-                    <span className="text-dark-300">Timeline</span>
-                    <span className="text-dark-50 font-semibold ml-auto">{service.duration}</span>
+                    <Clock className="w-4 h-4 text-primary-600" />
+                    <span className="text-gray-600">Timeline</span>
+                    <span className="text-gray-900 font-semibold ml-auto">{service.duration}</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
-                    <Shield className="w-4 h-4 text-primary-400" />
-                    <span className="text-dark-300">Warranty</span>
-                    <span className="text-dark-50 font-semibold ml-auto">Up to 10 Years</span>
+                    <Shield className="w-4 h-4 text-primary-600" />
+                    <span className="text-gray-600">Warranty</span>
+                    <span className="text-gray-900 font-semibold ml-auto">Up to 10 Years</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
-                    <Star className="w-4 h-4 text-primary-400" />
-                    <span className="text-dark-300">Rating</span>
-                    <span className="text-dark-50 font-semibold ml-auto">4.9/5 ⭐</span>
+                    <Star className="w-4 h-4 text-primary-600" />
+                    <span className="text-gray-600">Rating</span>
+                    <span className="text-gray-900 font-semibold ml-auto">4.9/5 ⭐</span>
                   </div>
                 </div>
 
@@ -457,7 +507,7 @@ export default function ServiceDetail() {
 
       {/* Gallery */}
       {extended.gallery && (
-        <section className="py-20 bg-dark-900" aria-label="Service gallery">
+        <section className="py-20 bg-gray-50" aria-label="Service gallery">
           <div className="container-custom">
             <SectionHeading
               subtitle="Gallery"
@@ -468,7 +518,7 @@ export default function ServiceDetail() {
               {extended.gallery.map((img, i) => (
                 <motion.div
                   key={i}
-                  className="rounded-xl overflow-hidden group cursor-pointer"
+                  className="rounded-xl overflow-hidden group cursor-pointer shadow-sm"
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
@@ -491,7 +541,7 @@ export default function ServiceDetail() {
 
       {/* Process */}
       {extended.process && (
-        <section className="py-20 bg-dark-950" aria-label="Our process">
+        <section className="py-20 bg-white" aria-label="Our process">
           <div className="container-custom">
             <SectionHeading
               subtitle="Our Process"
@@ -508,14 +558,14 @@ export default function ServiceDetail() {
                   transition={{ duration: 0.4, delay: i * 0.08 }}
                 >
                   <Card className="h-full relative overflow-hidden group" padding="lg">
-                    <span className="absolute top-3 right-4 text-6xl font-heading font-bold text-primary-400/5 group-hover:text-primary-400/10 transition-colors">
+                    <span className="absolute top-3 right-4 text-6xl font-heading font-bold text-primary-100 group-hover:text-primary-200 transition-colors">
                       {step.step}
                     </span>
-                    <div className="w-10 h-10 rounded-full bg-primary-400/10 flex items-center justify-center mb-4">
-                      <span className="text-primary-400 font-bold font-heading">{step.step}</span>
+                    <div className="w-10 h-10 rounded-full bg-primary-50 flex items-center justify-center mb-4">
+                      <span className="text-primary-700 font-bold font-heading">{step.step}</span>
                     </div>
-                    <h3 className="font-heading text-lg font-semibold text-dark-50 mb-2">{step.title}</h3>
-                    <p className="text-dark-300 text-sm">{step.desc}</p>
+                    <h3 className="font-heading text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-gray-600 text-sm">{step.desc}</p>
                   </Card>
                 </motion.div>
               ))}
@@ -526,7 +576,7 @@ export default function ServiceDetail() {
 
       {/* Benefits */}
       {extended.benefits && (
-        <section className="py-20 bg-dark-900" aria-label="Benefits">
+        <section className="py-20 bg-gray-50" aria-label="Benefits">
           <div className="container-custom">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <div>
@@ -539,20 +589,20 @@ export default function ServiceDetail() {
                   {extended.benefits.map((b, i) => (
                     <motion.div
                       key={b}
-                      className="flex items-center gap-3 p-3 rounded-xl glass-light"
+                      className="flex items-center gap-3 p-3 rounded-xl bg-white border border-gray-100 shadow-sm"
                       initial={{ opacity: 0, x: -20 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.3, delay: i * 0.05 }}
                     >
-                      <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-                      <span className="text-dark-100">{b}</span>
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                      <span className="text-gray-700">{b}</span>
                     </motion.div>
                   ))}
                 </div>
               </div>
               <motion.div
-                className="rounded-2xl overflow-hidden"
+                className="rounded-2xl overflow-hidden shadow-lg"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -573,7 +623,7 @@ export default function ServiceDetail() {
 
       {/* FAQ */}
       {extended.faqs && extended.faqs.length > 0 && (
-        <section className="py-20 bg-dark-950" aria-label="FAQs">
+        <section className="py-20 bg-white" aria-label="FAQs">
           <div className="container-custom max-w-4xl">
             <SectionHeading
               subtitle="FAQ"
@@ -589,7 +639,7 @@ export default function ServiceDetail() {
       )}
 
       {/* Related Services */}
-      <section className="py-20 bg-dark-900" aria-label="Related services">
+      <section className="py-20 bg-gray-50" aria-label="Related services">
         <div className="container-custom">
           <SectionHeading
             subtitle="Explore More"
@@ -616,14 +666,14 @@ export default function ServiceDetail() {
                       </div>
                       <div className="p-6">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 rounded-lg bg-primary-400/10 flex items-center justify-center">
-                            <RsIcon className="w-5 h-5 text-primary-400" />
+                          <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
+                            <RsIcon className="w-5 h-5 text-primary-600" />
                           </div>
-                          <h3 className="font-heading text-lg font-semibold text-dark-50 group-hover:text-primary-300 transition-colors">
+                          <h3 className="font-heading text-lg font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
                             {rs.title}
                           </h3>
                         </div>
-                        <p className="text-dark-300 text-sm line-clamp-2">{rs.shortDescription}</p>
+                        <p className="text-gray-600 text-sm line-clamp-2">{rs.shortDescription}</p>
                       </div>
                     </Card>
                   </Link>
@@ -635,24 +685,24 @@ export default function ServiceDetail() {
       </section>
 
       {/* Prev / Next Navigation */}
-      <section className="py-12 bg-dark-950 border-t border-dark-700/20">
+      <section className="py-12 bg-white border-t border-gray-100">
         <div className="container-custom">
           <div className="flex items-center justify-between">
             {prevService ? (
               <Link to={`/services/${prevService.slug}`}
-                className="flex items-center gap-3 text-dark-300 hover:text-primary-400 transition-colors group">
+                className="flex items-center gap-3 text-gray-600 hover:text-primary-600 transition-colors group">
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
                 <div>
-                  <span className="text-xs text-dark-500 block">Previous Service</span>
+                  <span className="text-xs text-gray-500 block">Previous Service</span>
                   <span className="font-medium">{prevService.title}</span>
                 </div>
               </Link>
             ) : <div />}
             {nextService ? (
               <Link to={`/services/${nextService.slug}`}
-                className="flex items-center gap-3 text-dark-300 hover:text-primary-400 transition-colors group text-right">
+                className="flex items-center gap-3 text-gray-600 hover:text-primary-600 transition-colors group text-right">
                 <div>
-                  <span className="text-xs text-dark-500 block">Next Service</span>
+                  <span className="text-xs text-gray-500 block">Next Service</span>
                   <span className="font-medium">{nextService.title}</span>
                 </div>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -666,60 +716,8 @@ export default function ServiceDetail() {
         title={`Need ${service.title}?`}
         description={`Get a free consultation for your ${service.title.toLowerCase()} project. Our experts are ready to help!`}
         primaryAction={{ label: 'Send Enquiry', link: '/contact' }}
-        variant="gold"
+        variant="default"
       />
     </>
-  );
-}
-
-// FAQ Item with toggle
-function FAQItem({ faq, index }) {
-  const [isOpen, setIsOpen] = useState(index === 0);
-
-  return (
-    <motion.div
-      className={cn(
-        'glass-card rounded-xl overflow-hidden transition-all duration-300',
-        isOpen && 'shadow-gold border-primary-400/30'
-      )}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.05 }}
-    >
-      <button
-        className="w-full flex items-center justify-between p-6 text-left cursor-pointer group"
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
-        <span className={cn(
-          'font-heading font-semibold text-lg pr-4 transition-colors',
-          isOpen ? 'text-primary-300' : 'text-dark-100 group-hover:text-primary-400'
-        )}>
-          {faq.q}
-        </span>
-        <motion.span
-          animate={{ rotate: isOpen ? 45 : 0 }}
-          className={cn('flex-shrink-0 text-2xl font-light', isOpen ? 'text-primary-400' : 'text-dark-400')}
-        >
-          +
-        </motion.span>
-      </button>
-      <AnimatePresence initial={false}>
-        {isOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            <div className="px-6 pb-6 text-dark-200 leading-relaxed border-t border-dark-600/20 pt-4">
-              {faq.a}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
   );
 }
