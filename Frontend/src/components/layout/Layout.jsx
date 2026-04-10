@@ -20,16 +20,16 @@ const pageTransition = {
 
 function PageLoader() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-dark-950">
+    <div className="min-h-screen flex items-center justify-center bg-white">
       <div className="text-center">
         <motion.div
-          className="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center mx-auto mb-4"
+          className="w-16 h-16 rounded-xl bg-primary-600 flex items-center justify-center mx-auto mb-4"
           animate={{ rotate: 360, scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <span className="font-heading text-2xl font-bold text-dark-950">B</span>
+          <span className="font-heading text-2xl font-bold text-white">B</span>
         </motion.div>
-        <p className="text-dark-300 text-sm font-accent tracking-wider">Loading...</p>
+        <p className="text-gray-500 text-sm font-accent tracking-wider">Loading...</p>
       </div>
     </div>
   );
@@ -37,7 +37,7 @@ function PageLoader() {
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-dark-950">
+    <div className="min-h-screen flex flex-col bg-white">
       <ScrollToTop />
       <Navbar />
       <main className="flex-1" role="main">

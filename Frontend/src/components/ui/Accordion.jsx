@@ -38,8 +38,8 @@ function AccordionItem({ item, isOpen, onToggle, index }) {
   return (
     <motion.div
       className={cn(
-        'glass-card rounded-xl overflow-hidden transition-all duration-300',
-        isOpen && 'shadow-gold border-primary-400/30'
+        'bg-white rounded-xl overflow-hidden transition-all duration-300 border',
+        isOpen ? 'border-primary-300 shadow-md' : 'border-gray-200'
       )}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ function AccordionItem({ item, isOpen, onToggle, index }) {
       >
         <span className={cn(
           'font-heading font-semibold text-lg pr-4 transition-colors duration-300',
-          isOpen ? 'text-primary-300' : 'text-dark-100 group-hover:text-primary-400'
+          isOpen ? 'text-primary-600' : 'text-gray-800 group-hover:text-primary-600'
         )}>
           {item.question}
         </span>
@@ -64,7 +64,7 @@ function AccordionItem({ item, isOpen, onToggle, index }) {
           transition={{ duration: 0.3 }}
           className={cn(
             'flex-shrink-0 p-1 rounded-full transition-colors',
-            isOpen ? 'bg-primary-400/20 text-primary-400' : 'text-dark-300'
+            isOpen ? 'bg-primary-100 text-primary-600' : 'text-gray-400'
           )}
         >
           <ChevronDown className="w-5 h-5" />
@@ -81,7 +81,7 @@ function AccordionItem({ item, isOpen, onToggle, index }) {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
             className="overflow-hidden"
           >
-            <div className="px-6 pb-6 text-dark-200 leading-relaxed border-t border-dark-600/20 pt-4">
+            <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">
               {item.answer}
             </div>
           </motion.div>

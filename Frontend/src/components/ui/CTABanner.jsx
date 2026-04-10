@@ -15,21 +15,21 @@ export default function CTABanner({
   const { openEnquiry } = useEnquiry();
 
   const bgVariants = {
-    default: 'bg-gradient-to-r from-dark-800 via-dark-700 to-dark-800',
-    gold: 'bg-gradient-to-r from-primary-900/50 via-primary-800/30 to-primary-900/50',
-    dark: 'bg-gradient-to-br from-dark-900 to-dark-950',
+    default: 'bg-gray-100',
+    gold: 'bg-gray-100',
+    dark: 'bg-gray-100',
   };
 
   return (
     <section className={`relative py-20 overflow-hidden ${bgVariants[variant]}`} aria-label="Call to action">
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-30">
         <div className="absolute inset-0" style={{
-          backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(201,169,110,0.3) 2px, transparent 0)',
+          backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(59,102,240,0.1) 2px, transparent 0)',
           backgroundSize: '50px 50px',
         }} />
       </div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-400/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-400/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -40,7 +40,7 @@ export default function CTABanner({
           transition={{ duration: 0.6 }}
         >
           <motion.h2
-            className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gradient mb-6"
+            className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -50,7 +50,7 @@ export default function CTABanner({
           </motion.h2>
 
           <motion.p
-            className="text-lg text-dark-200 mb-10 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

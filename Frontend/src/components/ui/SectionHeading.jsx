@@ -26,7 +26,7 @@ export default function SectionHeading({
     >
       {subtitle && (
         <motion.span
-          className="inline-block text-primary-400 font-accent font-medium text-sm tracking-[0.2em] uppercase mb-4"
+          className="inline-block text-primary-600 font-accent font-medium text-sm tracking-[0.2em] uppercase mb-4"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -40,7 +40,7 @@ export default function SectionHeading({
         className={cn(
           'font-heading font-bold leading-tight mb-6',
           'text-3xl md:text-4xl lg:text-5xl',
-          light ? 'text-dark-800' : 'text-gradient'
+          light ? 'text-gray-600' : 'text-gray-900'
         )}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +54,7 @@ export default function SectionHeading({
         <motion.p
           className={cn(
             'text-lg leading-relaxed',
-            light ? 'text-dark-500' : 'text-dark-200'
+            light ? 'text-gray-500' : 'text-gray-600'
           )}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +68,7 @@ export default function SectionHeading({
       {/* Decorative line */}
       <motion.div
         className={cn(
-          'mt-6 h-[2px] bg-gradient-to-r from-transparent via-primary-400 to-transparent',
+          'mt-6 h-[2px] bg-primary-500',
           align === 'center' ? 'w-24 mx-auto' : 'w-24',
           align === 'right' && 'ml-auto'
         )}

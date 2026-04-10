@@ -41,7 +41,7 @@ export default function Modal({
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label={title}>
           {/* Backdrop */}
           <motion.div
-            className="absolute inset-0 bg-dark-950/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -51,7 +51,7 @@ export default function Modal({
           {/* Modal Content */}
           <motion.div
             className={cn(
-              'relative w-full rounded-2xl glass-card shadow-elevated overflow-hidden',
+              'relative w-full rounded-2xl bg-white shadow-xl overflow-hidden',
               sizes[size],
               className
             )}
@@ -63,15 +63,15 @@ export default function Modal({
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-dark-700/80 text-dark-200 hover:text-white hover:bg-dark-600 transition-colors cursor-pointer"
+              className="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 text-gray-600 hover:text-gray-900 hover:bg-gray-200 transition-colors cursor-pointer"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
             </button>
 
             {title && (
-              <div className="px-6 pt-6 pb-4 border-b border-dark-600/30">
-                <h3 className="font-heading text-xl font-semibold text-dark-50">{title}</h3>
+              <div className="px-6 pt-6 pb-4 border-b border-gray-200">
+                <h3 className="font-heading text-xl font-semibold text-gray-900">{title}</h3>
               </div>
             )}
 

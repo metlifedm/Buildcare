@@ -51,7 +51,7 @@ export default function OptimizedImage({
   };
 
   const containerStyles = cn(
-    'relative overflow-hidden bg-dark-800/30',
+    'relative overflow-hidden bg-gray-100',
     fill && 'absolute inset-0',
     wrapperClassName
   );
@@ -71,13 +71,13 @@ export default function OptimizedImage({
     >
       {/* Skeleton placeholder */}
       {!isLoaded && (
-        <div className="absolute inset-0 skeleton" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gray-200 animate-pulse" aria-hidden="true" />
       )}
 
       {/* Error fallback */}
       {hasError && (
-        <div className="absolute inset-0 flex items-center justify-center bg-dark-800">
-          <div className="text-center text-dark-500">
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="text-center text-gray-400">
             <svg className="w-8 h-8 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
@@ -105,7 +105,7 @@ export default function OptimizedImage({
 
       {/* Overlay */}
       {overlay && isLoaded && (
-        <div className={cn('absolute inset-0', overlayClassName || 'bg-gradient-to-t from-dark-950/60 to-transparent')} />
+        <div className={cn('absolute inset-0', overlayClassName || 'bg-black/40')} />
       )}
     </div>
   );

@@ -243,7 +243,7 @@ export default function AgitationSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative py-24 md:py-32 bg-dark-950 overflow-hidden"
+      className="relative py-24 md:py-32 bg-white overflow-hidden"
       aria-labelledby="agitation-title"
     >
       {/* Background Grid */}

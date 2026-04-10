@@ -21,15 +21,15 @@ export default class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-dark-950 flex items-center justify-center p-6">
+        <div className="min-h-screen bg-white flex items-center justify-center p-6">
           <div className="text-center max-w-md">
-            <div className="w-20 h-20 rounded-2xl bg-red-500/10 flex items-center justify-center mx-auto mb-6">
-              <AlertTriangle className="w-10 h-10 text-red-400" />
+            <div className="w-20 h-20 rounded-2xl bg-red-100 flex items-center justify-center mx-auto mb-6">
+              <AlertTriangle className="w-10 h-10 text-red-600" />
             </div>
-            <h1 className="font-heading text-3xl font-bold text-dark-50 mb-4">
+            <h1 className="font-heading text-3xl font-bold text-gray-900 mb-4">
               Something Went Wrong
             </h1>
-            <p className="text-dark-300 mb-8">
+            <p className="text-gray-600 mb-8">
               We apologize for the inconvenience. An unexpected error has occurred.
               Please try refreshing the page.
             </p>

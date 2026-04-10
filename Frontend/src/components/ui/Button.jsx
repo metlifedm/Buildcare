@@ -19,47 +19,47 @@ const Button = forwardRef(({
   const baseStyles = `
     relative inline-flex items-center justify-center gap-2 
     font-semibold rounded-lg transition-all duration-300 
-    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 focus-visible:ring-offset-dark-900
+    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white
     disabled:opacity-50 disabled:cursor-not-allowed
     overflow-hidden group cursor-pointer
   `;
 
   const variants = {
     primary: `
-      bg-gradient-to-r from-primary-500 to-primary-600 
-      text-dark-950 font-bold
-      hover:from-primary-400 hover:to-primary-500 
-      hover:shadow-gold active:scale-[0.98]
-      border border-primary-400/20
+      bg-primary-600 
+      text-white font-bold
+      hover:bg-primary-700 
+      active:scale-[0.98]
+      border border-primary-500
     `,
     secondary: `
-      bg-transparent border-2 border-primary-400/50 
-      text-primary-300 
-      hover:bg-primary-400/10 hover:border-primary-400 
-      hover:text-primary-200 active:scale-[0.98]
+      bg-transparent border-2 border-primary-500 
+      text-primary-600 
+      hover:bg-primary-50 hover:border-primary-600 
+      hover:text-primary-700 active:scale-[0.98]
     `,
     outline: `
-      bg-transparent border border-dark-300/30 
-      text-dark-100 
-      hover:bg-dark-700/50 hover:border-primary-400/50 
-      hover:text-primary-300 active:scale-[0.98]
+      bg-transparent border border-gray-300 
+      text-gray-700 
+      hover:bg-gray-50 hover:border-primary-500 
+      hover:text-primary-600 active:scale-[0.98]
     `,
     ghost: `
-      bg-transparent text-dark-200 
-      hover:bg-dark-700/50 hover:text-primary-300
+      bg-transparent text-gray-600 
+      hover:bg-gray-100 hover:text-primary-600
       active:scale-[0.98]
     `,
     whatsapp: `
-      bg-gradient-to-r from-green-600 to-green-500 
+      bg-green-600 
       text-white font-bold
-      hover:from-green-500 hover:to-green-400 
+      hover:bg-green-700 
       hover:shadow-lg active:scale-[0.98]
-      border border-green-400/20
+      border border-green-500
     `,
     danger: `
-      bg-gradient-to-r from-red-600 to-red-500 
+      bg-red-600 
       text-white font-bold
-      hover:from-red-500 hover:to-red-400 
+      hover:bg-red-700 
       active:scale-[0.98]
     `,
   };
@@ -89,8 +89,7 @@ const Button = forwardRef(({
       {...motionProps}
       {...props}
     >
-      {/* Shimmer effect on hover */}
-      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+      <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
       
       {loading && (
         <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24" fill="none">

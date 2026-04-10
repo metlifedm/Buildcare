@@ -53,7 +53,7 @@ export function AnimatedHeading({
         <motion.span
           key={`${word}-${i}`}
           variants={wordVariants}
-          className="inline-block mr-[0.3em]"
+          className="inline-block mr-[0.3em] text-gray-900"
           style={{ transformOrigin: 'bottom' }}
         >
           {word}
@@ -75,7 +75,7 @@ export function AnimatedParagraph({
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
       viewport={{ once, margin: '-30px' }}
       transition={{ duration: 0.7, delay, ease: 'easeOut' }}
-      className={className}
+      className={cn('text-gray-600', className)}
     >
       {text}
     </motion.p>
@@ -85,7 +85,7 @@ export function AnimatedParagraph({
 export function AnimatedCounter({ value, suffix = '', duration = 2, className }) {
   return (
     <motion.span
-      className={className}
+      className={cn('text-gray-900', className)}
       initial={{ opacity: 0, scale: 0.5 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}

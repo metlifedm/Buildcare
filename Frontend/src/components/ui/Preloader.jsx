@@ -34,13 +34,13 @@ export default function Preloader() {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[200] bg-dark-950 flex flex-col items-center justify-center"
+          className="fixed inset-0 z-[200] bg-white flex flex-col items-center justify-center"
           exit={{ opacity: 0, scale: 1.05 }}
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
         >
           {/* Background pattern */}
-          <div className="absolute inset-0 opacity-[0.02]" style={{
-            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(201,169,110,0.4) 1px, transparent 0)`,
+          <div className="absolute inset-0 opacity-[0.03]" style={{
+            backgroundImage: `radial-gradient(circle at 25px 25px, #3b66f0 1px, transparent 0)`,
             backgroundSize: '50px 50px',
           }} />
 
@@ -52,24 +52,24 @@ export default function Preloader() {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <motion.div
-              className="w-24 h-24 rounded-2xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center shadow-gold"
+              className="w-24 h-24 rounded-2xl bg-primary-600 flex items-center justify-center shadow-lg"
               animate={{
                 boxShadow: [
-                  '0 0 20px rgba(201,169,110,0.2)',
-                  '0 0 60px rgba(201,169,110,0.4)',
-                  '0 0 20px rgba(201,169,110,0.2)',
+                  '0 0 20px rgba(59,102,240,0.2)',
+                  '0 0 60px rgba(59,102,240,0.4)',
+                  '0 0 20px rgba(59,102,240,0.2)',
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              <span className="font-heading text-4xl font-bold text-dark-950">B</span>
+              <span className="font-heading text-4xl font-bold text-white">B</span>
             </motion.div>
 
             {/* Orbiting dots */}
             {[0, 1, 2, 3].map((i) => (
               <motion.div
                 key={i}
-                className="absolute w-2 h-2 rounded-full bg-primary-400/40"
+                className="absolute w-2 h-2 rounded-full bg-primary-400"
                 style={{ top: '50%', left: '50%' }}
                 animate={{
                   x: [0, Math.cos((i * Math.PI) / 2) * 60],
@@ -94,22 +94,22 @@ export default function Preloader() {
             transition={{ delay: 0.3 }}
             className="text-center mb-10"
           >
-            <h1 className="font-heading text-3xl font-bold text-gradient mb-1">Buildcare</h1>
-            <p className="text-dark-400 text-xs tracking-[0.3em] uppercase font-accent">
+            <h1 className="font-heading text-3xl font-bold text-gray-900 mb-1">Buildcare</h1>
+            <p className="text-gray-500 text-xs tracking-[0.3em] uppercase font-accent">
               Crafting Spaces, Creating Experiences
             </p>
           </motion.div>
 
           {/* Progress bar */}
-          <div className="w-48 h-[2px] bg-dark-800 rounded-full overflow-hidden">
+          <div className="w-48 h-[2px] bg-gray-200 rounded-full overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-primary-400 to-primary-600 rounded-full"
+              className="h-full bg-primary-600 rounded-full"
               style={{ width: `${progress}%` }}
               transition={{ duration: 0.3 }}
             />
           </div>
           <motion.p
-            className="text-dark-500 text-xs font-accent mt-3 tracking-wider"
+            className="text-gray-400 text-xs font-accent mt-3 tracking-wider"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}

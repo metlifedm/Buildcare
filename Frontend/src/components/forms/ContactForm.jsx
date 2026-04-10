@@ -82,18 +82,18 @@ export default function ContactForm({
   };
 
   const inputStyles = cn(
-    'w-full px-4 py-3 rounded-xl bg-dark-800/60 border border-dark-600/30',
-    'text-dark-100 placeholder-dark-400',
-    'focus:outline-none focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400/50',
+    'w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200',
+    'text-gray-900 placeholder-gray-400',
+    'focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500',
     'transition-all duration-300',
-    'hover:border-dark-500/50'
+    'hover:border-gray-300'
   );
 
   const isCompact = variant === 'compact';
 
   return (
     <motion.div
-      className={cn('glass-card rounded-2xl p-6 md:p-8', className)}
+      className={cn('bg-white rounded-2xl border border-gray-200 shadow-sm p-6 md:p-8', className)}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -104,11 +104,11 @@ export default function ContactForm({
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-6 p-4 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center gap-3"
+          className="mb-6 p-4 rounded-xl bg-green-50 border border-green-200 flex items-center gap-3"
           role="alert"
         >
-          <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
-          <p className="text-green-300 text-sm">
+          <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+          <p className="text-green-700 text-sm">
             Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
           </p>
         </motion.div>
@@ -118,11 +118,11 @@ export default function ContactForm({
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center gap-3"
+          className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 flex items-center gap-3"
           role="alert"
         >
-          <AlertCircle className="w-5 h-5 text-red-400 flex-shrink-0" />
-          <p className="text-red-300 text-sm">
+          <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0" />
+          <p className="text-red-700 text-sm">
             Something went wrong. Please try again or contact us via WhatsApp.
           </p>
         </motion.div>
@@ -138,7 +138,7 @@ export default function ContactForm({
             <input
               type="text"
               placeholder="John Doe"
-              className={cn(inputStyles, errors.name && 'border-red-400/50')}
+              className={cn(inputStyles, errors.name && 'border-red-400')}
               {...register('name')}
               aria-invalid={errors.name ? 'true' : 'false'}
             />
@@ -149,7 +149,7 @@ export default function ContactForm({
             <input
               type="email"
               placeholder="john@example.com"
-              className={cn(inputStyles, errors.email && 'border-red-400/50')}
+              className={cn(inputStyles, errors.email && 'border-red-400')}
               {...register('email')}
               aria-invalid={errors.email ? 'true' : 'false'}
             />
@@ -160,7 +160,7 @@ export default function ContactForm({
             <input
               type="tel"
               placeholder="+91 98765 43210"
-              className={cn(inputStyles, errors.phone && 'border-red-400/50')}
+              className={cn(inputStyles, errors.phone && 'border-red-400')}
               {...register('phone')}
               aria-invalid={errors.phone ? 'true' : 'false'}
             />
@@ -169,7 +169,7 @@ export default function ContactForm({
           {/* Service */}
           <FormField label="Service Interested In" error={errors.service?.message} required>
             <select
-              className={cn(inputStyles, 'cursor-pointer', errors.service && 'border-red-400/50')}
+              className={cn(inputStyles, 'cursor-pointer', errors.service && 'border-red-400')}
               {...register('service')}
               aria-invalid={errors.service ? 'true' : 'false'}
             >
@@ -205,7 +205,7 @@ export default function ContactForm({
             <textarea
               rows={isCompact ? 3 : 5}
               placeholder="Tell us about your project requirements..."
-              className={cn(inputStyles, 'resize-none', errors.message && 'border-red-400/50')}
+              className={cn(inputStyles, 'resize-none', errors.message && 'border-red-400')}
               {...register('message')}
               aria-invalid={errors.message ? 'true' : 'false'}
             />

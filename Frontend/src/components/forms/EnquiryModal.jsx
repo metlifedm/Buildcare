@@ -107,10 +107,10 @@ export default function EnquiryModal({ isOpen, onClose }) {
 
   const inputStyles = cn(
     'w-full px-4 py-3 rounded-xl',
-    'bg-dark-800/80 border border-dark-600/40',
-    'text-dark-100 placeholder-dark-500',
-    'focus:outline-none focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400/50',
-    'transition-all duration-300 hover:border-dark-500/60'
+    'bg-gray-50 border border-gray-200',
+    'text-gray-900 placeholder-gray-400',
+    'focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500',
+    'transition-all duration-300 hover:border-gray-300'
   );
 
   return (
@@ -121,7 +121,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
         >
           {/* Backdrop */}
           <motion.div
-            className="absolute inset-0 bg-dark-950/85 backdrop-blur-md"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -130,17 +130,16 @@ export default function EnquiryModal({ isOpen, onClose }) {
 
           {/* Modal */}
           <motion.div
-            className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-elevated z-10"
+            className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-xl z-10"
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 30 }}
             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
           >
-            {/* Header gradient */}
-            <div className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 p-6 relative overflow-hidden">
-              {/* Decorative circles */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/5" />
+            {/* Header */}
+            <div className="bg-primary-600 p-6 relative overflow-hidden">
+              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10" />
+              <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/10" />
 
               <button
                 onClick={handleClose}
@@ -168,7 +167,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
             </div>
 
             {/* Body */}
-            <div className="bg-dark-900 p-6 max-h-[70vh] overflow-y-auto">
+            <div className="bg-white p-6 max-h-[70vh] overflow-y-auto">
               <AnimatePresence mode="wait">
                 {isSubmitted ? (
                   <motion.div
@@ -182,17 +181,17 @@ export default function EnquiryModal({ isOpen, onClose }) {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', damping: 15 }}
-                      className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6"
+                      className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6"
                     >
-                      <CheckCircle className="w-10 h-10 text-green-400" />
+                      <CheckCircle className="w-10 h-10 text-green-600" />
                     </motion.div>
-                    <h3 className="font-heading text-xl font-bold text-dark-50 mb-3">
+                    <h3 className="font-heading text-xl font-bold text-gray-900 mb-3">
                       Enquiry Sent Successfully!
                     </h3>
-                    <p className="text-dark-300 text-sm mb-2">
+                    <p className="text-gray-600 text-sm mb-2">
                       Your enquiry has been sent to our WhatsApp.
                     </p>
-                    <p className="text-dark-400 text-xs">
+                    <p className="text-gray-500 text-xs">
                       We'll respond within 30 minutes during working hours.
                     </p>
                   </motion.div>
@@ -209,11 +208,11 @@ export default function EnquiryModal({ isOpen, onClose }) {
                     {/* Name */}
                     <FormField label="Your Name" error={errors.name?.message} required>
                       <div className="relative">
-                        <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <input
                           type="text"
                           placeholder="Enter your full name"
-                          className={cn(inputStyles, 'pl-10', errors.name && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10', errors.name && 'border-red-400')}
                           {...register('name')}
                         />
                       </div>
@@ -222,11 +221,11 @@ export default function EnquiryModal({ isOpen, onClose }) {
                     {/* Phone */}
                     <FormField label="Phone Number" error={errors.phone?.message} required>
                       <div className="relative">
-                        <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <input
                           type="tel"
                           placeholder="+91 98765 43210"
-                          className={cn(inputStyles, 'pl-10', errors.phone && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10', errors.phone && 'border-red-400')}
                           {...register('phone')}
                         />
                       </div>
@@ -235,11 +234,11 @@ export default function EnquiryModal({ isOpen, onClose }) {
                     {/* Email (optional) */}
                     <FormField label="Email" error={errors.email?.message} helpText="Optional">
                       <div className="relative">
-                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <input
                           type="email"
                           placeholder="your@email.com"
-                          className={cn(inputStyles, 'pl-10', errors.email && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10', errors.email && 'border-red-400')}
                           {...register('email')}
                         />
                       </div>
@@ -248,9 +247,9 @@ export default function EnquiryModal({ isOpen, onClose }) {
                     {/* Service */}
                     <FormField label="Service Required" error={errors.service?.message} required>
                       <div className="relative">
-                        <Wrench className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Wrench className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <select
-                          className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none', errors.service && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none', errors.service && 'border-red-400')}
                           {...register('service')}
                         >
                           <option value="">Select a service</option>
@@ -259,7 +258,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                           ))}
                         </select>
                         <div className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none">
-                          <svg className="w-4 h-4 text-dark-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <svg className="w-4 h-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                           </svg>
                         </div>
@@ -269,11 +268,11 @@ export default function EnquiryModal({ isOpen, onClose }) {
                     {/* Message */}
                     <FormField label="Your Message" error={errors.message?.message} required>
                       <div className="relative">
-                        <MessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-dark-500" />
+                        <MessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />
                         <textarea
                           rows={3}
                           placeholder="Tell us about your project..."
-                          className={cn(inputStyles, 'pl-10 resize-none', errors.message && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10 resize-none', errors.message && 'border-red-400')}
                           {...register('message')}
                         />
                       </div>
@@ -295,7 +294,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
                       </Button>
                     </div>
 
-                    <p className="text-center text-dark-500 text-xs pt-1">
+                    <p className="text-center text-gray-500 text-xs pt-1">
                       <MessageCircle className="w-3 h-3 inline mr-1" />
                       Your enquiry will be sent directly to our WhatsApp for instant response
                     </p>

@@ -17,8 +17,8 @@ export default function StarRating({ rating, size = 'md', className }) {
           className={cn(
             sizes[size],
             star <= rating
-              ? 'text-primary-400 fill-primary-400'
-              : 'text-dark-500'
+              ? 'text-primary-500 fill-primary-500'
+              : 'text-gray-300'
           )}
         />
       ))}

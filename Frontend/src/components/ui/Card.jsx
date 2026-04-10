@@ -6,17 +6,17 @@ import { cn } from '@utils/helpers';
 const Card = forwardRef(({
   children,
   className,
-  variant = 'glass',
+  variant = 'solid',
   hover = true,
   padding = 'md',
   ...props
 }, ref) => {
   const variants = {
-    glass: 'glass-card',
-    solid: 'bg-dark-800 border border-dark-600/30',
+    glass: 'bg-white/90 border border-gray-200',
+    solid: 'bg-white border border-gray-200',
     transparent: 'bg-transparent',
-    elevated: 'glass-card shadow-elevated',
-    gradient: 'bg-gradient-to-br from-dark-800/90 to-dark-700/50 border border-primary-400/10',
+    elevated: 'bg-white shadow-lg',
+    gradient: 'bg-white border border-gray-200',
   };
 
   const paddings = {
@@ -34,7 +34,7 @@ const Card = forwardRef(({
         'rounded-2xl transition-all duration-500',
         variants[variant],
         paddings[padding],
-        hover && 'hover:shadow-gold hover:border-primary-400/30 hover:-translate-y-1',
+        hover && 'hover:shadow-xl hover:border-primary-300 hover:-translate-y-1',
         className
       )}
       {...props}

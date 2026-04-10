@@ -69,7 +69,7 @@ export default function CustomCursor() {
     <>
       {/* Main cursor dot */}
       <motion.div
-        className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
+        className="fixed top-0 left-0 z-[9999] pointer-events-none"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -78,7 +78,7 @@ export default function CustomCursor() {
         }}
       >
         <motion.div
-          className="rounded-full bg-primary-400 flex items-center justify-center"
+          className="rounded-full bg-primary-600 flex items-center justify-center"
           animate={{
             width: isHovering ? (cursorText ? 80 : 48) : isClicking ? 6 : 10,
             height: isHovering ? (cursorText ? 80 : 48) : isClicking ? 6 : 10,
@@ -87,7 +87,7 @@ export default function CustomCursor() {
           transition={{ type: 'spring', damping: 20, stiffness: 300 }}
         >
           {cursorText && isHovering && (
-            <span className="text-dark-950 text-[10px] font-bold uppercase tracking-wider">
+            <span className="text-white text-[10px] font-bold uppercase tracking-wider">
               {cursorText}
             </span>
           )}
@@ -105,7 +105,7 @@ export default function CustomCursor() {
         }}
       >
         <motion.div
-          className="rounded-full border border-primary-400/30"
+          className="rounded-full border border-primary-400"
           animate={{
             width: isHovering ? 60 : 36,
             height: isHovering ? 60 : 36,

@@ -21,8 +21,8 @@ export default function MobileDropdownMenu({ label, items, path, isActive, onClo
           className={cn(
             'flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-all',
             isActive
-              ? 'bg-primary-400/10 text-primary-300 border border-primary-400/20'
-              : 'text-dark-200 hover:bg-dark-800 hover:text-primary-300'
+              ? 'bg-primary-50 text-primary-700 border border-primary-200'
+              : 'text-gray-700 hover:bg-gray-100 hover:text-primary-600'
           )}
           onClick={onClose}
         >
@@ -44,8 +44,8 @@ export default function MobileDropdownMenu({ label, items, path, isActive, onClo
         className={cn(
           'flex items-center justify-between w-full px-4 py-3 rounded-xl text-base font-medium transition-all',
           isActive
-            ? 'bg-primary-400/10 text-primary-300 border border-primary-400/20'
-            : 'text-dark-200 hover:bg-dark-800 hover:text-primary-300'
+            ? 'bg-primary-50 text-primary-700 border border-primary-200'
+            : 'text-gray-700 hover:bg-gray-100 hover:text-primary-600'
         )}
       >
         {label}
@@ -66,12 +66,12 @@ export default function MobileDropdownMenu({ label, items, path, isActive, onClo
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="ml-4 mt-2 space-y-1 border-l-2 border-primary-500/20 pl-4">
+            <div className="ml-4 mt-2 space-y-1 border-l-2 border-primary-200 pl-4">
               {items.map((item, index) => (
                 <Link
                   key={item.id || index}
                   to={item.path}
-                  className="flex items-center gap-3 px-4 py-2 rounded-lg text-sm text-dark-300 hover:text-primary-300 hover:bg-dark-800 transition-all group"
+                  className="flex items-center gap-3 px-4 py-2 rounded-lg text-sm text-gray-600 hover:text-primary-600 hover:bg-gray-50 transition-all group"
                   onClick={() => {
                     setIsOpen(false);
                     onClose();
@@ -81,7 +81,7 @@ export default function MobileDropdownMenu({ label, items, path, isActive, onClo
                   <div className="flex-1">
                     <div>{item.label}</div>
                     {item.description && (
-                      <div className="text-xs text-dark-500 group-hover:text-primary-400/70">
+                      <div className="text-xs text-gray-400 group-hover:text-primary-500">
                         {item.description}
                       </div>
                     )}

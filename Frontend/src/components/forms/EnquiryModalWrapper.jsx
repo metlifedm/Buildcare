@@ -167,10 +167,10 @@ export default function EnquiryModalWrapper() {
 
   const inputStyles = cn(
     'w-full px-4 py-3 rounded-xl',
-    'bg-dark-800/80 border border-dark-600/40',
-    'text-dark-100 placeholder-dark-500',
-    'focus:outline-none focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400/50',
-    'transition-all duration-300 hover:border-dark-500/60'
+    'bg-gray-50 border border-gray-200',
+    'text-gray-900 placeholder-gray-400',
+    'focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500',
+    'transition-all duration-300 hover:border-gray-300'
   );
 
   return (
@@ -179,7 +179,7 @@ export default function EnquiryModalWrapper() {
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4"
           role="dialog" aria-modal="true" aria-label="Enquiry Form">
           <motion.div
-            className="absolute inset-0 bg-dark-950/85 backdrop-blur-md"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -187,16 +187,16 @@ export default function EnquiryModalWrapper() {
           />
 
           <motion.div
-            className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-elevated z-10"
+            className="relative w-full max-w-lg rounded-2xl overflow-hidden shadow-xl z-10"
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 30 }}
             transition={{ type: 'spring', damping: 25, stiffness: 250 }}
           >
             {/* Header */}
-            <div className="bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 p-6 relative overflow-hidden">
-              <div className="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5" />
-<div className="pointer-events-none absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/5" />
+            <div className="bg-primary-600 p-6 relative overflow-hidden">
+              <div className="pointer-events-none absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/10" />
+              <div className="pointer-events-none absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/10" />
               <button
                 onClick={handleClose}
                 className="absolute top-4 right-4 z-20 p-2 rounded-full bg-white/10 text-white/80 hover:bg-white/20 hover:text-white transition-all cursor-pointer"
@@ -218,7 +218,7 @@ export default function EnquiryModalWrapper() {
             </div>
 
             {/* Body */}
-            <div className="bg-dark-900 p-6 h-[80vh] overflow-y-auto overscroll-contain"
+            <div className="bg-white p-6 h-[80vh] overflow-y-auto overscroll-contain"
             onWheel={(e) => e.stopPropagation()}>
               <AnimatePresence mode="wait">
                 {isSubmitted ? (
@@ -232,14 +232,14 @@ export default function EnquiryModalWrapper() {
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', damping: 15 }}
-                      className="w-20 h-20 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-6"
+                      className="w-20 h-20 rounded-full bg-green-50 flex items-center justify-center mx-auto mb-6"
                     >
-                      <CheckCircle className="w-10 h-10 text-green-400" />
+                      <CheckCircle className="w-10 h-10 text-green-600" />
                     </motion.div>
-                    <h3 className="font-heading text-xl font-bold text-dark-50 mb-3">
+                    <h3 className="font-heading text-xl font-bold text-gray-900 mb-3">
                       Lead Submitted! ✅
                     </h3>
-                    <p className="text-dark-300 text-sm">
+                    <p className="text-gray-600 text-sm">
                       We'll respond on WhatsApp shortly.
                     </p>
                   </motion.div>
@@ -255,25 +255,25 @@ export default function EnquiryModalWrapper() {
                     {/* Basic Information */}
                     <FormField label="Full Name" error={errors.name?.message} required>
                       <div className="relative">
-                        <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <input type="text" placeholder="Enter full name"
-                          className={cn(inputStyles, 'pl-10', errors.name && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10', errors.name && 'border-red-400')}
                           {...register('name')} />
                       </div>
                     </FormField>
 
                     <FormField label="Phone Number" error={errors.phone?.message} required>
                       <div className="relative">
-                        <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <input type="tel" placeholder="+91 98765 43210"
-                          className={cn(inputStyles, 'pl-10', errors.phone && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10', errors.phone && 'border-red-400')}
                           {...register('phone')} />
                       </div>
                     </FormField>
 
                     <FormField label="Email Address" error={errors.email?.message} helpText="Optional">
                       <div className="relative">
-                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <input type="email" placeholder="your@email.com"
                           className={cn(inputStyles, 'pl-10')}
                           {...register('email')} />
@@ -282,7 +282,7 @@ export default function EnquiryModalWrapper() {
 
                     {/* Property Information */}
                     <div className="pt-2 pb-1">
-                      <h3 className="text-sm font-semibold text-primary-400 mb-2 flex items-center gap-2">
+                      <h3 className="text-sm font-semibold text-primary-600 mb-2 flex items-center gap-2">
                         <Home className="w-4 h-4" />
                         Property Information
                       </h3>
@@ -290,7 +290,7 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Property Type" error={errors.propertyType?.message} helpText="Optional">
                       <div className="relative">
-                        <Home className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Home className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <select
                           className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
                           {...register('propertyType')}>
@@ -310,7 +310,7 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Budget Range" error={errors.budget?.message} helpText="Optional">
                       <div className="relative">
-                        <IndianRupee className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <IndianRupee className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <select
                           className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
                           {...register('budget')}>
@@ -329,7 +329,7 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Timeline" error={errors.timeline?.message} helpText="Optional">
                       <div className="relative">
-                        <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Calendar className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <select
                           className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
                           {...register('timeline')}>
@@ -346,7 +346,7 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Property Address" error={errors.address?.message} helpText="Optional">
                       <div className="relative">
-                        <MapPin className="absolute left-3.5 top-3.5 w-4 h-4 text-dark-500" />
+                        <MapPin className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />
                         <textarea rows={2} placeholder="Enter full property address"
                           className={cn(inputStyles, 'pl-10 resize-none')}
                           {...register('address')} />
@@ -355,7 +355,7 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Preferred Meeting Time" error={errors.meetingTime?.message} helpText="Optional">
                       <div className="relative">
-                        <Clock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Clock className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <input type="text" placeholder="e.g., Weekdays after 6 PM, Saturday morning"
                           className={cn(inputStyles, 'pl-10')}
                           {...register('meetingTime')} />
@@ -364,7 +364,7 @@ export default function EnquiryModalWrapper() {
 
                     {/* Service & Requirements */}
                     <div className="pt-2 pb-1">
-                      <h3 className="text-sm font-semibold text-primary-400 mb-2 flex items-center gap-2">
+                      <h3 className="text-sm font-semibold text-primary-600 mb-2 flex items-center gap-2">
                         <Wrench className="w-4 h-4" />
                         Service & Requirements
                       </h3>
@@ -372,9 +372,9 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Service Required" error={errors.service?.message} required>
                       <div className="relative">
-                        <Wrench className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-500" />
+                        <Wrench className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <select
-                          className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none', errors.service && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none', errors.service && 'border-red-400')}
                           {...register('service')}>
                           <option value="">Select a service</option>
                           {SERVICE_OPTIONS.map((s) => (
@@ -386,7 +386,7 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Specific Requirements" error={errors.requirements?.message} helpText="Optional">
                       <div className="relative">
-                        <FileText className="absolute left-3.5 top-3.5 w-4 h-4 text-dark-500" />
+                        <FileText className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />
                         <textarea rows={3} placeholder="List any specific requirements or preferences..."
                           className={cn(inputStyles, 'pl-10 resize-none')}
                           {...register('requirements')} />
@@ -395,16 +395,16 @@ export default function EnquiryModalWrapper() {
 
                     <FormField label="Additional Message" error={errors.message?.message} required>
                       <div className="relative">
-                        <MessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-dark-500" />
+                        <MessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />
                         <textarea rows={3} placeholder="Tell us more about your project..."
-                          className={cn(inputStyles, 'pl-10 resize-none', errors.message && 'border-red-400/50')}
+                          className={cn(inputStyles, 'pl-10 resize-none', errors.message && 'border-red-400')}
                           {...register('message')} />
                       </div>
                     </FormField>
 
                     <FormField label="Additional Notes" error={errors.notes?.message} helpText="Optional">
                       <div className="relative">
-                        <StickyNote className="absolute left-3.5 top-3.5 w-4 h-4 text-dark-500" />
+                        <StickyNote className="absolute left-3.5 top-3.5 w-4 h-4 text-gray-400" />
                         <textarea rows={2} placeholder="Any other information you'd like to share..."
                           className={cn(inputStyles, 'pl-10 resize-none')}
                           {...register('notes')} />
@@ -426,7 +426,7 @@ export default function EnquiryModalWrapper() {
                       </Button>
                     </div>
 
-                    <p className="text-center text-dark-500 text-xs">
+                    <p className="text-center text-gray-500 text-xs">
                       <MessageCircle className="w-3 h-3 inline mr-1" />
                       Lead will be sent directly to our team for immediate follow-up
                     </p>

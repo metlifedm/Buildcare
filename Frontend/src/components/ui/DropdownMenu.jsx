@@ -35,19 +35,19 @@ export default function DropdownMenu({ label, items, path, isActive }) {
         className={cn(
           'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 relative group',
           isActive
-            ? 'text-primary-300'
-            : 'text-dark-200 hover:text-primary-300'
+            ? 'text-primary-600'
+            : 'text-gray-700 hover:text-primary-600'
         )}
       >
         {label}
         {isActive && (
           <motion.div
             layoutId="navbar-indicator"
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary-400 rounded-full"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary-500 rounded-full"
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           />
         )}
-        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-400/50 rounded-full group-hover:w-6 transition-all duration-300" />
+        <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-primary-400 rounded-full group-hover:w-6 transition-all duration-300" />
       </Link>
     );
   }
@@ -63,8 +63,8 @@ export default function DropdownMenu({ label, items, path, isActive }) {
         className={cn(
           'px-4 py-2 text-sm font-medium rounded-lg transition-all duration-300 flex items-center gap-1.5 group cursor-pointer',
           isActive || isOpen
-            ? 'text-primary-300'
-            : 'text-dark-200 hover:text-primary-300'
+            ? 'text-primary-600'
+            : 'text-gray-700 hover:text-primary-600'
         )}
       >
         {label}
@@ -77,7 +77,7 @@ export default function DropdownMenu({ label, items, path, isActive }) {
         {isActive && !isOpen && (
           <motion.div
             layoutId="navbar-indicator"
-            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary-400 rounded-full"
+            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-6 h-0.5 bg-primary-500 rounded-full"
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           />
         )}
@@ -92,19 +92,19 @@ export default function DropdownMenu({ label, items, path, isActive }) {
             transition={{ duration: 0.2 }}
             className="absolute top-full left-0 mt-2 w-72 z-50"
           >
-            <div className="glass-card rounded-xl overflow-hidden border border-primary-500/20 shadow-premium">
+            <div className="bg-white rounded-xl overflow-hidden border border-gray-200 shadow-lg">
               <div className="py-2 max-h-[80vh] overflow-y-auto">
                 {items.map((item, index) => (
                   <Link
                     key={item.id || index}
                     to={item.path}
-                    className="flex items-center gap-3 px-4 py-3 text-sm text-dark-200 hover:text-primary-300 hover:bg-primary-500/5 transition-all duration-200 group"
+                    className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:text-primary-600 hover:bg-gray-50 transition-all duration-200 group"
                   >
                     <span className="text-xl">{item.icon || '•'}</span>
                     <div className="flex-1">
                       <div className="font-medium">{item.label}</div>
                       {item.description && (
-                        <div className="text-xs text-dark-400 group-hover:text-primary-400/70">
+                        <div className="text-xs text-gray-500 group-hover:text-primary-500">
                           {item.description}
                         </div>
                       )}

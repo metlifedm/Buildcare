@@ -1,5 +1,5 @@
 // src/components/ui/ParallaxSection.jsx
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { cn } from '@utils/helpers';
 
@@ -11,7 +11,7 @@ export default function ParallaxSection({
   image,
   imageAlt = '',
   overlay = true,
-  overlayOpacity = 0.7,
+  overlayOpacity = 0.5,
 }) {
   const ref = useRef(null);
 
@@ -40,7 +40,7 @@ export default function ParallaxSection({
           />
           {overlay && (
             <div
-              className="absolute inset-0 bg-dark-950"
+              className="absolute inset-0 bg-black"
               style={{ opacity: overlayOpacity }}
             />
           )}
