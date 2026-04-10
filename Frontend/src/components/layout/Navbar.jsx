@@ -10,7 +10,7 @@ import DropdownMenu from '@components/ui/DropdownMenu';
 import MobileDropdownMenu from '@components/ui/MobileDropdownMenu';
 import { useEnquiry } from '@hooks/useEnquiry';
 import navigationData from '@data/navigation.json';
-import BuildcareLogo from '@assets/images/buildcare-logo.png';
+import BuildcareLogo from '../../assets/images/buildcare-logo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
