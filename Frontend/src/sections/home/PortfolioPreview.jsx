@@ -51,8 +51,8 @@ export default function PortfolioPreview() {
 
   return (
     <>
-      <section className="py-24 bg-dark-950 relative overflow-hidden" aria-label="Featured portfolio">
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-400/3 rounded-full blur-3xl" />
+      <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Featured portfolio">
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-50" />
         
         <div className="container-custom">
           <SectionHeading
@@ -65,7 +65,7 @@ export default function PortfolioPreview() {
             {featuredProjects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer"
+                className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -84,17 +84,17 @@ export default function PortfolioPreview() {
                 </div>
 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-950/90 via-dark-950/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
 
                 {/* Content */}
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block px-3 py-1 rounded-full bg-primary-400/20 text-primary-300 text-xs font-medium mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-medium mb-3">
                     {project.category}
                   </span>
-                  <h3 className="font-heading text-xl font-semibold text-dark-50 mb-2">
+                  <h3 className="font-heading text-xl font-semibold text-white mb-2">
                     {project.title}
                   </h3>
-                  <div className="flex items-center gap-4 text-dark-300 text-sm">
+                  <div className="flex items-center gap-4 text-gray-200 text-sm">
                     <span className="flex items-center gap-1">
                       <MapPin className="w-3 h-3" />
                       {project.location}
@@ -104,7 +104,7 @@ export default function PortfolioPreview() {
                 </div>
 
                 {/* Expand icon */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 cursor-pointer">
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 cursor-pointer">
                   <Maximize2 className="w-4 h-4 text-white" />
                 </div>
               </motion.div>
@@ -134,7 +134,7 @@ export default function PortfolioPreview() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center"
+            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center"
             onClick={closeLightbox}
             onKeyDown={handleKeyDown}
             tabIndex={0}
@@ -142,7 +142,7 @@ export default function PortfolioPreview() {
             {/* Close button */}
             <button
               onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
+              className="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
               aria-label="Close lightbox"
             >
               <X className="w-6 h-6" />
@@ -156,7 +156,7 @@ export default function PortfolioPreview() {
                     e.stopPropagation();
                     prevImage();
                   }}
-                  className="absolute left-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
+                  className="absolute left-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
                   aria-label="Previous image"
                 >
                   <ChevronLeft className="w-6 h-6" />
@@ -167,7 +167,7 @@ export default function PortfolioPreview() {
                     e.stopPropagation();
                     nextImage();
                   }}
-                  className="absolute right-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
+                  className="absolute right-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
                   aria-label="Next image"
                 >
                   <ChevronRight className="w-6 h-6" />
@@ -176,7 +176,7 @@ export default function PortfolioPreview() {
             )}
 
             {/* Image counter */}
-            <div className="absolute top-4 left-4 z-10 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md text-white text-sm cursor-default">
+            <div className="absolute top-4 left-4 z-10 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm cursor-default">
               {currentImageIndex + 1} / {featuredProjects.length}
             </div>
 
@@ -202,14 +202,14 @@ export default function PortfolioPreview() {
                 </AnimatePresence>
               </div>
 
-              {/* Image info with glass effect */}
+              {/* Image info */}
               <motion.div 
                 className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent rounded-b-2xl"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.2, duration: 0.3 }}
               >
-                <span className="inline-block px-3 py-1 rounded-full bg-primary-400/20 backdrop-blur-sm text-primary-300 text-xs font-medium mb-3">
+                <span className="inline-block px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-medium mb-3">
                   {featuredProjects[currentImageIndex].category}
                 </span>
                 <h3 className="font-heading text-xl md:text-2xl font-semibold text-white mb-2">
@@ -225,7 +225,7 @@ export default function PortfolioPreview() {
               </motion.div>
             </div>
 
-            {/* Thumbnails with glass effect */}
+            {/* Thumbnails */}
             {featuredProjects.length > 1 && (
               <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 overflow-x-auto px-4 pb-2">
                 {featuredProjects.map((project, idx) => (
@@ -243,7 +243,7 @@ export default function PortfolioPreview() {
                     }}
                     className={`relative w-16 h-16 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer ${
                       idx === currentImageIndex
-                        ? 'ring-2 ring-primary-400 scale-110'
+                        ? 'ring-2 ring-primary-500 scale-110'
                         : 'opacity-60 hover:opacity-100'
                     }`}
                   >
@@ -253,7 +253,7 @@ export default function PortfolioPreview() {
                       className="w-full h-full object-cover"
                     />
                     {idx === currentImageIndex && (
-                      <div className="absolute inset-0 bg-primary-400/20 backdrop-blur-sm" />
+                      <div className="absolute inset-0 bg-primary-500/20" />
                     )}
                   </button>
                 ))}

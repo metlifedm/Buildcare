@@ -20,8 +20,8 @@ export default function ServicesPreview() {
   const previewServices = servicesData.services.slice(0, 6);
 
   return (
-    <section className="py-24 bg-dark-900 relative overflow-hidden" aria-label="Our services">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-400/3 rounded-full blur-3xl" />
+    <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Our services">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-50" />
 
       <div className="container-custom">
         <SectionHeading
@@ -43,26 +43,26 @@ export default function ServicesPreview() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="h-full group cursor-pointer relative overflow-hidden" padding="lg">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <Card className="h-full group cursor-pointer relative overflow-hidden" padding="lg" variant="solid">
+                  <div className="absolute inset-0 bg-primary-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div className="relative z-10">
-                    <div className="w-14 h-14 rounded-xl bg-primary-400/10 flex items-center justify-center mb-5 group-hover:bg-primary-400/20 group-hover:shadow-gold transition-all duration-300">
-                      <Icon className="w-7 h-7 text-primary-400" />
+                    <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center mb-5 group-hover:bg-primary-200 transition-all duration-300">
+                      <Icon className="w-7 h-7 text-primary-600" />
                     </div>
 
-                    <h3 className="font-heading text-xl font-semibold text-dark-50 mb-3 group-hover:text-primary-300 transition-colors">
+                    <h3 className="font-heading text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                       {service.title}
                     </h3>
 
-                    <p className="text-dark-300 text-sm leading-relaxed mb-5">
+                    <p className="text-gray-600 text-sm leading-relaxed mb-5">
                       {service.shortDescription}
                     </p>
 
                     <div className="flex items-center gap-3">
                       <Link
                         to={`/services/${service.slug}`}
-                        className="inline-flex items-center gap-2 text-primary-400 text-sm font-medium hover:gap-3 transition-all duration-300"
+                        className="inline-flex items-center gap-2 text-primary-600 text-sm font-medium hover:gap-3 transition-all duration-300"
                       >
                         View Details <ArrowUpRight className="w-4 h-4" />
                       </Link>
@@ -71,7 +71,7 @@ export default function ServicesPreview() {
                           e.stopPropagation();
                           openEnquiry(service.title);
                         }}
-                        className="inline-flex items-center gap-1.5 text-green-400 text-sm font-medium hover:text-green-300 transition-colors cursor-pointer"
+                        className="inline-flex items-center gap-1.5 text-green-600 text-sm font-medium hover:text-green-700 transition-colors cursor-pointer"
                       >
                         <Send className="w-3.5 h-3.5" /> Enquiry
                       </button>

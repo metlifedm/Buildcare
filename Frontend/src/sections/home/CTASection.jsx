@@ -8,7 +8,7 @@ export default function CTASection() {
       description="Ready to transform your home or office? Send us an enquiry and our experts will get back to you within minutes on WhatsApp."
       primaryAction={{ label: 'Enquiry Now' }}
       secondaryAction={{ label: 'Call Now', link: 'tel:+91-98765-43210' }}
-      variant="gold"
+      variant="default"
     />
   );
 }

@@ -16,9 +16,9 @@ const highlights = [
 
 export default function AboutPreview() {
   return (
-    <section className="py-24 bg-dark-950 relative overflow-hidden" aria-label="About Buildcare">
+    <section className="py-24 bg-white relative overflow-hidden" aria-label="About Buildcare">
       {/* Background accents */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-400/3 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-100 rounded-full blur-3xl opacity-50" />
       
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -30,7 +30,7 @@ export default function AboutPreview() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg">
               <img
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
                 alt="Buildcare premium interior design showcase - luxury living room"
@@ -38,24 +38,24 @@ export default function AboutPreview() {
                 loading="lazy"
                 onLoad={(e) => e.target.classList.add('loaded')}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-dark-950/50 to-transparent" />
+              <div className="absolute inset-0 bg-black/20" />
             </div>
 
             {/* Floating card */}
             <motion.div
-              className="absolute -bottom-6 -right-6 md:right-8 glass-card rounded-xl p-5 shadow-elevated"
+              className="absolute -bottom-6 -right-6 md:right-8 bg-white rounded-xl p-5 shadow-xl border border-gray-200"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
               animate={{ y: [0, -10, 0] }}
             >
-              <p className="font-heading text-3xl font-bold text-primary-400">12+</p>
-              <p className="text-dark-300 text-sm">Years of Excellence</p>
+              <p className="font-heading text-3xl font-bold text-primary-600">12+</p>
+              <p className="text-gray-600 text-sm">Years of Excellence</p>
             </motion.div>
 
             {/* Decorative border */}
-            <div className="absolute -inset-4 rounded-2xl border border-primary-400/10 -z-10" />
+            <div className="absolute -inset-4 rounded-2xl border border-primary-200 -z-10" />
           </motion.div>
 
           {/* Content Column */}
@@ -82,8 +82,8 @@ export default function AboutPreview() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
                 >
-                  <CheckCircle className="w-5 h-5 text-primary-400 flex-shrink-0" />
-                  <span className="text-dark-200 text-sm">{item}</span>
+                  <CheckCircle className="w-5 h-5 text-primary-600 flex-shrink-0" />
+                  <span className="text-gray-700 text-sm">{item}</span>
                 </motion.div>
               ))}
             </div>

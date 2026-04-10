@@ -11,7 +11,7 @@ export default function ParallaxSection({
   image,
   imageAlt = '',
   overlay = true,
-  overlayOpacity = 0.5,
+  overlayOpacity = 0.6,
 }) {
   const ref = useRef(null);
 

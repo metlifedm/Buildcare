@@ -14,7 +14,7 @@ export default function BrandsMarquee() {
   ];
 
   return (
-    <section className="py-4 bg-dark-900/50 border-y border-dark-700/20 overflow-hidden" aria-hidden="true">
+    <section className="py-4 bg-gray-100 border-y border-gray-200 overflow-hidden" aria-hidden="true">
       <MarqueeText texts={texts} speed={35} />
     </section>
   );

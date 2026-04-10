@@ -11,7 +11,8 @@ import StatsSection from '@sections/home/StatsSection';
 import CTASection from '@sections/home/CTASection';
 import BrandsMarquee from '@sections/home/BrandsMarquee';
 import ParallaxCTA from '@sections/home/ParallaxCTA';
-import AgitationSection from '../sections/home/AgitationSection';
+import AgitationSection from '@sections/home/AgitationSection';
+import HomeEstimate from '@sections/home/HomeEstimate';
 
 export default function Home() {
   return (
@@ -28,14 +29,15 @@ export default function Home() {
       />
 
       <HeroSection />
-      <AgitationSection />
       <BrandsMarquee />
-      <StatsSection />
+      <AgitationSection />
       <AboutPreview />
       <ServicesPreview />
-      <ParallaxCTA />
+      {/* <ParallaxCTA /> */}
       <PortfolioPreview />
+      <HomeEstimate />
       <TestimonialsSection />
+      <StatsSection />
       <CTASection />
     </>
   );

@@ -34,7 +34,7 @@ function AnimatedCounter({ value, suffix, inView }) {
   }, [value, inView]);
 
   return (
-    <span className="font-heading text-4xl md:text-5xl font-bold text-gradient">
+    <span className="font-heading text-4xl md:text-5xl font-bold text-primary-600">
       {count}{suffix}
     </span>
   );
@@ -47,12 +47,12 @@ export default function StatsSection() {
   return (
     <section
       ref={ref}
-      className="relative py-20 bg-gradient-to-b from-dark-950 to-dark-900 overflow-hidden"
+      className="relative py-20 bg-white overflow-hidden border-y border-gray-100"
       aria-label="Company statistics"
     >
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(201,169,110,0.5) 2px, transparent 0)',
+        backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(59,102,240,0.5) 2px, transparent 0)',
         backgroundSize: '50px 50px',
       }} />
 
@@ -67,11 +67,11 @@ export default function StatsSection() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="w-16 h-16 rounded-2xl glass-card mx-auto mb-4 flex items-center justify-center group-hover:shadow-gold transition-all duration-300">
-                <stat.icon className="w-7 h-7 text-primary-400" />
+              <div className="w-16 h-16 rounded-2xl bg-gray-100 mx-auto mb-4 flex items-center justify-center group-hover:shadow-md transition-all duration-300 group-hover:bg-primary-50">
+                <stat.icon className="w-7 h-7 text-primary-600" />
               </div>
               <AnimatedCounter value={stat.value} suffix={stat.suffix} inView={inView} />
-              <p className="text-dark-300 text-sm mt-2 font-accent">{stat.label}</p>
+              <p className="text-gray-600 text-sm mt-2 font-accent">{stat.label}</p>
             </motion.div>
           ))}
         </div>

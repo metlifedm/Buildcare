@@ -27,8 +27,8 @@ export default function HeroSection() {
         >
           <source src="https://cdn.coverr.co/videos/coverr-interior-of-a-modern-house-1584/1080p.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-dark-950/90 via-dark-950/70 to-dark-950/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-950 via-transparent to-dark-950/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
       </div>
 
       {/* Decorative particles */}
@@ -36,7 +36,7 @@ export default function HeroSection() {
         {[...Array(5)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 rounded-full bg-primary-400/30"
+            className="absolute w-1 h-1 rounded-full bg-primary-400/50"
             style={{ left: `${20 + i * 15}%`, top: `${30 + i * 10}%` }}
             animate={{ y: [0, -30, 0], opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.5 }}
@@ -53,7 +53,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="w-12 h-[2px] bg-primary-400" />
+            <div className="w-12 h-[2px] bg-primary-500" />
             <span className="text-primary-400 font-accent font-medium text-sm tracking-[0.2em] uppercase">
               {COMPANY.tagline}
             </span>
@@ -65,13 +65,13 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
           >
-            <span className="text-dark-50">Interior Design Without </span> 
-            <span className="text-gradient">Cost Surprises, </span> 
-            <span className="text-dark-50">Delays or Regret</span>
+            <span className="text-white">Interior Design Without </span> 
+            <span className="text-primary-400">Cost Surprises, </span> 
+            <span className="text-white">Delays or Regret</span>
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-dark-200 max-w-xl leading-relaxed mb-10"
+            className="text-lg md:text-xl text-gray-200 max-w-xl leading-relaxed mb-10"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
@@ -92,7 +92,6 @@ export default function HeroSection() {
               icon={Send}
               iconPosition="left"
               onClick={() => openEnquiry()}
-              className="animate-pulse-glow"
             >
               Enquiry Now
             </Button>
@@ -105,29 +104,27 @@ export default function HeroSection() {
 
           {/* Stats inline */}
           <motion.div
-            className="flex items-center gap-8 mt-12 pt-8 border-t border-dark-600/20"
+            className="flex items-center gap-8 mt-12 pt-8 border-t border-white/10"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 1.2 }}
           >
-            {[
-              { value: 'Response within 10–15 minutes' },
-              { value: '|' },
-              { value: 'Expert guidance' },
-              // { value: '350+', label: 'Clients' },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p className="font-heading text-lg md:text-xl font-bold text-primary-400">{stat.value}</p>
-                {/* <p className="text-xs text-dark-400 uppercase tracking-wider font-accent">{stat.label}</p> */}
-              </div>
-            ))}
+            <div>
+              <p className="font-heading text-lg md:text-xl font-bold text-primary-400">Response within 10–15 minutes</p>
+            </div>
+            <div>
+              <p className="text-white/40 text-xl">|</p>
+            </div>
+            <div>
+              <p className="font-heading text-lg md:text-xl font-bold text-primary-400">Expert guidance</p>
+            </div>
           </motion.div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <motion.button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-dark-400 cursor-pointer"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-gray-400 cursor-pointer"
         onClick={scrollToNext}
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}

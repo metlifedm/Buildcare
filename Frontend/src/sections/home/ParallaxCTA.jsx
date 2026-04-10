@@ -5,14 +5,15 @@ import ParallaxSection from '@components/ui/ParallaxSection';
 import Button from '@components/ui/Button';
 import RevealAnimation from '@components/ui/RevealAnimation';
 import { AnimatedHeading } from '@components/ui/AnimatedText';
+import Image from '../../assets/images/agitation1.jpg';
 
 export default function ParallaxCTA() {
   return (
     <ParallaxSection
-      image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+      image={Image}
       imageAlt="Luxury interior design by Buildcare"
       speed={0.4}
-      overlayOpacity={0.75}
+      overlayOpacity={0.6}
       className="py-32 md:py-40"
     >
       <div className="container-custom text-center">
@@ -29,7 +30,7 @@ export default function ParallaxCTA() {
         />
 
         <RevealAnimation animation="fadeUp" delay={0.5}>
-          <p className="text-xl text-dark-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto mb-10 leading-relaxed">
             Every space has a story waiting to be told. Let our award-winning team help you
             write yours with exquisite design and flawless execution.
           </p>

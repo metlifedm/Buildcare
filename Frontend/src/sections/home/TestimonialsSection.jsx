@@ -23,8 +23,8 @@ export default function TestimonialsSection() {
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
   return (
-    <section className="py-24 bg-dark-900 relative overflow-hidden" aria-label="Client testimonials">
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary-400/5 rounded-full blur-3xl -translate-y-1/2" />
+    <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Client testimonials">
+      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary-100 rounded-full blur-3xl opacity-50 -translate-y-1/2" />
       
       <div className="container-custom">
         <SectionHeading
@@ -42,10 +42,10 @@ export default function TestimonialsSection() {
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="text-center" padding="xl" variant="elevated">
-                <Quote className="w-12 h-12 text-primary-400/20 mx-auto mb-6" />
+              <Card className="text-center" padding="xl" variant="solid">
+                <Quote className="w-12 h-12 text-primary-200 mx-auto mb-6" />
                 
-                <p className="text-lg md:text-xl text-dark-100 leading-relaxed mb-8 font-light italic">
+                <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8 font-light italic">
                   "{testimonials[current].review}"
                 </p>
 
@@ -57,14 +57,14 @@ export default function TestimonialsSection() {
                   <img
                     src={testimonials[current].avatar}
                     alt={testimonials[current].name}
-                    className="w-14 h-14 rounded-full object-cover border-2 border-primary-400/30"
+                    className="w-14 h-14 rounded-full object-cover border-2 border-primary-300"
                     loading="lazy"
                   />
                   <div className="text-left">
-                    <h4 className="font-heading font-semibold text-dark-50">
+                    <h4 className="font-heading font-semibold text-gray-900">
                       {testimonials[current].name}
                     </h4>
-                    <p className="text-dark-400 text-sm">
+                    <p className="text-gray-500 text-sm">
                       {testimonials[current].designation} • {testimonials[current].location}
                     </p>
                   </div>
@@ -77,7 +77,7 @@ export default function TestimonialsSection() {
           <div className="flex items-center justify-center gap-4 mt-8">
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-dark-300 hover:text-primary-400 hover:shadow-gold transition-all cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:text-primary-600 hover:border-primary-300 hover:shadow-md transition-all cursor-pointer"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-5 h-5" />
@@ -90,8 +90,8 @@ export default function TestimonialsSection() {
                   onClick={() => goTo(index)}
                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                     index === current
-                      ? 'bg-primary-400 w-8'
-                      : 'bg-dark-600 hover:bg-dark-400'
+                      ? 'bg-primary-600 w-8'
+                      : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
@@ -100,7 +100,7 @@ export default function TestimonialsSection() {
             
             <button
               onClick={next}
-              className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-dark-300 hover:text-primary-400 hover:shadow-gold transition-all cursor-pointer"
+              className="w-10 h-10 rounded-full bg-white border border-gray-200 shadow-sm flex items-center justify-center text-gray-600 hover:text-primary-600 hover:border-primary-300 hover:shadow-md transition-all cursor-pointer"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-5 h-5" />
