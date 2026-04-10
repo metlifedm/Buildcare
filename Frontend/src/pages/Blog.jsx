@@ -54,7 +54,7 @@ export default function Blog() {
         backgroundImage="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80"
       />
 
-      <section className="py-24 bg-dark-950" aria-label="Blog posts">
+      <section className="py-24 bg-white" aria-label="Blog posts">
         <div className="container-custom">
           {/* Category Filter */}
           <motion.div
@@ -69,8 +69,8 @@ export default function Blog() {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                   selectedCategory === category
-                    ? 'bg-primary-400 text-dark-950 shadow-gold'
-                    : 'glass-card text-dark-200 hover:text-primary-300 hover:border-primary-400/30'
+                    ? 'bg-primary-600 text-white shadow-md'
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-primary-600'
                 }`}
               >
                 {category}
@@ -98,23 +98,23 @@ export default function Blog() {
                         onLoad={(e) => e.target.classList.add('loaded')}
                       />
                     </div>
-                    <div className="p-8 md:p-10 flex flex-col justify-center">
+                    <div className="p-8 md:p-10 flex flex-col justify-center bg-white">
                       <div className="flex items-center gap-3 mb-4">
-                        <span className="px-3 py-1 rounded-full bg-primary-400/10 text-primary-400 text-xs font-medium">
+                        <span className="px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-medium">
                           {featuredPost.category}
                         </span>
-                        <span className="text-primary-400 text-xs font-accent">Featured</span>
+                        <span className="text-primary-600 text-xs font-accent">Featured</span>
                       </div>
 
-                      <h2 className="font-heading text-2xl md:text-3xl font-bold text-dark-50 mb-4 group-hover:text-primary-300 transition-colors">
+                      <h2 className="font-heading text-2xl md:text-3xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
                         {featuredPost.title}
                       </h2>
 
-                      <p className="text-dark-200 leading-relaxed mb-6">
+                      <p className="text-gray-600 leading-relaxed mb-6">
                         {featuredPost.excerpt}
                       </p>
 
-                      <div className="flex items-center gap-4 text-sm text-dark-400 mb-6">
+                      <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
                         <span className="flex items-center gap-1.5">
                           <User className="w-3.5 h-3.5" />
                           {featuredPost.author}
@@ -129,7 +129,7 @@ export default function Blog() {
                         </span>
                       </div>
 
-                      <span className="inline-flex items-center gap-2 text-primary-400 font-medium group-hover:gap-3 transition-all">
+                      <span className="inline-flex items-center gap-2 text-primary-600 font-medium group-hover:gap-3 transition-all">
                         Read Article <ArrowRight className="w-4 h-4" />
                       </span>
                     </div>
@@ -160,31 +160,31 @@ export default function Blog() {
                         onLoad={(e) => e.target.classList.add('loaded')}
                       />
                     </div>
-                    <div className="p-6 flex flex-col flex-1">
+                    <div className="p-6 flex flex-col flex-1 bg-white">
                       <div className="flex items-center gap-3 mb-3">
-                        <span className="px-3 py-1 rounded-full bg-primary-400/10 text-primary-400 text-xs font-medium">
+                        <span className="px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-medium">
                           {post.category}
                         </span>
-                        <span className="text-dark-500 text-xs flex items-center gap-1">
+                        <span className="text-gray-500 text-xs flex items-center gap-1">
                           <Clock className="w-3 h-3" />
                           {post.readTime}
                         </span>
                       </div>
 
-                      <h3 className="font-heading text-lg font-semibold text-dark-50 mb-3 group-hover:text-primary-300 transition-colors line-clamp-2 flex-grow-0">
+                      <h3 className="font-heading text-lg font-semibold text-gray-900 mb-3 group-hover:text-primary-700 transition-colors line-clamp-2 flex-grow-0">
                         {post.title}
                       </h3>
 
-                      <p className="text-dark-300 text-sm leading-relaxed mb-4 line-clamp-3 flex-1">
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3 flex-1">
                         {post.excerpt}
                       </p>
 
-                      <div className="flex items-center justify-between pt-4 border-t border-dark-600/20 mt-auto">
-                        <div className="flex items-center gap-2 text-xs text-dark-400">
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
+                        <div className="flex items-center gap-2 text-xs text-gray-500">
                           <User className="w-3 h-3" />
                           {post.author}
                         </div>
-                        <span className="text-xs text-dark-500">
+                        <span className="text-xs text-gray-400">
                           {formatDate(post.date)}
                         </span>
                       </div>
@@ -196,7 +196,7 @@ export default function Blog() {
           </div>
 
           {filteredPosts.length === 0 && (
-            <p className="text-center text-dark-400 py-20 text-lg">
+            <p className="text-center text-gray-500 py-20 text-lg">
               No posts found in this category.
             </p>
           )}
@@ -206,7 +206,7 @@ export default function Blog() {
       <CTABanner
         title="Need Expert Design Advice?"
         description="Our team is ready to help you bring your design vision to life. Get in touch for a free consultation."
-        variant="gold"
+        variant="default"
       />
     </>
   );

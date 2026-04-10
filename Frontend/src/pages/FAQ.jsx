@@ -66,7 +66,7 @@ export default function FAQ() {
         backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
       />
 
-      <section className="py-24 bg-dark-950" aria-label="FAQ section">
+      <section className="py-24 bg-white" aria-label="FAQ section">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             {/* Search */}
@@ -77,13 +77,13 @@ export default function FAQ() {
               transition={{ duration: 0.5 }}
             >
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-dark-400" />
+                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
                   type="text"
                   placeholder="Search your question..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-dark-800/60 border border-dark-600/30 text-dark-100 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400/50 transition-all"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500 transition-all"
                   aria-label="Search FAQs"
                 />
               </div>
@@ -102,8 +102,8 @@ export default function FAQ() {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 cursor-pointer ${
                     selectedCategory === category
-                      ? 'bg-primary-400 text-dark-950'
-                      : 'glass-card text-dark-300 hover:text-primary-300'
+                      ? 'bg-primary-600 text-white shadow-sm'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-primary-600'
                   }`}
                 >
                   {category}
@@ -127,9 +127,9 @@ export default function FAQ() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
-                <HelpCircle className="w-16 h-16 text-dark-600 mx-auto mb-4" />
-                <p className="text-dark-400 text-lg mb-2">No matching questions found.</p>
-                <p className="text-dark-500 text-sm">Try different keywords or browse all categories.</p>
+                <HelpCircle className="w-16 h-16 text-gray-300 mx-auto mb-4" />
+                <p className="text-gray-500 text-lg mb-2">No matching questions found.</p>
+                <p className="text-gray-400 text-sm">Try different keywords or browse all categories.</p>
               </motion.div>
             )}
 
@@ -141,12 +141,12 @@ export default function FAQ() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card padding="xl" className="text-center bg-gradient-to-br from-primary-900/20 to-dark-800/50 border-primary-400/10">
-                <HelpCircle className="w-12 h-12 text-primary-400 mx-auto mb-4" />
-                <h3 className="font-heading text-2xl font-bold text-dark-50 mb-3">
+              <Card padding="xl" className="text-center bg-primary-50 border-primary-200">
+                <HelpCircle className="w-12 h-12 text-primary-600 mx-auto mb-4" />
+                <h3 className="font-heading text-2xl font-bold text-gray-900 mb-3">
                   Still Have Questions?
                 </h3>
-                <p className="text-dark-300 mb-8 max-w-lg mx-auto">
+                <p className="text-gray-600 mb-8 max-w-lg mx-auto">
                   Can't find what you're looking for? Send us your question and we'll get back to you within 24 hours.
                 </p>
                 <ContactForm variant="compact" className="max-w-xl mx-auto" />
@@ -156,7 +156,7 @@ export default function FAQ() {
         </div>
       </section>
 
-      <CTABanner variant="gold" />
+      <CTABanner variant="default" />
     </>
   );
 }
