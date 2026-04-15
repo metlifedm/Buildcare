@@ -24,9 +24,34 @@ export default function TestimonialsSection() {
 
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Client testimonials">
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary-100 rounded-full blur-3xl opacity-50 -translate-y-1/2" />
+      {/* Simple dot and plus background animation */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-[5%] w-3 h-3 rounded-full bg-primary-300/30 animate-pulse" style={{ animationDuration: '4s' }} />
+        <div className="absolute top-20 right-[10%] w-2 h-2 rounded-full bg-primary-400/40 animate-ping" style={{ animationDuration: '3s', animationDelay: '0.5s' }} />
+        <div className="absolute top-1/3 left-[15%] w-4 h-4 rounded-full bg-primary-500/20 animate-bounce" style={{ animationDuration: '6s', animationDelay: '1s' }} />
+        <div className="absolute bottom-1/4 right-[8%] w-3 h-3 rounded-full bg-primary-600/25 animate-pulse" style={{ animationDuration: '5s', animationDelay: '0.3s' }} />
+        <div className="absolute top-2/3 left-[20%] w-2 h-2 rounded-full bg-primary-700/30 animate-ping" style={{ animationDuration: '3.5s', animationDelay: '0.8s' }} />
+        <div className="absolute bottom-10 right-[20%] w-5 h-5 rounded-full bg-primary-300/20 animate-bounce" style={{ animationDuration: '7s', animationDelay: '0.2s' }} />
+        
+        <div className="absolute top-40 left-[30%] text-primary-400/25 text-4xl font-thin animate-pulse" style={{ animationDuration: '8s' }}>+</div>
+        <div className="absolute bottom-32 left-[10%] text-primary-500/20 text-3xl font-thin animate-ping" style={{ animationDuration: '5s', animationDelay: '0.4s' }}>+</div>
+        <div className="absolute top-1/2 right-[15%] text-primary-600/30 text-5xl font-thin animate-bounce" style={{ animationDuration: '6s', animationDelay: '1.2s' }}>+</div>
+        <div className="absolute bottom-20 right-[25%] text-primary-300/25 text-4xl font-thin animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '0.6s' }}>+</div>
+        <div className="absolute top-24 right-[40%] text-primary-700/20 text-2xl font-thin animate-ping" style={{ animationDuration: '3s', animationDelay: '0.1s' }}>+</div>
+        <div className="absolute bottom-40 left-[35%] text-primary-400/20 text-3xl font-thin animate-bounce" style={{ animationDuration: '5.5s', animationDelay: '0.9s' }}>+</div>
+        
+        <div className="absolute top-1/4 right-[5%] w-1.5 h-1.5 rounded-full bg-primary-200/40 animate-pulse" style={{ animationDuration: '3s', animationDelay: '0.7s' }} />
+        <div className="absolute bottom-1/3 left-[40%] w-2.5 h-2.5 rounded-full bg-primary-400/30 animate-ping" style={{ animationDuration: '4s', animationDelay: '0.2s' }} />
+        <div className="absolute top-3/4 right-[30%] w-2 h-2 rounded-full bg-primary-500/25 animate-bounce" style={{ animationDuration: '5s', animationDelay: '1.5s' }} />
+        <div className="absolute top-10 left-[60%] w-3 h-3 rounded-full bg-primary-600/20 animate-pulse" style={{ animationDuration: '6s', animationDelay: '0.4s' }} />
+        <div className="absolute bottom-10 left-[70%] w-1.5 h-1.5 rounded-full bg-primary-300/35 animate-ping" style={{ animationDuration: '3.8s', animationDelay: '0.6s' }} />
+        <div className="absolute top-1/2 left-[45%] text-primary-500/20 text-4xl font-thin animate-pulse" style={{ animationDuration: '7s', animationDelay: '0.5s' }}>+</div>
+        <div className="absolute bottom-1/4 left-[55%] w-2 h-2 rounded-full bg-primary-700/25 animate-bounce" style={{ animationDuration: '4.2s', animationDelay: '1.1s' }} />
+        <div className="absolute top-32 left-[75%] w-4 h-4 rounded-full bg-primary-400/20 animate-ping" style={{ animationDuration: '5s', animationDelay: '0.3s' }} />
+        <div className="absolute bottom-48 right-[5%] text-primary-300/20 text-3xl font-thin animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.8s' }}>+</div>
+      </div>
       
-      <div className="container-custom">
+      <div className="container-custom relative z-10">
         <SectionHeading
           subtitle="Testimonials"
           title="What Our Clients Say"

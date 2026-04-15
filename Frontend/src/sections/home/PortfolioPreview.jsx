@@ -52,7 +52,6 @@ export default function PortfolioPreview() {
   return (
     <>
       <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Featured portfolio">
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-50" />
         
         <div className="container-custom">
           <SectionHeading
@@ -91,7 +90,7 @@ export default function PortfolioPreview() {
                   <span className="inline-block px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-medium mb-3">
                     {project.category}
                   </span>
-                  <h3 className="font-heading text-xl font-semibold text-white mb-2">
+                  <h3 className="font-heading text-xl font-semibold text-white! mb-2">
                     {project.title}
                   </h3>
                   <div className="flex items-center gap-4 text-gray-200 text-sm">
@@ -118,9 +117,9 @@ export default function PortfolioPreview() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/portfolio">
-              <Button variant="secondary" size="lg" icon={ArrowRight}>
-                View Full Portfolio
+            <Link to="/about/our-story">
+              <Button size="lg" icon={ArrowRight}>
+                Our Story & More Projects
               </Button>
             </Link>
           </motion.div>
@@ -212,7 +211,7 @@ export default function PortfolioPreview() {
                 <span className="inline-block px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-medium mb-3">
                   {featuredProjects[currentImageIndex].category}
                 </span>
-                <h3 className="font-heading text-xl md:text-2xl font-semibold text-white mb-2">
+                <h3 className="text-white! font-heading text-xl md:text-2xl font-semiboldmb-2">
                   {featuredProjects[currentImageIndex].title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-4 text-white/80 text-sm">

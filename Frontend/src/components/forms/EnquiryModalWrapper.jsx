@@ -315,13 +315,14 @@ export default function EnquiryModalWrapper() {
                           className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
                           {...register('budget')}>
                           <option value="">Select budget range</option>
-                          <option value="Below ₹10 Lakhs">Below ₹10 Lakhs</option>
-                          <option value="₹10 Lakhs - ₹25 Lakhs">₹10 Lakhs - ₹25 Lakhs</option>
-                          <option value="₹25 Lakhs - ₹50 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
-                          <option value="₹50 Lakhs - ₹75 Lakhs">₹50 Lakhs - ₹75 Lakhs</option>
-                          <option value="₹75 Lakhs - ₹1 Crore">₹75 Lakhs - ₹1 Crore</option>
-                          <option value="₹1 Crore - ₹2 Crore">₹1 Crore - ₹2 Crore</option>
-                          <option value="₹2 Crore - ₹5 Crore">₹2 Crore - ₹5 Crore</option>
+                          <option value="Below ₹10 Lakhs">Below ₹5 Lakhs</option>
+                          <option value="₹10 Lakhs - ₹25 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
+                          <option value="₹25 Lakhs - ₹50 Lakhs">₹10 Lakhs - ₹25 Lakhs</option>
+                          <option value="₹50 Lakhs - ₹75 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
+                          <option value="₹75 Lakhs - ₹1 Crore">₹50 Lakhs - ₹75 Lakhs</option>
+                          <option value="₹1 Crore - ₹2 Crore">₹75 Lakhs - ₹1 Crore</option>
+                          <option value="₹2 Crore - ₹5 Crore">₹1 Crore - ₹3 Crore</option>
+                          <option value="₹2 Crore - ₹5 Crore">₹3 Crore - ₹5 Crore</option>
                           <option value="Above ₹5 Crore">Above ₹5 Crore</option>
                         </select>
                       </div>

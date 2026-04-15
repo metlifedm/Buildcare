@@ -30,9 +30,9 @@ export default function Home() {
 
       <HeroSection />
       <BrandsMarquee />
-      <AgitationSection />
       <AboutPreview />
       <ServicesPreview />
+      <AgitationSection />
       {/* <ParallaxCTA /> */}
       <PortfolioPreview />
       <HomeEstimate />

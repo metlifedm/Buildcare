@@ -2,9 +2,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useAnimation } from 'framer-motion';
 import { 
-  AlertTriangle, TrendingUp, ArrowRight, Zap, BarChart3, Timer, 
-  Eye, Construction, DollarSign, Calendar, Brush, Sparkles, 
-  CheckCircle2, AlertCircle
+  AlertTriangle, TrendingUp, ArrowRight, BarChart3, Timer, 
+  Eye, Construction, DollarSign, Calendar, Brush, 
+  AlertCircle, XCircle
 } from 'lucide-react';
 import { cn } from '@utils/helpers';
 
@@ -30,8 +30,6 @@ const painPoints = [
     stat: "+73%",
     statLabel: "average overrun",
     image: Agitation1,
-    position: "left",
-    step: "01"
   },
   {
     id: 2,
@@ -47,8 +45,6 @@ const painPoints = [
     stat: "+68%",
     statLabel: "face delays >2 months",
     image: Agitation2,
-    position: "right",
-    step: "02"
   },
   {
     id: 3,
@@ -64,8 +60,6 @@ const painPoints = [
     stat: "82%",
     statLabel: "unsatisfied with result",
     image: Agitation3,
-    position: "left",
-    step: "03"
   },
   {
     id: 4,
@@ -81,8 +75,6 @@ const painPoints = [
     stat: "3.2x",
     statLabel: "higher cost for fixes",
     image: Agitation4,
-    position: "right",
-    step: "04"
   }
 ];
 
@@ -92,69 +84,6 @@ const floatingStats = [
   { value: "82%", label: "Unsatisfied with design", icon: Eye },
   { value: "3.2x", label: "Cost for fixes", icon: TrendingUp }
 ];
-
-// Curved SVG Timeline
-const CurvedTimeline = ({ itemCount }) => {
-  return (
-    <svg
-      className="absolute left-1/2 top-0 w-full h-full -translate-x-1/2"
-      style={{ pointerEvents: 'none' }}
-      viewBox="0 0 200 1200"
-      preserveAspectRatio="none"
-    >
-      <defs>
-        <linearGradient id="timelineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" stopColor="rgba(59, 102, 240, 0)" />
-          <stop offset="50%" stopColor="rgba(59, 102, 240, 0.4)" />
-          <stop offset="100%" stopColor="rgba(59, 102, 240, 0)" />
-        </linearGradient>
-      </defs>
-
-      {/* Main curved path */}
-      <motion.path
-        d="M 100 0 Q 80 150, 100 300 T 100 600 T 100 900 T 100 1200"
-        stroke="url(#timelineGradient)"
-        strokeWidth="3"
-        fill="none"
-        strokeLinecap="round"
-        initial={{ strokeDasharray: 2000, strokeDashoffset: 2000 }}
-        whileInView={{ strokeDashoffset: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
-      />
-
-      {/* Animated flowing line */}
-      <motion.path
-        d="M 100 0 Q 80 150, 100 300 T 100 600 T 100 900 T 100 1200"
-        stroke="rgba(59, 102, 240, 0.8)"
-        strokeWidth="2"
-        fill="none"
-        strokeLinecap="round"
-        initial={{ strokeDasharray: 100, strokeDashoffset: 100, opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        animate={{ strokeDashoffset: [100, 0] }}
-        transition={{ duration: 1.5, repeat: Infinity }}
-      />
-
-      {/* Dots along the timeline */}
-      {[0, 0.33, 0.66, 1].map((position, idx) => (
-        <motion.circle
-          key={idx}
-          cx="100"
-          cy={position * 1200}
-          r="8"
-          fill="rgba(59, 102, 240, 0.3)"
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: idx * 0.2, duration: 0.5 }}
-        />
-      ))}
-    </svg>
-  );
-};
 
 export default function AgitationSection() {
   const sectionRef = useRef(null);
@@ -174,64 +103,59 @@ export default function AgitationSection() {
     setImageErrors(prev => ({ ...prev, [id]: true }));
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: 0 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { 
-        duration: 0.8, 
-        ease: "easeOut"
-      } 
-    }
-  };
-
   return (
     <section 
       ref={sectionRef}
       className="relative py-24 md:py-32 bg-gray-50 overflow-hidden"
       aria-labelledby="agitation-title"
     >
-      {/* Background Grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width=%2260%22%20height=%2260%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cdefs%3E%3Cpattern%20id=%22grid%22%20width=%2260%22%20height=%2260%22%20patternUnits=%22userSpaceOnUse%22%3E%3Cpath%20d=%22M%2060%200%20L%200%200%200%2060%22%20fill=%22none%22%20stroke=%22rgba(59,102,240,0.15)%22%20stroke-width=%221%22/%3E%3C/pattern%3E%3C/defs%3E%3Crect%20width=%22100%25%22%20height=%22100%25%22%20fill=%22url(%23grid)%22/%3E%3C/svg%3E')] animate-[spin_60s_linear_infinite]" />
-      </div>
-
-      {/* Floating Particles */}
+      {/* Simple Dot and Plus Background Animation - No Gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-primary-400/30 rounded-full"
-            initial={{ 
-              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-              scale: 0
-            }}
-            animate={{ 
-              y: [null, -100, -200],
-              opacity: [0, 0.5, 0],
-              scale: [0, 1, 0]
-            }}
-            transition={{
-              duration: 3 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "linear"
-            }}
-          />
-        ))}
+        {/* Dots - small circles */}
+        <div className="absolute top-[5%] left-[3%] w-1 h-1 rounded-full bg-primary-300/40 animate-pulse" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-[12%] right-[8%] w-2 h-2 rounded-full bg-primary-400/30 animate-ping" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
+        <div className="absolute top-[25%] left-[15%] w-1.5 h-1.5 rounded-full bg-primary-500/35 animate-bounce" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+        <div className="absolute top-[40%] right-[20%] w-2 h-2 rounded-full bg-primary-600/25 animate-pulse" style={{ animationDuration: '3.5s', animationDelay: '0.3s' }} />
+        <div className="absolute top-[55%] left-[8%] w-1 h-1 rounded-full bg-primary-700/30 animate-ping" style={{ animationDuration: '4.5s', animationDelay: '0.8s' }} />
+        <div className="absolute top-[70%] right-[12%] w-2.5 h-2.5 rounded-full bg-primary-300/25 animate-bounce" style={{ animationDuration: '6s', animationDelay: '0.2s' }} />
+        <div className="absolute top-[85%] left-[25%] w-1.5 h-1.5 rounded-full bg-primary-400/30 animate-pulse" style={{ animationDuration: '3.8s', animationDelay: '1.2s' }} />
+        <div className="absolute top-[15%] left-[45%] w-2 h-2 rounded-full bg-primary-500/20 animate-ping" style={{ animationDuration: '5.5s', animationDelay: '0.6s' }} />
+        <div className="absolute top-[35%] right-[35%] w-1 h-1 rounded-full bg-primary-600/35 animate-bounce" style={{ animationDuration: '4.2s', animationDelay: '0.9s' }} />
+        <div className="absolute top-[60%] left-[55%] w-2.5 h-2.5 rounded-full bg-primary-700/25 animate-pulse" style={{ animationDuration: '3.2s', animationDelay: '0.4s' }} />
+        <div className="absolute top-[80%] right-[45%] w-1.5 h-1.5 rounded-full bg-primary-300/30 animate-ping" style={{ animationDuration: '4.8s', animationDelay: '1.1s' }} />
+        <div className="absolute top-[20%] left-[70%] w-2 h-2 rounded-full bg-primary-400/25 animate-bounce" style={{ animationDuration: '5.2s', animationDelay: '0.7s' }} />
+        <div className="absolute top-[50%] right-[60%] w-1 h-1 rounded-full bg-primary-500/35 animate-pulse" style={{ animationDuration: '3.6s', animationDelay: '0.1s' }} />
+        <div className="absolute top-[75%] left-[80%] w-2 h-2 rounded-full bg-primary-600/30 animate-ping" style={{ animationDuration: '4.4s', animationDelay: '1.3s' }} />
+        <div className="absolute top-[10%] left-[90%] w-1.5 h-1.5 rounded-full bg-primary-700/20 animate-bounce" style={{ animationDuration: '5.8s', animationDelay: '0.5s' }} />
+
+        {/* Plus signs - no gradients, solid color with opacity */}
+        <div className="absolute top-[8%] left-[20%] text-primary-400/30 text-2xl font-thin animate-pulse" style={{ animationDuration: '6s' }}>+</div>
+        <div className="absolute top-[18%] right-[15%] text-primary-500/25 text-3xl font-thin animate-ping" style={{ animationDuration: '5s', animationDelay: '0.4s' }}>+</div>
+        <div className="absolute top-[32%] left-[35%] text-primary-600/20 text-4xl font-thin animate-bounce" style={{ animationDuration: '7s', animationDelay: '1s' }}>+</div>
+        <div className="absolute top-[45%] right-[40%] text-primary-300/30 text-2xl font-thin animate-pulse" style={{ animationDuration: '4.5s', animationDelay: '0.6s' }}>+</div>
+        <div className="absolute top-[58%] left-[50%] text-primary-700/25 text-3xl font-thin animate-ping" style={{ animationDuration: '5.5s', animationDelay: '0.2s' }}>+</div>
+        <div className="absolute top-[68%] right-[25%] text-primary-400/20 text-4xl font-thin animate-bounce" style={{ animationDuration: '6.5s', animationDelay: '1.1s' }}>+</div>
+        <div className="absolute top-[78%] left-[65%] text-primary-500/30 text-2xl font-thin animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.8s' }}>+</div>
+        <div className="absolute top-[88%] right-[55%] text-primary-600/25 text-3xl font-thin animate-ping" style={{ animationDuration: '5.8s', animationDelay: '0.3s' }}>+</div>
+        <div className="absolute top-[5%] left-[75%] text-primary-300/20 text-4xl font-thin animate-bounce" style={{ animationDuration: '6.2s', animationDelay: '1.4s' }}>+</div>
+        <div className="absolute top-[95%] left-[10%] text-primary-700/20 text-2xl font-thin animate-pulse" style={{ animationDuration: '4.8s', animationDelay: '0.7s' }}>+</div>
+        <div className="absolute top-[28%] left-[85%] text-primary-400/25 text-3xl font-thin animate-ping" style={{ animationDuration: '5.2s', animationDelay: '0.9s' }}>+</div>
+        <div className="absolute top-[52%] left-[12%] text-primary-500/20 text-4xl font-thin animate-bounce" style={{ animationDuration: '7.2s', animationDelay: '0.5s' }}>+</div>
+        <div className="absolute top-[72%] right-[70%] text-primary-600/30 text-2xl font-thin animate-pulse" style={{ animationDuration: '4.2s', animationDelay: '1.2s' }}>+</div>
+        <div className="absolute top-[15%] left-[55%] text-primary-300/25 text-3xl font-thin animate-ping" style={{ animationDuration: '6.8s', animationDelay: '0.1s' }}>+</div>
+        <div className="absolute top-[42%] right-[80%] text-primary-700/20 text-4xl font-thin animate-bounce" style={{ animationDuration: '5.5s', animationDelay: '0.8s' }}>+</div>
+
+        {/* Additional small dots for density */}
+        <div className="absolute top-[22%] left-[42%] w-1 h-1 rounded-full bg-primary-300/25 animate-pulse" style={{ animationDuration: '3.3s', animationDelay: '0.5s' }} />
+        <div className="absolute top-[48%] right-[18%] w-2 h-2 rounded-full bg-primary-400/20 animate-ping" style={{ animationDuration: '4.7s', animationDelay: '0.9s' }} />
+        <div className="absolute top-[62%] left-[38%] w-1.5 h-1.5 rounded-full bg-primary-500/30 animate-bounce" style={{ animationDuration: '5.3s', animationDelay: '0.2s' }} />
+        <div className="absolute top-[82%] right-[48%] w-1 h-1 rounded-full bg-primary-600/25 animate-pulse" style={{ animationDuration: '3.9s', animationDelay: '1.1s' }} />
+        <div className="absolute top-[92%] left-[58%] w-2 h-2 rounded-full bg-primary-700/20 animate-ping" style={{ animationDuration: '4.1s', animationDelay: '0.6s' }} />
+        <div className="absolute top-[30%] right-[5%] w-1.5 h-1.5 rounded-full bg-primary-300/35 animate-bounce" style={{ animationDuration: '6.1s', animationDelay: '1.3s' }} />
+        <div className="absolute top-[65%] left-[92%] w-1 h-1 rounded-full bg-primary-400/30 animate-pulse" style={{ animationDuration: '3.5s', animationDelay: '0.4s' }} />
+        <div className="absolute top-[8%] right-[65%] w-2 h-2 rounded-full bg-primary-500/25 animate-ping" style={{ animationDuration: '5.7s', animationDelay: '0.7s' }} />
+        <div className="absolute top-[38%] left-[18%] w-1.5 h-1.5 rounded-full bg-primary-600/20 animate-bounce" style={{ animationDuration: '4.9s', animationDelay: '1s' }} />
+        <div className="absolute top-[90%] right-[85%] w-1 h-1 rounded-full bg-primary-700/30 animate-pulse" style={{ animationDuration: '3.7s', animationDelay: '0.3s' }} />
       </div>
 
       <div className="container-custom relative z-10">
@@ -240,346 +164,293 @@ export default function AgitationSection() {
           initial={{ opacity: 0, y: -30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-24"
+          className="text-center max-w-4xl mx-auto mb-20"
         >
           <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary-50 border border-primary-200 mb-6"
+            whileHover={{ scale: 1.05, rotate: [0, -2, 2, 0] }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 mb-8 shadow-sm"
+            style={{ 
+              backgroundColor: 'rgba(136, 172, 196, 0.1)',
+              borderColor: '#88acc4'
+            }}
           >
-            <AlertTriangle className="w-4 h-4 text-primary-600" />
-            <span className="text-sm font-accent text-primary-700 tracking-wide">
-              The Problems You Face
+            <motion.div
+              animate={{ rotate: [0, 10, -10, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            >
+              <AlertTriangle className="w-5 h-5" style={{ color: '#115989' }} />
+            </motion.div>
+            <span className="text-sm font-accent tracking-wide uppercase font-bold" style={{ color: '#0e476e' }}>
+              The Problems You Face Daily
             </span>
           </motion.div>
 
           <h1 
             id="agitation-title"
-            className="font-heading text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900"
+            className="font-heading text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-[1.1]"
           >
             <motion.span 
-              className="block text-primary-600"
+              className="block mb-2"
+              style={{ color: '#171717' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.2 }}
             >
-              Most Interior Projects Fail Before They Even Start
+              Most Interior Projects
+            </motion.span>
+            <motion.span 
+              className="block"
+              style={{ color: '#115989' }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 0.4 }}
+            >
+              Fail Before They Even Start
             </motion.span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            Interior design is not just about looks. It's about planning it right from the beginning.
-          </p>
+          <motion.p 
+            className="text-xl md:text-2xl leading-relaxed font-medium"
+            style={{ color: '#525252' }}
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.6 }}
+          >
+            Interior design is not just about looks.{' '}
+            <span className="font-bold" style={{ color: '#115989' }}>
+              It's about planning it right from the beginning.
+            </span>
+          </motion.p>
         </motion.div>
 
-        {/* Curved Timeline Container */}
-        <div className="relative">
-          {/* Curved SVG Timeline Background */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 w-full h-full pointer-events-none">
-            <CurvedTimeline itemCount={painPoints.length} />
-          </div>
-
-          {/* Timeline Items */}
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={controls}
-            className="relative space-y-48"
-          >
-            {painPoints.map((point, index) => {
-              const isLeft = point.position === "left";
-              
-              return (
-                <motion.div
-                  key={point.id}
-                  variants={itemVariants}
-                  className="relative"
-                >
-                  {/* Timeline Dot */}
-                  <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-20 h-20 z-20">
-                    <motion.div
-                      className="absolute inset-0"
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true, amount: 0.5 }}
-                      transition={{ duration: 0.6, delay: index * 0.2 }}
-                    >
-                      {/* Outer glow ring */}
-                      <motion.div
-                        className="absolute inset-0 rounded-full bg-primary-400 opacity-20"
-                        animate={{ scale: [1, 1.3, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
-                      />
-                      
-                      {/* Middle ring */}
-                      <motion.div
-                        className="absolute inset-2 rounded-full border-2 border-primary-400"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 8, repeat: Infinity, linear: true }}
-                      />
-                      
-                      {/* Center dot */}
-                      <motion.div
-                        className="absolute inset-3 rounded-full bg-primary-600 flex items-center justify-center shadow-md"
-                        animate={{ 
-                          boxShadow: [
-                            "0 0 20px rgba(59, 102, 240, 0.4)",
-                            "0 0 40px rgba(59, 102, 240, 0.6)",
-                            "0 0 20px rgba(59, 102, 240, 0.4)"
-                          ]
-                        }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      >
-                        <span className="font-heading font-bold text-white text-sm">{point.step}</span>
-                      </motion.div>
-                    </motion.div>
-                  </div>
-
-                  {/* Content Container - Zig Zag Layout */}
-                  <div className={cn(
-                    "grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-20",
-                    isLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-                  )}>
-                    {/* Image Side */}
-                    <motion.div
-                      className={cn(
-                        "relative rounded-2xl overflow-hidden h-80 group shadow-lg",
-                        isLeft ? "lg:order-1" : "lg:order-2"
-                      )}
-                      initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.8, delay: index * 0.1 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {/* Image with fallback */}
+        {/* Pain Points - Large Cards */}
+        <div className="space-y-24 md:space-y-32 mb-32">
+          {painPoints.map((point, index) => {
+            const isEven = index % 2 === 0;
+            
+            return (
+              <motion.div
+                key={point.id}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="relative"
+              >
+                <div className={cn(
+                  "grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center",
+                  isEven ? "" : "lg:grid-flow-dense"
+                )}>
+                  {/* Image Side */}
+                  <motion.div
+                    className={cn(
+                      "lg:col-span-7 relative group",
+                      isEven ? "" : "lg:col-start-6"
+                    )}
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px] md:h-[600px]" style={{ backgroundColor: '#f5f5f5' }}>
+                      {/* Image */}
                       {!imageErrors[point.id] && point.image ? (
                         <>
-                          <img 
+                          <motion.img 
                             src={point.image}
                             alt={point.title}
                             className="w-full h-full object-cover"
                             onError={() => handleImageError(point.id)}
+                            initial={{ scale: 1.1 }}
+                            whileInView={{ scale: 1 }}
+                            transition={{ duration: 1.2 }}
                           />
-                          <div className="absolute inset-0 bg-black/30" />
+                          <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.4)' }} />
                         </>
                       ) : (
-                        <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                          <div className="text-center">
-                            <point.icon className="w-24 h-24 text-primary-300 mx-auto mb-4" />
-                            <p className="text-gray-500">{point.title}</p>
+                        <div className="w-full h-full flex items-center justify-center" style={{ backgroundColor: '#e5e5e5' }}>
+                          <div className="text-center p-8">
+                            <point.icon className="w-32 h-32 mx-auto mb-4" style={{ color: '#88acc4' }} />
+                            <p className="text-lg" style={{ color: '#525252' }}>{point.title}</p>
                           </div>
                         </div>
                       )}
+
+                      {/* Simple Border Animation */}
+                      <motion.div
+                        className="absolute inset-0 rounded-3xl border-4"
+                        style={{
+                          borderColor: '#417aa1',
+                          opacity: 0.3
+                        }}
+                        animate={{ 
+                          opacity: [0.2, 0.4, 0.2],
+                        }}
+                        transition={{ duration: 3, repeat: Infinity }}
+                      />
 
                       {/* Floating Stat Badge */}
                       <motion.div
-                        className="absolute top-6 right-6 px-4 py-3 rounded-xl bg-white/90 backdrop-blur-sm border border-primary-200 shadow-md flex flex-col items-center"
+                        className="absolute top-8 right-8 bg-white rounded-2xl shadow-2xl border p-6"
+                        style={{ borderColor: '#88acc4' }}
                         animate={{ 
-                          y: [0, -8, 0],
-                          scale: [1, 1.05, 1]
+                          y: [0, -12, 0],
                         }}
-                        transition={{ duration: 3, repeat: Infinity, delay: index * 0.2 }}
+                        transition={{ duration: 4, repeat: Infinity }}
                       >
-                        <div className="text-2xl font-bold mb-1 text-primary-600">
+                        <motion.div 
+                          className="text-5xl md:text-6xl font-black mb-2"
+                          style={{ color: '#115989' }}
+                          animate={{ scale: [1, 1.1, 1] }}
+                          transition={{ duration: 2, repeat: Infinity }}
+                        >
                           {point.stat}
-                        </div>
-                        <div className="text-gray-500 text-xs font-medium text-center">
+                        </motion.div>
+                        <div className="text-sm font-bold text-center uppercase tracking-wide" style={{ color: '#525252' }}>
                           {point.statLabel}
                         </div>
                       </motion.div>
-
-                      {/* Image Border Glow */}
-                      <motion.div
-                        className="absolute inset-0 rounded-2xl border-2 border-primary-300 pointer-events-none"
-                        animate={{ 
-                          boxShadow: [
-                            "0 0 20px rgba(59, 102, 240, 0.3)",
-                            "0 0 40px rgba(59, 102, 240, 0.5)",
-                            "0 0 20px rgba(59, 102, 240, 0.3)"
-                          ]
-                        }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      />
-                    </motion.div>
-
-                    {/* Content Side */}
-                    <motion.div
-                      className={cn(
-                        "relative",
-                        isLeft ? "lg:order-2 lg:pl-8" : "lg:order-1 lg:pr-8"
-                      )}
-                      initial={{ opacity: 0, x: isLeft ? 50 : -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.8, delay: index * 0.15 }}
-                    >
-                      <div className="relative p-8 rounded-2xl border border-gray-200 bg-white shadow-sm">
-                        {/* Icon and Title */}
-                        <div className="flex items-start gap-4 mb-6">
-                          <motion.div
-                            className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary-600"
-                            whileHover={{ rotate: 360, scale: 1.1 }}
-                            transition={{ duration: 0.6 }}
-                          >
-                            <point.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
-                          </motion.div>
-
-                          <div className="flex-1">
-                            <h3 className="font-heading text-2xl font-bold text-gray-900 mb-2">
-                              {point.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed">
-                              {point.description}
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Details List */}
-                        <motion.div
-                          className="space-y-2.5 mt-6"
-                          initial={{ opacity: 0 }}
-                          whileInView={{ opacity: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.5, delay: index * 0.2 }}
-                        >
-                          {point.details.map((detail, idx) => (
-                            <motion.div
-                              key={idx}
-                              className="flex items-center gap-3 text-gray-700 text-sm"
-                              initial={{ opacity: 0, x: -10 }}
-                              whileInView={{ opacity: 1, x: 0 }}
-                              viewport={{ once: true }}
-                              transition={{ delay: idx * 0.05 + index * 0.1 }}
-                            >
-                              <AlertCircle className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                              <span>{detail}</span>
-                            </motion.div>
-                          ))}
-                        </motion.div>
-
-                        {/* Animated Bottom Border */}
-                        <motion.div 
-                          className="absolute bottom-0 left-0 right-0 h-1 bg-primary-500 rounded-full"
-                          initial={{ scaleX: 0 }}
-                          whileInView={{ scaleX: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 0.8, delay: index * 0.2 }}
-                        />
-                      </div>
-                    </motion.div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </motion.div>
-        </div>
-
-        {/* Statistics Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-32 mb-24"
-        >
-          <div className="rounded-3xl overflow-hidden border border-primary-200 bg-white shadow-lg">
-            <div className="p-12 md:p-16">
-              {/* Header */}
-              <div className="text-center mb-12">
-                <motion.div 
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-6"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <TrendingUp className="w-4 h-4 text-primary-600" />
-                  <span className="text-sm font-accent text-primary-700 tracking-wide">
-                    Industry Statistics 2025-26
-                  </span>
-                </motion.div>
-                
-                <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                  The Real Cost of <span className="text-primary-600">Poor Planning</span>
-                </h2>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {floatingStats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    whileHover={{ y: -8 }}
-                    className="group"
-                  >
-                    <div className="text-center p-6 rounded-xl bg-gray-50 border border-gray-200 group-hover:border-primary-300 transition-all">
-                      <motion.div 
-                        className="w-12 h-12 rounded-lg bg-primary-100 flex items-center justify-center mx-auto mb-4"
-                        animate={{ rotate: [0, 360] }}
-                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                      >
-                        <stat.icon className="w-6 h-6 text-primary-600" />
-                      </motion.div>
-                      
-                      <motion.div 
-                        className="text-4xl md:text-5xl font-bold text-primary-600 mb-2"
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        {stat.value}
-                      </motion.div>
-                      
-                      <div className="text-gray-600 text-xs md:text-sm font-medium">
-                        {stat.label}
-                      </div>
                     </div>
                   </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </motion.div>
 
-        {/* Bottom CTA Banner */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8, delay: 1.0 }}
-          className="relative group"
-          whileHover={{ scale: 1.02 }}
-        >
-          <div className="relative rounded-3xl overflow-hidden">
-            {/* Animated Border */}
-            <motion.div 
-              className="absolute inset-0 bg-primary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"
-              animate={{ 
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-              }}
-              transition={{ duration: 3, repeat: Infinity }}
-            />
-            
-            <div className="relative bg-white shadow-xl p-10 md:p-14 rounded-3xl border border-primary-200">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-                {/* Left Content */}
-                <div className="flex-1 text-center md:text-left">
-                  <motion.div 
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-4"
-                    whileHover={{ scale: 1.05 }}
+                  {/* Content Side */}
+                  <motion.div
+                    className={cn(
+                      "lg:col-span-5",
+                      isEven ? "" : "lg:col-start-1 lg:row-start-1"
+                    )}
+                    initial={{ opacity: 0, x: isEven ? 50 : -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
                   >
-                    <Zap className="w-4 h-4 text-primary-600" />
-                    <span className="text-xs font-accent text-primary-700 tracking-wide">
-                      The Solution
+                    <div className="relative">
+                      {/* Number Badge */}
+                      <motion.div 
+                        className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 shadow-lg"
+                        style={{ backgroundColor: '#115989' }}
+                        whileHover={{ rotate: 360, scale: 1.1 }}
+                        transition={{ duration: 0.6 }}
+                      >
+                        <span className="text-white font-black text-2xl">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </motion.div>
+
+                      {/* Icon */}
+                      <motion.div
+                        className="inline-flex p-5 rounded-2xl mb-6 ml-4 shadow-lg"
+                        style={{ backgroundColor: '#417aa1' }}
+                        whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <point.icon className="w-10 h-10 text-white" strokeWidth={2} />
+                      </motion.div>
+
+                      {/* Title */}
+                      <h3 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight" style={{ color: '#171717' }}>
+                        {point.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-xl md:text-2xl mb-8 leading-relaxed font-medium" style={{ color: '#525252' }}>
+                        {point.description}
+                      </p>
+
+                      {/* Details List */}
+                      <div className="space-y-4">
+                        {point.details.map((detail, idx) => (
+                          <motion.div
+                            key={idx}
+                            className="flex items-start gap-4 group/item"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1 }}
+                            whileHover={{ x: 8 }}
+                          >
+                            <motion.div
+                              className="p-2 rounded-lg flex-shrink-0"
+                              style={{ backgroundColor: '#115989' }}
+                              whileHover={{ rotate: 360 }}
+                              transition={{ duration: 0.5 }}
+                            >
+                              <XCircle className="w-5 h-5 text-white" strokeWidth={2.5} />
+                            </motion.div>
+                            <span className="text-lg md:text-xl font-medium pt-1 group-hover/item:text-gray-900 transition-colors" style={{ color: '#404040' }}>
+                              {detail}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      {/* Decorative Line */}
+                      <motion.div 
+                        className="h-2 rounded-full mt-8"
+                        style={{ backgroundColor: '#115989' }}
+                        initial={{ scaleX: 0 }}
+                        whileInView={{ scaleX: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        style={{ transformOrigin: isEven ? 'left' : 'right' }}
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative"
+        >
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+            {/* Solid Color Background - No Gradients */}
+            <div className="absolute inset-0" style={{ backgroundColor: '#115989' }} />
+            
+            {/* Dot Pattern Overlay - Simple dots */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0" style={{ 
+                backgroundImage: `radial-gradient(circle at 2px 2px, white 1.5px, transparent 1.5px)`,
+                backgroundSize: '24px 24px'
+              }} />
+            </div>
+
+            <div className="relative p-12 md:p-20">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                {/* Left Content */}
+                <div className="flex-1 text-center lg:text-left">
+                  <motion.div 
+                    className="inline-flex items-center gap-3 px-6 py-3 rounded-full border-2 mb-8"
+                    style={{ 
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                      borderColor: 'rgba(255, 255, 255, 0.3)'
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    animate={{ 
+                      y: [0, -5, 0],
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <AlertCircle className="w-5 h-5 text-white" />
+                    <span className="text-sm font-accent text-white tracking-wider uppercase font-bold">
+                      The Solution Awaits
                     </span>
                   </motion.div>
                   
-                  <h3 className="font-heading text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                    Interior design is not just about <span className="text-primary-600">looks</span>
+                  <h3 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-tight">
+                    Ready to Plan It Right?
                   </h3>
                   
-                  <p className="text-gray-600 text-lg">
-                    It's about planning it{" "}
-                    <motion.span 
-                      className="text-primary-600 font-semibold inline-block"
-                      animate={{ scale: [1, 1.05, 1] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
-                      right from the beginning
-                    </motion.span>
+                  <p className="text-xl md:text-2xl text-white/90 font-medium leading-relaxed">
+                    Stop wasting time and money.{" "}
+                    <span className="font-black" style={{ color: '#88acc4' }}>
+                      Start with proper planning today.
+                    </span>
                   </p>
                 </div>
 
@@ -588,27 +459,53 @@ export default function AgitationSection() {
                   onClick={() => openEnquiry()}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex-shrink-0 group/btn relative px-8 py-4 rounded-xl bg-primary-600 hover:bg-primary-700 transition-all shadow-md overflow-hidden cursor-pointer"
+                  className="group/btn relative px-12 py-6 rounded-2xl bg-white hover:bg-gray-50 transition-all shadow-2xl overflow-hidden cursor-pointer"
                 >
-                  <span className="relative z-10 flex items-center gap-2 text-white font-bold">
-                    Start Your Project
+                  {/* Simple Shine Effect */}
+                  <motion.div
+                    className="absolute inset-0"
+                    style={{ backgroundColor: '#e5e5e5', opacity: 0 }}
+                    whileHover={{ opacity: 0.1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                  
+                  <span className="relative z-10 flex items-center gap-3 font-black text-xl" style={{ color: '#115989' }}>
+                    Start Your Project Now
                     <motion.div
                       animate={{ x: [0, 5, 0] }}
                       transition={{ duration: 1, repeat: Infinity }}
                     >
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-6 h-6" strokeWidth={3} />
                     </motion.div>
                   </span>
                 </motion.button>
               </div>
             </div>
+
+            {/* Floating Dots - Simple elements */}
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-white rounded-full"
+                style={{
+                  left: `${10 + (i % 4) * 20}%`,
+                  top: `${20 + Math.floor(i / 4) * 50}%`,
+                  opacity: 0.3
+                }}
+                animate={{ 
+                  y: [0, -15, 0],
+                  opacity: [0.2, 0.5, 0.2],
+                }}
+                transition={{
+                  duration: 3 + (i * 0.5),
+                  repeat: Infinity,
+                  delay: i * 0.4,
+                }}
+              />
+            ))}
           </div>
         </motion.div>
       </div>
-
-      {/* Decorative Blurs */}
-      <div className="absolute left-0 top-1/2 -translate-x-1/2 w-96 h-96 bg-primary-100 rounded-full blur-[128px] opacity-50 pointer-events-none" />
-      <div className="absolute right-0 bottom-1/4 translate-x-1/2 w-96 h-96 bg-primary-50 rounded-full blur-[128px] opacity-50 pointer-events-none" />
     </section>
   );
 }

@@ -17,8 +17,6 @@ const highlights = [
 export default function AboutPreview() {
   return (
     <section className="py-24 bg-white relative overflow-hidden" aria-label="About Buildcare">
-      {/* Background accents */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-100 rounded-full blur-3xl opacity-50" />
       
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">

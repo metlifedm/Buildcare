@@ -4,6 +4,7 @@ import SchemaMarkup from '@seo/SchemaMarkup';
 import PageHero from '@components/shared/PageHero';
 import OurStorySection from '@sections/about/OurStory';
 import CTABanner from '@components/ui/CTABanner';
+import WhoWeAre from '../../sections/about/WhoWeAre';
 
 export default function OurStory() {
   return (
@@ -32,6 +33,8 @@ export default function OurStory() {
         ]}
         backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
       />
+
+      <WhoWeAre />
 
       <OurStorySection />
       

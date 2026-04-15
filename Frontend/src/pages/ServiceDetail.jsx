@@ -346,7 +346,7 @@ export default function ServiceDetail() {
       />
 
       {/* Hero Section with Parallax */}
-      <section ref={sectionRef} className="relative flex items-end overflow-hidden bg-gray-900 py-20">
+      <section ref={sectionRef} className="relative flex items-end overflow-hidden bg-dark-100 py-20">
         <div className="absolute inset-0">
           <img
             src={extended.heroImage || service.image}
@@ -354,9 +354,8 @@ export default function ServiceDetail() {
             className="parallax-img w-full h-[120%] object-cover"
             loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-gray-900/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/80 to-transparent" />
         </div>
+        <div className="absolute inset-0 bg-dark-800/50" />
 
         <div className="container-custom relative z-10 pb-16">
           {/* Breadcrumb */}
@@ -365,7 +364,7 @@ export default function ServiceDetail() {
             <span className="text-gray-50">/</span>
             <Link to="/services" className="text-gray-50 hover:text-primary-400 transition-colors">Services</Link>
             <span className="text-gray-50">/</span>
-            <span className="text-primary-400">{service.title}</span>
+            <span className="text-dark-300">{service.title}</span>
           </nav>
 
           <motion.div
@@ -374,25 +373,17 @@ export default function ServiceDetail() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-4 mb-4">
-              <div className="w-16 h-16 rounded-2xl bg-primary-500/15 backdrop-blur-sm flex items-center justify-center border border-primary-500/20">
-                <Icon className="w-8 h-8 text-primary-400" />
+              <div className="w-16 h-16 rounded-2xl bg-primary-500 backdrop-blur-sm flex items-center justify-center border border-primary-500/20">
+                <Icon className="w-8 h-8 text-dark-100" />
               </div>
               <div>
-                <span className="text-primary-400 text-sm font-accent tracking-wider uppercase">Service</span>
+                <span className="text-dark-100 text-sm font-accent tracking-wider uppercase bg-primary-500 py-1 px-3 rounded-lg">Service</span>
                 <h1 className="font-heading text-3xl md:text-5xl font-bold text-white!">{service.title}</h1>
               </div>
             </div>
             <p className="text-gray-300 text-lg max-w-2xl mt-4">{service.shortDescription}</p>
 
             <div className="flex flex-wrap items-center gap-6 mt-8">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/10">
-                <IndianRupee className="w-4 h-4 text-primary-400" />
-                <span className="text-white text-sm font-medium">{service.priceRange}</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/10">
-                <Clock className="w-4 h-4 text-primary-400" />
-                <span className="text-white text-sm font-medium">{service.duration}</span>
-              </div>
               <Button
                 variant="primary"
                 size="lg"
@@ -400,7 +391,7 @@ export default function ServiceDetail() {
                 iconPosition="left"
                 onClick={() => openEnquiry(service.title)}
               >
-                Enquiry for {service.title}
+                Consultation for {service.title}
               </Button>
             </div>
           </motion.div>
@@ -666,8 +657,8 @@ export default function ServiceDetail() {
                       </div>
                       <div className="p-6">
                         <div className="flex items-center gap-3 mb-3">
-                          <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center">
-                            <RsIcon className="w-5 h-5 text-primary-600" />
+                          <div className="w-10 h-10 rounded-lg bg-primary-500 flex items-center justify-center">
+                            <RsIcon className="w-5 h-5 text-dark-50" />
                           </div>
                           <h3 className="font-heading text-lg font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
                             {rs.title}

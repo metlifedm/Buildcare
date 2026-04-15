@@ -225,7 +225,7 @@ export default function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center text-gray-600 hover:text-primary-600 hover:bg-primary-50 hover:-translate-y-1 transition-all duration-300"
+                      className="w-11 h-11 rounded-xl bg-gray-100 flex items-center justify-center text-primary-600 hover:bg-primary-400 hover:text-dark-100 hover:-translate-y-1 transition-all duration-300"
                       aria-label={`Follow Buildcare on ${social.label}`}
                     >
                       <social.icon className="w-5 h-5" />

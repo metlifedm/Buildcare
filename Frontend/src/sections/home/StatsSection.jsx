@@ -1,23 +1,43 @@
-// src/sections/home/StatsSection.jsx
-import { useEffect, useRef, useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Briefcase, Users, Award, Palette } from 'lucide-react';
+// src/sections/home/StatsMinimal.jsx
+
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 
 const stats = [
-  { icon: Briefcase, value: 500, suffix: '+', label: 'Projects Completed' },
-  { icon: Users, value: 350, suffix: '+', label: 'Happy Clients' },
-  { icon: Award, value: 12, suffix: '+', label: 'Years Experience' },
-  { icon: Palette, value: 45, suffix: '+', label: 'Expert Designers' },
+  {
+    value: 4500,
+    suffix: "+",
+    title: "Projects Completed",
+    desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
+  },
+  {
+    value: 42,
+    suffix: "+",
+    title: "Design Experts",
+    desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
+  },
+  {
+    value: 98,
+    suffix: "%",
+    title: "Client Satisfaction",
+    desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
+  },
+  {
+    value: 25,
+    suffix: "+",
+    title: "Years Experience",
+    desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
+  },
 ];
 
-function AnimatedCounter({ value, suffix, inView }) {
+function Counter({ value, inView }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!inView) return;
-    
+
     let start = 0;
-    const duration = 2000;
+    const duration = 1500;
     const increment = value / (duration / 16);
 
     const timer = setInterval(() => {
@@ -33,47 +53,53 @@ function AnimatedCounter({ value, suffix, inView }) {
     return () => clearInterval(timer);
   }, [value, inView]);
 
-  return (
-    <span className="font-heading text-4xl md:text-5xl font-bold text-primary-600">
-      {count}{suffix}
-    </span>
-  );
+  return count.toLocaleString();
 }
 
 export default function StatsSection() {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: '-100px' });
+  const inView = useInView(ref, { once: true });
 
   return (
     <section
       ref={ref}
-      className="relative py-20 bg-white overflow-hidden border-y border-gray-100"
-      aria-label="Company statistics"
+      className="bg-dark-100 py-16 md:py-20 border-y border-dark-200"
     >
-      {/* Background decoration */}
-      <div className="absolute inset-0 opacity-[0.03]" style={{
-        backgroundImage: 'radial-gradient(circle at 25px 25px, rgba(59,102,240,0.5) 2px, transparent 0)',
-        backgroundSize: '50px 50px',
-      }} />
-
-      <div className="container-custom">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              className="text-center group"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+      <div className="max-w-7xl mx-auto px-4">
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+          
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className={`px-6 py-8 ${
+                i !== stats.length - 1
+                  ? "border-b sm:border-b-0 sm:border-r border-dashed border-dark-300"
+                  : ""
+              }`}
             >
-              <div className="w-16 h-16 rounded-2xl bg-gray-100 mx-auto mb-4 flex items-center justify-center group-hover:shadow-md transition-all duration-300 group-hover:bg-primary-50">
-                <stat.icon className="w-7 h-7 text-primary-600" />
+              {/* NUMBER */}
+              <div className="flex items-start gap-1">
+                <h2 className="text-4xl md:text-5xl font-semibold text-dark-900">
+                  <Counter value={stat.value} inView={inView} />
+                </h2>
+                <span className="text-primary-500 text-2xl md:text-3xl font-semibold mt-1">
+                  {stat.suffix}
+                </span>
               </div>
-              <AnimatedCounter value={stat.value} suffix={stat.suffix} inView={inView} />
-              <p className="text-gray-600 text-sm mt-2 font-accent">{stat.label}</p>
-            </motion.div>
+
+              {/* TITLE */}
+              <h3 className="mt-6 text-lg font-semibold text-primary-400!">
+                {stat.title}
+              </h3>
+
+              {/* DESC */}
+              <p className="mt-2 text-sm text-dark-500 leading-relaxed max-w-xs">
+                {stat.desc}
+              </p>
+            </div>
           ))}
+
         </div>
       </div>
     </section>

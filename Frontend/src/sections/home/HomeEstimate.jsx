@@ -146,9 +146,6 @@ export default function HomeEstimate() {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden" aria-label="Free Estimate">
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-50 rounded-full blur-3xl opacity-60" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gray-100 rounded-full blur-3xl opacity-50" />
 
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-stretch">
@@ -211,8 +208,8 @@ export default function HomeEstimate() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
                   >
-                    <div className="w-10 h-10 rounded-lg bg-primary-100 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-200 transition-colors">
-                      <item.icon className="w-5 h-5 text-primary-600" />
+                    <div className="w-10 h-10 rounded-lg bg-primary-400 flex items-center justify-center flex-shrink-0 group-hover:bg-primary-700 transition-colors">
+                      <item.icon className="w-5 h-5 text-dark-50" />
                     </div>
                     <div>
                       <p className="text-xs text-gray-500 font-accent">{item.label}</p>
@@ -271,10 +268,10 @@ export default function HomeEstimate() {
           >
             {/* Form Header */}
             <div className="bg-primary-600 px-6 py-6 text-center flex-shrink-0">
-              <h2 className="font-heading text-2xl font-bold text-white mb-1">
+              <h2 className="font-heading text-2xl font-bold text-white! mb-1">
                 Get Free Estimate
               </h2>
-              <p className="text-primary-100 text-sm">
+              <p className="text-dark-100 text-sm">
                 Fill the form & get response within 15 minutes
               </p>
             </div>

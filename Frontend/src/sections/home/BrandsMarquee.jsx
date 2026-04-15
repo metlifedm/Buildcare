@@ -4,7 +4,7 @@ import { MarqueeText } from '@components/ui/Marquee';
 export default function BrandsMarquee() {
   const texts = [
     'Interior Design',
-    'Architecture',
+    'Commercial Design',
     'Modular Kitchen',
     'False Ceiling',
     'Renovation',

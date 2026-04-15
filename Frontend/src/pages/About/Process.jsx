@@ -2,12 +2,13 @@
 import SEOHead from '@seo/SEOHead';
 import SchemaMarkup from '@seo/SchemaMarkup';
 import { pageSEO } from '@seo/seoConfig';
-import ProcessHero from '@sections/process/ProcessHero';
+import ProcessHero from '../../components/shared/PageHero';
 import WhyProcessMatters from '@sections/process/WhyProcessMatters';
 import VisualTimeline from '@sections/process/VisualTimeline';
 import TimelinePayment from '@sections/process/TimelinePayment';
 import CommunicationFAQ from '@sections/process/CommunicationFAQ';
 import CTABanner from '@components/ui/CTABanner';
+import PageHero from '../../components/shared/PageHero';
 
 export default function Process() {
   return (
@@ -34,7 +35,16 @@ export default function Process() {
         }}
       />
 
-      <ProcessHero />
+      <PageHero
+        title="A Clear, Step-by-Step Interior Process You Can Trust"
+        subtitle="How Its Works"
+        description="From planning to execution, every stage is structured so you stay in control. No surprises, no hidden costs—just exceptional results."
+        breadcrumbs={[
+          { label: 'About Us', path: '/about' },
+          { label: 'How Its Works' }
+        ]}
+        backgroundImage="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80"
+      />
       <WhyProcessMatters />
       <VisualTimeline />
       <TimelinePayment />
