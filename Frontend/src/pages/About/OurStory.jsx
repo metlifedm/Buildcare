@@ -26,7 +26,7 @@ export default function OurStory() {
       <PageHero
         title="Our Story"
         subtitle="Who We Are"
-        description="We are a passionate team of architects, designers, and craftsmen dedicated to creating extraordinary interior spaces that inspire and transform lives."
+        description="We are a passionate team of interior designers, architect craftmen, engineers, civil engineers and structure engineers dedicated to creating extraordinary interior spaces that inspire and transform lives."
         breadcrumbs={[
           { label: 'About Us', path: '/about' },
           { label: 'Our Story' }

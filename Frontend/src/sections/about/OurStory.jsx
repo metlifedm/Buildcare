@@ -44,7 +44,6 @@ export default function OurStory() {
 
   return (
     <section className="py-24 bg-white relative overflow-hidden" aria-label="Our story">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-100 rounded-full blur-3xl opacity-30" />
 
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
@@ -84,7 +83,7 @@ export default function OurStory() {
               <div className="space-y-4">
                 <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
-                    src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&q=80"
+                    src="https://res.cloudinary.com/doo2og4l3/image/upload/v1776267096/photo-1600210492486-724fe5c67fb0_i9vnaz.jpg"
                     alt="Buildcare luxury interior design project"
                     className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy"
@@ -93,7 +92,7 @@ export default function OurStory() {
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
-                    src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=80"
+                    src="https://res.cloudinary.com/doo2og4l3/image/upload/v1776266878/pexels-houzlook-7516077_ldy6qv.jpg"
                     alt="Modern modular kitchen by Buildcare"
                     className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy"
@@ -104,7 +103,7 @@ export default function OurStory() {
               <div className="space-y-4 pt-8">
                 <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
-                    src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80"
+                    src="https://res.cloudinary.com/doo2og4l3/image/upload/v1776267122/photo-1600607687939-ce8a6c25118c_jss1lb.jpg"
                     alt="Premium living room interior"
                     className="w-full h-72 object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy"
@@ -113,7 +112,7 @@ export default function OurStory() {
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-md">
                   <img
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80"
+                    src="https://res.cloudinary.com/doo2og4l3/image/upload/v1776267143/photo-1497366216548-37526070297c_hxkvpd.jpg"
                     alt="Modern commercial office interior"
                     className="w-full h-56 object-cover hover:scale-105 transition-transform duration-500"
                     loading="lazy"

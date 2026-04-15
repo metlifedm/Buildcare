@@ -1,22 +1,23 @@
 // src/components/ui/Marquee.jsx
-import { motion } from 'framer-motion';
-import { cn } from '@utils/helpers';
+
+import { motion } from "framer-motion";
+import { cn } from "@utils/helpers";
 
 export default function Marquee({
   children,
   speed = 30,
-  direction = 'left',
+  direction = "left",
   className,
   pauseOnHover = true,
 }) {
-  const directionValue = direction === 'left' ? '-50%' : '0%';
-  const initialValue = direction === 'left' ? '0%' : '-50%';
+  const directionValue = direction === "left" ? "-50%" : "0%";
+  const initialValue = direction === "left" ? "0%" : "-50%";
 
   return (
     <div
       className={cn(
-        'overflow-hidden whitespace-nowrap',
-        pauseOnHover && 'hover:[&>div]:pause-animation',
+        "overflow-hidden whitespace-nowrap border-y border-dark-200 bg-dark-100",
+        pauseOnHover && "hover:[&>div]:pause-animation",
         className
       )}
     >
@@ -27,26 +28,36 @@ export default function Marquee({
           x: {
             duration: speed,
             repeat: Infinity,
-            ease: 'linear',
+            ease: "linear",
           },
         }}
       >
-        <div className="flex items-center gap-8 pr-8">{children}</div>
-        <div className="flex items-center gap-8 pr-8" aria-hidden="true">{children}</div>
+        <div className="flex items-center gap-10 pr-10">
+          {children}
+        </div>
+        <div className="flex items-center gap-10 pr-10" aria-hidden="true">
+          {children}
+        </div>
       </motion.div>
     </div>
   );
 }
 
+/* 🔥 Updated Text Style */
 export function MarqueeText({ texts, className, speed = 25 }) {
   return (
-    <Marquee speed={speed} className={cn('py-6', className)}>
+    <Marquee speed={speed} className={cn("py-3", className)}>
       {texts.map((text, i) => (
-        <span key={i} className="flex items-center gap-8">
-          <span className="font-heading text-4xl md:text-6xl font-bold uppercase tracking-wider text-primary-200">
+        <span key={i} className="flex items-center gap-6">
+          
+          {/* TEXT */}
+          <span className="text-xs sm:text-sm md:text-base uppercase tracking-[0.3em] text-dark-500 font-medium">
             {text}
           </span>
-          <span className="w-3 h-3 rounded-full bg-primary-300 flex-shrink-0" />
+
+          {/* DOT */}
+          <span className="w-1.5 h-1.5 rounded-full bg-primary-400 flex-shrink-0" />
+
         </span>
       ))}
     </Marquee>
