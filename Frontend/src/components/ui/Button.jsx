@@ -26,7 +26,7 @@ const Button = forwardRef(({
 
   const variants = {
     primary: `
-      bg-primary-600 
+      bg-primary-500 
       text-white font-bold
       hover:bg-primary-700 
       active:scale-[0.98]

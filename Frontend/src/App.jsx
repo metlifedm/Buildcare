@@ -13,8 +13,6 @@ const WhyChooseUs = lazy(() => import('@pages/About/WhyChooseUs'));
 const Testimonials = lazy(() => import('@pages/About/Testimonials'));
 const Services = lazy(() => import('@pages/Services'));
 const ServiceDetail = lazy(() => import('@pages/ServiceDetail'));
-const Portfolio = lazy(() => import('@pages/Portfolio'));
-const Clients = lazy(() => import('@pages/Clients'));
 const Blog = lazy(() => import('@pages/Blog'));
 const BlogPost = lazy(() => import('@pages/BlogPost'));
 const FAQ = lazy(() => import('@pages/FAQ'));
@@ -49,8 +47,6 @@ export default function App() {
             <Route path="/about/testimonials" element={<Testimonials />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/:slug" element={<ServiceDetail />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/clients" element={<Clients />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/faq" element={<FAQ />} />

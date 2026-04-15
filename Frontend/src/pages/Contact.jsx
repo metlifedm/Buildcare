@@ -23,8 +23,8 @@ const contactInfo = [
     details: [COMPANY.phone],
     action: `tel:${COMPANY.phone}`,
     actionLabel: 'Call Now',
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50',
+    color: 'text-primary-600',
+    bgColor: 'bg-primary-50',
   },
   {
     icon: Mail,
@@ -247,8 +247,8 @@ export default function Contact() {
               className="group flex flex-col items-center gap-3 p-6 rounded-2xl hover:bg-white transition-all"
               whileHover={{ y: -5 }}
             >
-              <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                <Phone className="w-8 h-8 text-blue-600" />
+              <div className="w-16 h-16 rounded-2xl bg-primary-50 flex items-center justify-center group-hover:bg-primary-100 transition-colors">
+                <Phone className="w-8 h-8 text-primary-600" />
               </div>
               <div>
                 <p className="text-gray-500 text-sm">Call Directly</p>

@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail, ChevronRight, Send } from 'lucide-react';
+import { FaInstagram, FaFacebookF, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 import { cn } from '@utils/helpers';
 import { COMPANY } from '@utils/constants';
 import Button from '@components/ui/Button';
@@ -48,22 +49,71 @@ export default function Navbar() {
   return (
     <>
       {/* Top Bar */}
-      <div className={cn(
-        'hidden lg:block bg-gray-50 border-b border-gray-200 transition-all duration-300',
-        isScrolled && 'hidden'
-      )}>
+      <div
+        className={cn(
+          "hidden lg:block bg-gray-100 border-b border-gray-200 transition-all duration-300",
+          isScrolled && "hidden"
+        )}
+      >
         <div className="container-custom py-2 flex items-center justify-between text-sm">
-          <div className="flex items-center gap-6 text-gray-600">
-            <a href={`tel:${COMPANY.phone}`} className="flex items-center gap-2 hover:text-primary-500 transition-colors">
+
+          {/* Left Side */}
+          <div className="flex items-center gap-6">
+            <a
+              href={`tel:${COMPANY.phone}`}
+              className="flex items-center gap-2 text-primary-500 transition-colors hover:text-primary-700"
+            >
               <Phone className="w-3 h-3" /> {COMPANY.phone}
             </a>
-            <a href={`mailto:${COMPANY.email}`} className="flex items-center gap-2 hover:text-primary-500 transition-colors">
+
+            <a
+              href={`mailto:${COMPANY.email}`}
+              className="flex items-center gap-2 text-primary-500 transition-colors hover:text-primary-700"
+            >
               <Mail className="w-3 h-3" /> {COMPANY.email}
             </a>
           </div>
-          <p className="text-gray-400 text-xs tracking-wide">
-            {COMPANY.workingHours} | Free Consultation Available
-          </p>
+
+          {/* Right Side - Social Icons */}
+          <div className="flex items-center gap-4">
+
+            <a
+              href={COMPANY.social.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-500 hover:text-pink-500 transition-colors"
+            >
+              <FaInstagram className="w-4 h-4" />
+            </a>
+
+            <a
+              href={COMPANY.social.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-500 hover:text-blue-600 transition-colors"
+            >
+              <FaFacebookF className="w-4 h-4" />
+            </a>
+
+            <a
+              href={COMPANY.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-500 hover:text-blue-500 transition-colors"
+            >
+              <FaLinkedinIn className="w-4 h-4" />
+            </a>
+
+            <a
+              href={COMPANY.social.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary-500 hover:text-black transition-colors"
+            >
+              <FaXTwitter className="w-4 h-4" />
+            </a>
+
+          </div>
         </div>
       </div>
 
