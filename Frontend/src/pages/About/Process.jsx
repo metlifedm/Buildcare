@@ -2,10 +2,8 @@
 import SEOHead from '@seo/SEOHead';
 import SchemaMarkup from '@seo/SchemaMarkup';
 import { pageSEO } from '@seo/seoConfig';
-import ProcessHero from '../../components/shared/PageHero';
 import WhyProcessMatters from '@sections/process/WhyProcessMatters';
 import VisualTimeline from '@sections/process/VisualTimeline';
-import TimelinePayment from '@sections/process/TimelinePayment';
 import CommunicationFAQ from '@sections/process/CommunicationFAQ';
 import CTABanner from '@components/ui/CTABanner';
 import PageHero from '../../components/shared/PageHero';
@@ -47,7 +45,6 @@ export default function Process() {
       />
       <WhyProcessMatters />
       <VisualTimeline />
-      <TimelinePayment />
       <CommunicationFAQ />
       
       <CTABanner

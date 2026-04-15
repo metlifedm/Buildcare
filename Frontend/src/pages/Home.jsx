@@ -13,6 +13,7 @@ import BrandsMarquee from '@sections/home/BrandsMarquee';
 import ParallaxCTA from '@sections/home/ParallaxCTA';
 import AgitationSection from '@sections/home/AgitationSection';
 import HomeEstimate from '@sections/home/HomeEstimate';
+import HeroSplit from '../sections/home/HeroSplit';
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <BrandsMarquee />
       <AboutPreview />
       <ServicesPreview />
+      <HeroSplit />
       <AgitationSection />
       {/* <ParallaxCTA /> */}
       <PortfolioPreview />

@@ -1,109 +1,110 @@
 // src/sections/process/WhyProcessMatters.jsx
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef } from 'react';
-import { AlertTriangle, TrendingUp, Calendar, XCircle, DollarSign, Clock } from 'lucide-react';
 
-const problems = [
-  { 
-    icon: DollarSign, 
-    text: "Budget Overruns", 
-    stat: "+45%",
-    description: "Projects without clear process exceed budget by 45% on average"
+import { motion } from "framer-motion";
+import { AlertTriangle } from "lucide-react";
+
+const steps = [
+  {
+    number: "01",
+    title: "Discovery Meeting",
+    desc: "Understanding your needs, budget and vision clearly.",
   },
-  { 
-    icon: Clock, 
-    text: "Project Delays", 
-    stat: "2-3x",
-    description: "Delays are 2-3x more likely without structured planning"
+  {
+    number: "02",
+    title: "Concept Creation",
+    desc: "Design ideas are developed into clear concepts.",
   },
-  { 
-    icon: XCircle, 
-    text: "Design Mismatches", 
-    stat: "68%",
-    description: "68% of clients report dissatisfaction without clear process"
-  }
+  {
+    number: "03",
+    title: "Design Approval",
+    desc: "Finalizing layouts, materials and aesthetics.",
+  },
+  {
+    number: "04",
+    title: "Project Delivery",
+    desc: "Execution with precision and timely completion.",
+  },
 ];
 
 export default function WhyProcessMatters() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0.3, 1]);
-
   return (
-    <section ref={ref} className="py-24 bg-gray-50 relative overflow-hidden">
-      <div className="container-custom relative z-10">
+    <section className="py-20 md:py-24 bg-dark-50">
+
+      <div className="max-w-7xl mx-auto px-4">
+
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6"
-          >
-            <AlertTriangle className="w-4 h-4 text-primary-400" />
-            <span className="text-sm font-medium text-primary-400">Critical Insight</span>
-          </motion.div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-6">
+            <AlertTriangle className="w-4 h-4 text-primary-500" />
+            <span className="text-sm text-primary-500 font-medium">
+              Our Process
+            </span>
+          </div>
 
-          <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-white">
-            Most Problems Happen Due to{' '}
-            <span className="text-primary-500">Poor Planning</span>
+          <h2 className="text-3xl md:text-5xl font-semibold text-dark-900 mb-4">
+            A Clear Process That <br />
+            <span className="text-primary-500">Guarantees Results</span>
           </h2>
-          
-          <p className="text-xl text-gray-600">
-            Budget overruns, delays, and design mismatches happen when there's no clear process.
+
+          <p className="text-dark-500 text-lg">
+            We follow a structured approach to eliminate delays, cost overruns and design issues.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {problems.map((problem, index) => (
-            <motion.div
-              key={problem.text}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.5, type: "spring", stiffness: 100 }}
-              whileHover={{ y: -10 }}
-              className="group relative overflow-hidden rounded-2xl bg-gray-50 p-8 border border-gray-700 hover:border-primary-500 transition-all duration-500"
-            >
-              
-              <div className="relative z-10">
-                <div className="w-16 h-16 rounded-2xl bg-primary-500 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <problem.icon className="w-8 h-8 text-white" />
-                </div>
-                
-                <div className="text-4xl font-bold text-primary-500 mb-2">{problem.stat}</div>
-                <h3 className="text-xl font-semibold mb-3 text-white">{problem.text}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{problem.description}</p>
-              </div>
+        {/* TOP STEPS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
 
-              <motion.div
-                className="absolute bottom-0 left-0 right-0 h-1 bg-primary-600"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 + 0.3, duration: 0.6 }}
-              />
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              className="relative"
+            >
+              {/* BIG NUMBER */}
+              <span className="text-6xl font-bold text-dark-200 absolute -top-6 left-0 opacity-40">
+                {step.number}
+              </span>
+
+              <div className="pt-10">
+                <h3 className="text-lg font-semibold text-dark-900 mb-2">
+                  {step.title}
+                </h3>
+
+                <p className="text-sm text-dark-500 leading-relaxed">
+                  {step.desc}
+                </p>
+
+                {/* LINE */}
+                <div className="mt-4 h-[1px] bg-dark-200 w-full" />
+              </div>
             </motion.div>
           ))}
+
         </div>
 
+        {/* IMAGE SECTION */}
         <motion.div
-          style={{ opacity }}
-          className="mt-12 text-center"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="relative overflow-hidden rounded-2xl"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gray-50 border border-gray-700">
-            <div className="w-2 h-2 rounded-full bg-primary-500 animate-pulse" />
-            <span className="text-sm text-gray-600">Without a structured process, these risks increase significantly</span>
-          </div>
+          <img
+            src="https://res.cloudinary.com/doo2og4l3/image/upload/v1776269611/2151008741_q3kybz.jpg"
+            alt="interior"
+            className="w-full h-[300px] md:h-[450px] lg:h-[550px] object-cover"
+          />
+
+          {/* subtle overlay */}
+          <div className="absolute inset-0 bg-dark-900/10" />
         </motion.div>
+
       </div>
     </section>
   );

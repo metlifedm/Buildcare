@@ -1,147 +1,187 @@
-// src/sections/home/HeroSection.jsx
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { Send, Play, ChevronDown } from 'lucide-react';
-import Button from '@components/ui/Button';
-import { useEnquiry } from '@hooks/useEnquiry';
-import { COMPANY } from '@utils/constants';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const slides = [
+  {
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776269611/2151008741_q3kybz.jpg",
+    title: "Elegant Interior",
+    desc: "Architecture shapes not just spaces, but how we live and feel.",
+    button: "View Project",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+    title: "Modern Living",
+    desc: "Design that blends comfort, style, and functionality.",
+    button: "Explore Design",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    title: "Luxury Spaces",
+    desc: "Premium interiors crafted with perfection.",
+    button: "See Portfolio",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+    title: "Creative Concepts",
+    desc: "Turning imagination into beautiful spaces.",
+    button: "Discover More",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    title: "Smart Interiors",
+    desc: "Innovation meets modern lifestyle.",
+    button: "Get Started",
+  },
+];
 
 export default function HeroSection() {
-  const videoRef = useRef(null);
-  const { openEnquiry } = useEnquiry();
+  const [current, setCurrent] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
-  const scrollToNext = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  // Auto-slide logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const handleNext = () => {
+    if (isAnimating) return;
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
+
+  const handlePrev = () => {
+    if (isAnimating) return;
+    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const activeSlide = slides[current];
+
+  // Professional Wipe Animation Variants
+  const wipeVariants = {
+    initial: { clipPath: "inset(0 0 0 100%)" },
+    animate: { clipPath: "inset(0 0 0 0%)" },
+    exit: { clipPath: "inset(0 100% 0 0%)" },
   };
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center overflow-hidden" role="banner" aria-label="Hero section">
-      {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          ref={videoRef}
-          autoPlay muted loop playsInline preload="auto"
-          className="w-full h-full object-cover"
-          poster="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80"
+    <section className="relative h-screen w-full bg-[#0a0a0a] overflow-hidden">
+      
+      {/* BACKGROUND LAYER (Current Image) */}
+      <AnimatePresence mode="popLayout" onExitComplete={() => setIsAnimating(false)}>
+        <motion.div
+          key={current}
+          variants={wipeVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          onAnimationStart={() => setIsAnimating(true)}
+          transition={{ duration: 1.2, ease: [0.77, 0, 0.175, 1] }} // Professional Cubic Bezier
+          className="absolute inset-0 z-10"
         >
-          <source src="https://cdn.coverr.co/videos/coverr-interior-of-a-modern-house-1584/1080p.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30" />
-      </div>
-
-      {/* Decorative particles */}
-      <div className="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 rounded-full bg-primary-400/50"
-            style={{ left: `${20 + i * 15}%`, top: `${30 + i * 10}%` }}
-            animate={{ y: [0, -30, 0], opacity: [0.3, 0.8, 0.3] }}
-            transition={{ duration: 3 + i, repeat: Infinity, delay: i * 0.5 }}
+          {/* Image with subtle Ken Burns effect */}
+          <motion.img
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 1.5 }}
+            src={activeSlide.image}
+            alt={activeSlide.title}
+            className="h-full w-full object-cover"
           />
-        ))}
-      </div>
+          
+          {/* Professional Overlay */}
+          <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/20 to-transparent" />
+        </motion.div>
+      </AnimatePresence>
 
-      {/* Content */}
-      <div className="container-custom relative z-10">
-        <div className="max-w-3xl">
-          <motion.div
-            className="flex items-center gap-3 mb-6"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+      {/* STATIC CONTENT LAYER (Always on top) */}
+      <div className="relative z-20 h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-center pointer-events-none">
+        <div className="max-w-3xl overflow-hidden">
+          <motion.span
+            key={`subtitle-${current}`}
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="inline-block text-primary-400 bg-dark-50/70 py-1 px-3 rounded-xl font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-4"
           >
-            <div className="w-12 h-[2px] bg-primary-500" />
-            <span className="text-primary-400 font-accent font-medium text-sm tracking-[0.2em] uppercase">
-              {COMPANY.tagline}
-            </span>
-          </motion.div>
-
+            Premium Architecture
+          </motion.span>
+          
           <motion.h2
-            className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            key={`title-${current}`}
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            transition={{ delay: 0.6, duration: 1, ease: "circOut" }}
+            className="text-white! text-5xl md:text-8xl font-light tracking-tight mb-6 leading-[1.1]"
           >
-            <span className="text-white">Interior Design Without </span> 
-            <span className="text-primary-400">Cost Surprises, </span> 
-            <span className="text-white">Delays or Regret</span>
+            {activeSlide.title.split(' ')[0]} <br />
+            <span className="font-bold">{activeSlide.title.split(' ')[1]}</span>
           </motion.h2>
 
           <motion.p
-            className="text-lg md:text-xl text-gray-200 max-w-xl leading-relaxed mb-10"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            We guide you step-by-step with a structured process so you stay in control of your budget, design and execution from day one.
-          </motion.p>
-
-          {/* CTA Buttons - Enquiry Now + View Portfolio */}
-          <motion.div
-            className="flex flex-col sm:flex-row items-start gap-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            <Button
-              variant="primary"
-              size="lg"
-              icon={Send}
-              iconPosition="left"
-              onClick={() => openEnquiry()}
-            >
-              Enquiry Now
-            </Button>
-            <Link to="/portfolio">
-              <Button variant="secondary" size="lg" icon={Play} iconPosition="left">
-                View Portfolio
-              </Button>
-            </Link>
-          </motion.div>
-
-          {/* Stats inline */}
-          <motion.div
-            className="flex items-center gap-8 mt-12 pt-8 border-t border-white/10"
+            key={`desc-${current}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.2 }}
+            transition={{ delay: 1, duration: 1 }}
+            className="text-white/60 text-lg md:text-xl mb-10 max-w-lg leading-relaxed pointer-events-auto"
           >
-            <div>
-              <p className="font-heading text-lg md:text-xl font-bold text-primary-400">Response within 10–15 minutes</p>
-            </div>
-            <div>
-              <p className="text-white/40 text-xl">|</p>
-            </div>
-            <div>
-              <p className="font-heading text-lg md:text-xl font-bold text-primary-400">Expert guidance</p>
-            </div>
+            {activeSlide.desc}
+          </motion.p>
+
+          <motion.div
+            key={`btn-${current}`}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+            className="pointer-events-auto"
+          >
+            <button className="group relative cursor-pointer px-10 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest overflow-hidden transition-all">
+              <span className="relative z-10">{activeSlide.button}</span>
+              <div className="absolute inset-0 bg-primary-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+            </button>
           </motion.div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.button
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-gray-400 cursor-pointer"
-        onClick={scrollToNext}
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
-        aria-label="Scroll down"
-      >
-        <span className="text-xs font-accent tracking-widest uppercase">Scroll</span>
-        <ChevronDown className="w-5 h-5" />
-      </motion.button>
+      {/* UI CONTROLS */}
+      <div className="absolute bottom-12 right-6 md:right-12 z-30 flex items-center gap-8">
+        {/* Counter */}
+        <div className="flex items-baseline gap-2">
+          <span className="text-white text-2xl font-bold">{String(current + 1).padStart(2, '0')}</span>
+          <div className="h-[1px] w-12 bg-white/30" />
+          <span className="text-white/40 text-sm">{String(slides.length).padStart(2, '0')}</span>
+        </div>
 
-      {/* Side decoration */}
-      <div className="absolute right-8 top-1/2 -translate-y-1/2 hidden xl:flex flex-col items-center gap-4 z-10">
-        <div className="w-[1px] h-20 bg-gradient-to-b from-transparent to-primary-400/40" />
-        <span className="text-primary-400/60 font-accent text-xs tracking-widest" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
-          SINCE 2012
-        </span>
-        <div className="w-[1px] h-20 bg-gradient-to-b from-primary-400/40 to-transparent" />
+        {/* Arrow Navigation */}
+        <div className="flex gap-2">
+          <button 
+            onClick={handlePrev}
+            className="p-4 border border-white/10 text-white hover:bg-white hover:text-black transition-all rounded-full cursor-pointer"
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <button 
+            onClick={handleNext}
+            className="p-4 border border-white/10 text-white hover:bg-white hover:text-black transition-all rounded-full cursor-pointer"
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
       </div>
+
+      {/* PROGRESS BAR */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 z-30">
+        <motion.div 
+          key={current}
+          initial={{ width: "0%" }}
+          animate={{ width: "100%" }}
+          transition={{ duration: 6, ease: "linear" }}
+          className="h-full bg-white"
+        />
+      </div>
+
     </section>
   );
 }
