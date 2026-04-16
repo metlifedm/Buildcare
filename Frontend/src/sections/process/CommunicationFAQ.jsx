@@ -61,19 +61,19 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
         onClick={onToggle}
         className="w-full p-6 text-left group"
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between cursor-pointer">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Icon className="w-6 h-6 text-primary-600" />
+            <div className="w-12 h-12 rounded-xl bg-primary-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Icon className="w-6 h-6 text-dark-50" />
             </div>
             <span className="font-semibold text-lg text-gray-900">{faq.question}</span>
           </div>
           <motion.div
             animate={{ rotate: isOpen ? 180 : 0 }}
             transition={{ duration: 0.3 }}
-            className="w-8 h-8 rounded-full bg-primary-50 flex items-center justify-center"
+            className="w-8 h-8 rounded-full bg-primary-500 flex items-center justify-center"
           >
-            <ChevronDown className="w-5 h-5 text-primary-600" />
+            <ChevronDown className="w-5 h-5 text-dark-50" />
           </motion.div>
         </div>
       </button>
@@ -87,7 +87,7 @@ function FAQItem({ faq, index, isOpen, onToggle }) {
             transition={{ duration: 0.3 }}
           >
             <div className="px-6 pb-6 pt-0">
-              <div className="p-4 rounded-xl bg-primary-50 border-l-2 border-primary-500">
+              <div className="p-4 rounded-xl bg-primary-500/20 border-l-2 border-primary-500">
                 <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function CommunicationFAQ() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-6"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-200 mb-6"
               >
                 <Send className="w-4 h-4 text-primary-600" />
                 <span className="text-sm font-medium text-primary-700">Stay Connected</span>
@@ -156,7 +156,7 @@ export default function CommunicationFAQ() {
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
                           <h3 className="text-lg font-semibold text-gray-900">{channel.title}</h3>
-                          <span className="text-xs px-2 py-1 rounded-full bg-primary-50 text-primary-700">
+                          <span className="text-xs px-2 py-1 rounded-full bg-primary-500/10 text-primary-700">
                             {channel.stat}
                           </span>
                         </div>
@@ -174,7 +174,7 @@ export default function CommunicationFAQ() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="mt-6 flex items-center gap-2 p-3 rounded-xl bg-primary-50 border border-primary-200"
+                className="mt-6 flex items-center gap-2 p-3 rounded-xl bg-primary-500/10 border border-primary-200"
               >
                 <div className="w-2 h-2 rounded-full bg-primary-600 animate-pulse" />
                 <span className="text-sm text-primary-700">Live support available</span>
@@ -193,7 +193,7 @@ export default function CommunicationFAQ() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-200 mb-6"
             >
               <HelpCircle className="w-4 h-4 text-primary-600" />
               <span className="text-sm font-medium text-primary-700">Common Questions</span>

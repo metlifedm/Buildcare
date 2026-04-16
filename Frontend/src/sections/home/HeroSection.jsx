@@ -1,37 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776269611/2151008741_q3kybz.jpg",
     title: "Elegant Interior",
     desc: "Architecture shapes not just spaces, but how we live and feel.",
-    button: "View Project",
+    button: "Learn More",
+    link: "/about/our-story"
   },
   {
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
     title: "Modern Living",
     desc: "Design that blends comfort, style, and functionality.",
-    button: "Explore Design",
+    button: "Explore Services",
+    link: "/services"
   },
   {
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
     title: "Luxury Spaces",
     desc: "Premium interiors crafted with perfection.",
-    button: "See Portfolio",
+    button: "See Our Blogs",
+    link: "/blog"
   },
   {
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
     title: "Creative Concepts",
     desc: "Turning imagination into beautiful spaces.",
-    button: "Discover More",
+    button: "How It Works",
+    link: "/about/process"
   },
   {
     image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
     title: "Smart Interiors",
     desc: "Innovation meets modern lifestyle.",
     button: "Get Started",
+    link: "/contact"
   },
 ];
 
@@ -68,7 +74,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative h-screen w-full bg-[#0a0a0a] overflow-hidden">
-      
+
       {/* BACKGROUND LAYER (Current Image) */}
       <AnimatePresence mode="popLayout" onExitComplete={() => setIsAnimating(false)}>
         <motion.div
@@ -90,7 +96,7 @@ export default function HeroSection() {
             alt={activeSlide.title}
             className="h-full w-full object-cover"
           />
-          
+
           {/* Professional Overlay */}
           <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/20 to-transparent" />
         </motion.div>
@@ -108,7 +114,7 @@ export default function HeroSection() {
           >
             Premium Architecture
           </motion.span>
-          
+
           <motion.h2
             key={`title-${current}`}
             initial={{ y: "100%" }}
@@ -137,10 +143,12 @@ export default function HeroSection() {
             transition={{ delay: 1.2, duration: 0.5 }}
             className="pointer-events-auto"
           >
-            <button className="group relative cursor-pointer px-10 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest overflow-hidden transition-all">
-              <span className="relative z-10">{activeSlide.button}</span>
-              <div className="absolute inset-0 bg-primary-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-            </button>
+            <Link to={activeSlide.link}>
+              <button className="group relative cursor-pointer px-10 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest overflow-hidden transition-all">
+                <span className="relative z-10">{activeSlide.button}</span>
+                <div className="absolute inset-0 bg-primary-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              </button>
+            </Link>
           </motion.div>
         </div>
       </div>
@@ -156,13 +164,13 @@ export default function HeroSection() {
 
         {/* Arrow Navigation */}
         <div className="flex gap-2">
-          <button 
+          <button
             onClick={handlePrev}
             className="p-4 border border-white/10 text-white hover:bg-white hover:text-black transition-all rounded-full cursor-pointer"
           >
             <ChevronLeft size={20} />
           </button>
-          <button 
+          <button
             onClick={handleNext}
             className="p-4 border border-white/10 text-white hover:bg-white hover:text-black transition-all rounded-full cursor-pointer"
           >
@@ -173,12 +181,12 @@ export default function HeroSection() {
 
       {/* PROGRESS BAR */}
       <div className="absolute bottom-0 left-0 w-full h-1 bg-white/10 z-30">
-        <motion.div 
+        <motion.div
           key={current}
           initial={{ width: "0%" }}
           animate={{ width: "100%" }}
           transition={{ duration: 6, ease: "linear" }}
-          className="h-full bg-white"
+          className="h-full bg-primary-600"
         />
       </div>
 

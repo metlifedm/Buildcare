@@ -41,7 +41,7 @@ export default function FloatingWhatsApp() {
             >
               <X className="w-3 h-3" />
             </button>
-            <p className="text-sm text-dark-100">
+            <p className="text-sm text-dark-700">
               👋 Hi! Need help with interior design? Chat with us on WhatsApp!
             </p>
           </motion.div>

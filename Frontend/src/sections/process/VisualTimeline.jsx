@@ -9,8 +9,8 @@ const steps = [
     title: "Consultation",
     duration: "2 days",
     icon: Calendar,
-    color: "text-primary-600",
-    bgColor: "bg-primary-50",
+    color: "text-dark-50",
+    bgColor: "bg-primary-500",
     description: "We understand your space, needs, budget.",
     details: "Initial meeting to discuss your vision, measure the space, understand your lifestyle, and establish a realistic budget range that aligns with your goals.",
     image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80"
@@ -20,8 +20,8 @@ const steps = [
     title: "Design",
     duration: "7-15 days",
     icon: Palette,
-    color: "text-primary-600",
-    bgColor: "bg-primary-50",
+    color: "text-dark-50",
+    bgColor: "bg-primary-500",
     description: "Layout planning + design concept finalized.",
     details: "Our team creates 2D layouts, 3D renderings, and mood boards. You review and provide feedback until the design perfectly matches your vision.",
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
@@ -31,8 +31,8 @@ const steps = [
     title: "Material",
     duration: "with you",
     icon: Package,
-    color: "text-primary-600",
-    bgColor: "bg-primary-50",
+    color: "text-dark-50",
+    bgColor: "bg-primary-500",
     description: "You select materials with our guidance (no surprises).",
     details: "Visit our material library or browse curated options online. We explain pros/cons of each material and provide transparent pricing.",
     image: "https://images.unsplash.com/photo-1615529328331-f891f6b8fad8?w=800&q=80"
@@ -42,8 +42,8 @@ const steps = [
     title: "Execution",
     duration: "30-60 days",
     icon: Hammer,
-    color: "text-primary-600",
-    bgColor: "bg-primary-50",
+    color: "text-dark-50",
+    bgColor: "bg-primary-500",
     description: "Weekly updates. WhatsApp support. No delays.",
     details: "Dedicated project manager handles everything. Daily progress tracking, weekly photo updates, and direct WhatsApp support for quick questions.",
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
@@ -53,8 +53,8 @@ const steps = [
     title: "Handover",
     duration: "final",
     icon: CheckCircle,
-    color: "text-primary-600",
-    bgColor: "bg-primary-50",
+    color: "text-dark-50",
+    bgColor: "bg-primary-500",
     description: "Quality check + final walkthrough.",
     details: "Thorough quality inspection, final walkthrough with you, addressing any last-minute concerns, and handing over all warranties and documentation.",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
@@ -81,7 +81,7 @@ function StepCard({ step, index, isOpen, onToggle }) {
         <div className="relative p-6">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-4 flex-1">
-              <div className={`w-14 h-14 rounded-xl ${step.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-14 h-14 rounded-xl ${step.bgColor} flex cursor-pointer items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                 <Icon className={`w-7 h-7 ${step.color}`} />
               </div>
               
@@ -179,7 +179,7 @@ export default function VisualTimeline() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-50 border border-primary-200 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-200 mb-6"
           >
             <Sparkles className="w-4 h-4 text-primary-600" />
             <span className="text-sm font-medium text-primary-700">Your Journey</span>
@@ -238,7 +238,7 @@ export default function VisualTimeline() {
         </div>
 
         {/* Step Details Accordion */}
-        <div className="max-w-4xl mx-auto space-y-4">
+        <div className="max-w-4xl mx-auto space-y-4 cursor-pointer">
           {steps.map((step, index) => (
             <StepCard
               key={step.id}
