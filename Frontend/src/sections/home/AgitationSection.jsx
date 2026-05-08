@@ -26,8 +26,8 @@ const painPoints = [
     stat: "+73%",
     statLabel: "average overrun",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776264039/photo-1554224155-8d04cb21cd6c_huc4lb.jpg",
-    color: "from-primary-500/20 to-primary-600/20",
-    iconColor: "text-primary-500",
+    color: "from-primary-500 to-primary-600",
+    iconColor: "text-dark-50",
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const painPoints = [
     statLabel: "face delays >2 months",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776264066/photo-1506784983877-45594efa4cbe_tjh28p.jpg",
     color: "from-primary-400/20 to-primary-500/20",
-    iconColor: "text-primary-400",
+    iconColor: "text-dark-50",
   },
   {
     id: 3,
@@ -61,7 +61,7 @@ const painPoints = [
     statLabel: "unsatisfied with result",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776264090/pexels-photo-1571460_seirvx.jpg",
     color: "from-primary-300/20 to-primary-400/20",
-    iconColor: "text-primary-300",
+    iconColor: "text-dark-50",
   },
   {
     id: 4,
@@ -78,7 +78,7 @@ const painPoints = [
     statLabel: "higher cost for fixes",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776264122/photo-1503387762-592deb58ef4e_bbz9jn.jpg",
     color: "from-primary-600/20 to-primary-700/20",
-    iconColor: "text-primary-600",
+    iconColor: "text-dark-50",
   },
 ];
 
@@ -95,14 +95,14 @@ export default function AgitationSection() {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('https://res.cloudinary.com/doo2og4l3/image/upload/v1776259593/photo-1581091226033-d5c48150dbaa_m5gnjo.jpg')",
+          backgroundImage: "url('https://res.cloudinary.com/doo2og4l3/image/upload/v1778244001/april-pethybridge-nN28PjFOOLI-unsplash_s8pedu.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
         }}
       >
         {/* White Opacity Overlay - using white with 90% opacity */}
-        <div className="absolute inset-0 bg-white/80"></div>
+        <div className="absolute inset-0 bg-white/30"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,10 +114,10 @@ export default function AgitationSection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500/10 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-500 rounded-full mb-6"
             >
-              <AlertCircle className="w-4 h-4 text-primary-500" />
-              <span className="text-xs font-semibold text-primary-600 uppercase tracking-wider">The Reality Check</span>
+              <AlertCircle className="w-4 h-4 text-white" />
+              <span className="text-xs font-semibold text-white uppercase tracking-wider">The Reality Check</span>
             </motion.div>
             
             <motion.h2 
@@ -139,7 +139,7 @@ export default function AgitationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-dark-600 text-lg leading-relaxed"
+            className="text-dark-700/90 text-lg leading-relaxed"
           >
             A collective of real challenges homeowners face during interior
             projects — from budget issues to execution failures. Discover what's
@@ -183,7 +183,7 @@ export default function AgitationSection() {
                       transition={{ duration: 0.5 }}
                       className={cn(
                         "w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300",
-                        isActive ? "bg-primary-50" : "bg-dark-100"
+                        isActive ? "bg-primary-500" : "bg-primary-200"
                       )}
                     >
                       <ItemIcon className={cn("w-5 h-5", item.iconColor)} />

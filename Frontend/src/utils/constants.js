@@ -8,7 +8,7 @@ export const COMPANY = {
   siteUrl: import.meta.env.VITE_SITE_URL || 'https://buildcare.in',
   tagline: 'RISK-FREE POSITIONING',
   description: 'Premium Interior Design & Architecture Services',
-  workingHours: 'Mon - Sat: 9:00 AM - 6:00 PM',
+  workingHours: '24/7 Customer Support',
   mapUrl: 'https://maps.google.com/?q=19.0760,72.8777',
   social: {
     facebook: 'https://facebook.com/buildcare',

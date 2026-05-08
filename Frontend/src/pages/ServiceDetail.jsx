@@ -441,7 +441,7 @@ export default function ServiceDetail() {
                   <Sparkles className="w-5 h-5 text-primary-600" />
                   Quick Enquiry
                 </h3>
-                <div className="space-y-4 mb-6">
+                {/* <div className="space-y-4 mb-6">
                   <div className="flex items-center gap-3 text-sm">
                     <IndianRupee className="w-4 h-4 text-primary-600" />
                     <span className="text-gray-600">Starting from</span>
@@ -462,7 +462,7 @@ export default function ServiceDetail() {
                     <span className="text-gray-600">Rating</span>
                     <span className="text-gray-900 font-semibold ml-auto">4.9/5 ⭐</span>
                   </div>
-                </div>
+                </div> */}
 
                 <Button
                   variant="primary"

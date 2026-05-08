@@ -51,8 +51,7 @@ export default function Footer() {
               <img src={BuildcareLogo} alt="Buildcare" />
             </Link>
             <p className="text-dark-300 text-sm leading-relaxed mb-6">
-              Crafting exceptional interior spaces that inspire, function, and endure. 
-              From concept to completion, we bring your vision to life with premium quality and attention to detail.
+              Transforming spaces with creative interior design and renovation solutions that blend style, comfort, and functionality. From concept to completion, Buildcare Turkey Interior Contractor delivers premium craftsmanship, modern aesthetics, and attention to every detail.
             </p>
             
             {/* Social Links */}

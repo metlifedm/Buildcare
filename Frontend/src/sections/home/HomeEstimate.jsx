@@ -32,8 +32,8 @@ const estimateSchema = z.object({
 const contactInfo = [
   { icon: Phone, label: 'Call Us', value: COMPANY.phone, href: `tel:${COMPANY.phone}` },
   { icon: Mail, label: 'Email Us', value: COMPANY.email, href: `mailto:${COMPANY.email}` },
-  { icon: MapPin, label: 'Visit Us', value: COMPANY.address || 'Mumbai, India', href: '#' },
-  { icon: Clock, label: 'Working Hours', value: COMPANY.workingHours || 'Mon-Sat: 10AM - 7PM', href: null },
+  { icon: MapPin, label: 'Visit Us', value: "89, Khuraiyya Estate" || 'Mumbai, India', href: 'https://www.google.com/maps/place/Buildcare+Interior+Designers+%26+Modular+Kitchen+%7CBest+Painting%7C+Plumbing%7C+Interior+%26+exterior+Designer+In+Mumbai/@19.0766003,72.8711871,20.25z/data=!4m6!3m5!1s0x3be7c99586d51f59:0x1d3bbc110e536d21!8m2!3d19.0765304!4d72.8709913!16s%2Fg%2F11l77sqwbg?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D' },
+  { icon: Clock, label: 'Working Hours', value: COMPANY.workingHours || '24/7 Customer Support', href: null },
 ];
 
 const propertySizes = [
@@ -272,7 +272,7 @@ export default function HomeEstimate() {
                 Get Free Estimate
               </h2>
               <p className="text-dark-100 text-sm">
-                Fill the form & get response within 15 minutes
+                Fill the form & get response within 12-24 business hours on WhatsApp
               </p>
             </div>
 

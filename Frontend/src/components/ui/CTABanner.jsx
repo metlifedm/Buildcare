@@ -9,7 +9,7 @@ import { useEnquiry } from "@hooks/useEnquiry";
 export default function CTABanner({
   title = "Ready to Transform Your Space?",
   description = "Get a free consultation with our expert designers. Let's bring your dream interior to life.",
-  primaryAction = { label: "Enquiry Now" },
+  primaryAction = { label: "Free Consultation" },
   secondaryAction = { label: "Call Us", link: `tel:${COMPANY.phone}` },
 }) {
   const { openEnquiry } = useEnquiry();
