@@ -6,36 +6,36 @@ import { Link } from "react-router-dom";
 const slides = [
   {
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776269611/2151008741_q3kybz.jpg",
-    title: "Elegant Interior",
-    desc: "Architecture shapes not just spaces, but how we live and feel.",
+    title: "Elegant Interiors",
+    desc: "Beautifully designed interiors that bring comfort, style, and warmth to every space.",
     button: "Learn More",
     link: "/about/our-story"
   },
   {
     image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
-    title: "Modern Living",
-    desc: "Design that blends comfort, style, and functionality.",
+    title: "Modern Renovation",
+    desc: "Transforming outdated spaces into modern, functional, and inspiring environments.",
     button: "Explore Services",
     link: "/services"
   },
   {
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    title: "Luxury Spaces",
-    desc: "Premium interiors crafted with perfection.",
+    title: "Luxury Living",
+    desc: "Premium interior solutions crafted with attention to detail and timeless elegance.",
     button: "See Our Blogs",
     link: "/blog"
   },
   {
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
-    title: "Creative Concepts",
-    desc: "Turning imagination into beautiful spaces.",
+    title: "Creative Spaces",
+    desc: "Unique interior concepts designed to match your lifestyle and personality.",
     button: "How It Works",
     link: "/about/process"
   },
   {
     image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
-    title: "Smart Interiors",
-    desc: "Innovation meets modern lifestyle.",
+    title: "Smart Design",
+    desc: "Combining creativity and functionality to create interiors you'll truly love.",
     button: "Get Started",
     link: "/contact"
   },
@@ -98,7 +98,7 @@ export default function HeroSection() {
           />
 
           {/* Professional Overlay */}
-          <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black/30 via-black/10 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -112,7 +112,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="inline-block text-primary-400 bg-dark-50/70 py-1 px-3 rounded-xl font-medium tracking-[0.3em] uppercase text-xs md:text-sm mb-4"
           >
-            Premium Architecture
+            Premium Interior Design
           </motion.span>
 
           <motion.h2
@@ -131,7 +131,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
-            className="text-white/60 text-lg md:text-xl mb-10 max-w-lg leading-relaxed pointer-events-auto"
+            className="text-white/70 text-lg md:text-xl mb-10 max-w-lg leading-relaxed pointer-events-auto"
           >
             {activeSlide.desc}
           </motion.p>
@@ -144,7 +144,7 @@ export default function HeroSection() {
             className="pointer-events-auto"
           >
             <Link to={activeSlide.link}>
-              <button className="group relative cursor-pointer px-10 py-4 bg-white text-black font-bold uppercase text-xs tracking-widest overflow-hidden transition-all">
+              <button className="group relative cursor-pointer px-10 py-4 bg-white hover:text-white! text-black font-bold uppercase text-xs tracking-widest overflow-hidden transition-all">
                 <span className="relative z-10">{activeSlide.button}</span>
                 <div className="absolute inset-0 bg-primary-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </button>

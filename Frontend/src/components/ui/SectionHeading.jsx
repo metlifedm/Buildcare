@@ -18,7 +18,7 @@ export default function SectionHeading({
 
   return (
     <motion.div
-      className={cn('max-w-3xl mb-16', alignClasses[align], className)}
+      className={cn('max-w-3xl mb-8', alignClasses[align], className)}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-50px' }}

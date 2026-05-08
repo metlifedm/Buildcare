@@ -24,6 +24,8 @@ const enquirySchema = z.object({
   email: z.string().email('Enter a valid email').optional().or(z.literal('')),
   service: z.string().min(1, 'Please select a service'),
   propertyType: z.string().optional(),
+  propertySubType: z.string().optional(),
+  customPropertySubType: z.string().optional(),
   budget: z.string().optional(),
   timeline: z.string().optional(),
   address: z.string().optional(),
@@ -33,16 +35,23 @@ const enquirySchema = z.object({
   message: z.string().min(5, 'Message must be at least 5 characters').max(500),
 });
 
+// Property subtype options
+const RESIDENTIAL_OPTIONS = ['1BHK', '2BHK', '3BHK', '4BHK', 'Bungalow', 'Villa', 'Studio Apartment', 'Penthouse'];
+const COMMERCIAL_OPTIONS = ['Office', 'Restaurant', 'Hotel', 'Spa & Salon', 'Hospital', 'Retail Store', 'Warehouse', 'Coworking Space', 'Showroom', 'Gym', 'School', 'Other'];
+
 export default function EnquiryModalWrapper() {
   const { isEnquiryOpen, closeEnquiry, prefilledService } = useEnquiry();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedPropertyType, setSelectedPropertyType] = useState('');
+  const [showCustomInput, setShowCustomInput] = useState(false);
 
   const {
     register,
     handleSubmit,
     reset,
     setValue,
+    watch,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(enquirySchema),
@@ -52,6 +61,8 @@ export default function EnquiryModalWrapper() {
       email: '',
       service: '',
       propertyType: '',
+      propertySubType: '',
+      customPropertySubType: '',
       budget: '',
       timeline: '',
       address: '',
@@ -61,6 +72,27 @@ export default function EnquiryModalWrapper() {
       message: '',
     },
   });
+
+  const watchPropertyType = watch('propertyType');
+  const watchPropertySubType = watch('propertySubType');
+
+  // Update selected property type and reset subtype when property type changes
+  useEffect(() => {
+    setSelectedPropertyType(watchPropertyType);
+    setValue('propertySubType', '');
+    setValue('customPropertySubType', '');
+    setShowCustomInput(false);
+  }, [watchPropertyType, setValue]);
+
+  // Show custom input when "Other" is selected in commercial options
+  useEffect(() => {
+    if (selectedPropertyType === 'commercial' && watchPropertySubType === 'Other') {
+      setShowCustomInput(true);
+    } else {
+      setShowCustomInput(false);
+      setValue('customPropertySubType', '');
+    }
+  }, [watchPropertySubType, selectedPropertyType, setValue]);
 
   // Set prefilled service when modal opens
   useEffect(() => {
@@ -78,8 +110,25 @@ export default function EnquiryModalWrapper() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isEnquiryOpen]);
 
+  // Get the final property subtype value
+  const getFinalPropertySubType = (data) => {
+    if (data.propertyType === 'residential') {
+      return data.propertySubType;
+    } else if (data.propertyType === 'commercial') {
+      if (data.propertySubType === 'Other' && data.customPropertySubType) {
+        return `Other: ${data.customPropertySubType}`;
+      }
+      return data.propertySubType;
+    }
+    return '';
+  };
+
   const onSubmit = (data) => {
     setIsSubmitting(true);
+
+    const finalPropertySubType = getFinalPropertySubType(data);
+    const propertyTypeDisplay = data.propertyType === 'residential' ? 'Residential' : 
+                                 data.propertyType === 'commercial' ? 'Commercial' : 'Other';
 
     const lines = [
       `🏠 *NEW LEAD — ${COMPANY.name}*`,
@@ -103,7 +152,13 @@ export default function EnquiryModalWrapper() {
       ``,
     );
     
-    if (data.propertyType) lines.push(`🏗️ *Property Type:* ${data.propertyType}`);
+    if (data.propertyType) {
+      lines.push(`🏗️ *Property Type:* ${propertyTypeDisplay}`);
+      if (finalPropertySubType) {
+        lines.push(`📐 *Property Sub Type:* ${finalPropertySubType}`);
+      }
+    }
+    
     if (data.budget) lines.push(`💰 *Budget:* ${data.budget}`);
     if (data.timeline) lines.push(`⏱️ *Timeline:* ${data.timeline}`);
     if (data.address) lines.push(`📍 *Address:* ${data.address}`);
@@ -162,6 +217,8 @@ export default function EnquiryModalWrapper() {
     reset();
     setIsSubmitted(false);
     setIsSubmitting(false);
+    setSelectedPropertyType('');
+    setShowCustomInput(false);
     closeEnquiry();
   };
 
@@ -172,6 +229,15 @@ export default function EnquiryModalWrapper() {
     'focus:outline-none focus:ring-2 focus:ring-primary-500/50 focus:border-primary-500',
     'transition-all duration-300 hover:border-gray-300'
   );
+
+  const getPropertySubTypeOptions = () => {
+    if (selectedPropertyType === 'residential') {
+      return RESIDENTIAL_OPTIONS;
+    } else if (selectedPropertyType === 'commercial') {
+      return COMMERCIAL_OPTIONS;
+    }
+    return [];
+  };
 
   return (
     <AnimatePresence>
@@ -209,7 +275,7 @@ export default function EnquiryModalWrapper() {
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h2 className="font-heading text-xl font-bold text-white">New Lead Form</h2>
+                  <h2 className="font-heading text-xl font-bold text-white!">New Lead Form</h2>
                   <p className="text-white/70 text-xs font-accent">
                     Fill details to get a quick response
                   </p>
@@ -288,25 +354,91 @@ export default function EnquiryModalWrapper() {
                       </h3>
                     </div>
 
-                    <FormField label="Property Type" error={errors.propertyType?.message} helpText="Optional">
+                    <FormField label="Property Type" error={errors.propertyType?.message} helpText="Select property category">
                       <div className="relative">
                         <Home className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                         <select
                           className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
-                          {...register('propertyType')}>
+                          {...register('propertyType')}
+                          onChange={(e) => {
+                            register('propertyType').onChange(e);
+                            setSelectedPropertyType(e.target.value);
+                          }}>
                           <option value="">Select property type</option>
-                          <option value="Residential - Apartment">Residential - Apartment</option>
-                          <option value="Residential - Villa">Residential - Villa</option>
-                          <option value="Residential - Independent House">Residential - Independent House</option>
-                          <option value="Commercial - Office">Commercial - Office</option>
-                          <option value="Commercial - Retail">Commercial - Retail</option>
-                          <option value="Commercial - Warehouse">Commercial - Warehouse</option>
-                          <option value="Industrial">Industrial</option>
-                          <option value="Land/Plot">Land/Plot</option>
-                          <option value="Other">Other</option>
+                          <option value="residential">Residential</option>
+                          <option value="commercial">Commercial</option>
+                          <option value="other">Other</option>
                         </select>
                       </div>
                     </FormField>
+
+                    {/* Dynamic Property Sub Type Field */}
+                    {selectedPropertyType && selectedPropertyType !== 'other' && (
+                      <FormField 
+                        label={selectedPropertyType === 'residential' ? "Property Configuration" : "Property Type"} 
+                        error={errors.propertySubType?.message} 
+                        helpText={selectedPropertyType === 'residential' ? "Select your preferred configuration" : "Select commercial property type"}
+                      >
+                        <div className="relative">
+                          <Home className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                          <select
+                            className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
+                            {...register('propertySubType')}
+                          >
+                            <option value="">Select {selectedPropertyType === 'residential' ? 'configuration' : 'type'}</option>
+                            {getPropertySubTypeOptions().map((option) => (
+                              <option key={option} value={option}>{option}</option>
+                            ))}
+                          </select>
+                        </div>
+                      </FormField>
+                    )}
+
+                    {/* Custom Input for "Other" Commercial Option */}
+                    {showCustomInput && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                      >
+                        <FormField label="Specify Property Type" error={errors.customPropertySubType?.message}>
+                          <div className="relative">
+                            <FileText className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                            <input
+                              type="text"
+                              placeholder="Enter property type (e.g., Mall, Cinema Hall, Bank)"
+                              className={cn(inputStyles, 'pl-10')}
+                              {...register('customPropertySubType', {
+                                required: showCustomInput ? 'Please specify the property type' : false
+                              })}
+                            />
+                          </div>
+                        </FormField>
+                      </motion.div>
+                    )}
+
+                    {/* Custom Input for "Other" Property Type */}
+                    {selectedPropertyType === 'other' && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                      >
+                        <FormField label="Specify Property Type" error={errors.customPropertySubType?.message} required>
+                          <div className="relative">
+                            <FileText className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                            <input
+                              type="text"
+                              placeholder="Enter property type"
+                              className={cn(inputStyles, 'pl-10')}
+                              {...register('customPropertySubType', {
+                                required: selectedPropertyType === 'other' ? 'Please specify the property type' : false
+                              })}
+                            />
+                          </div>
+                        </FormField>
+                      </motion.div>
+                    )}
 
                     <FormField label="Budget Range" error={errors.budget?.message} helpText="Optional">
                       <div className="relative">
@@ -315,14 +447,14 @@ export default function EnquiryModalWrapper() {
                           className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
                           {...register('budget')}>
                           <option value="">Select budget range</option>
-                          <option value="Below ₹10 Lakhs">Below ₹5 Lakhs</option>
-                          <option value="₹10 Lakhs - ₹25 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
-                          <option value="₹25 Lakhs - ₹50 Lakhs">₹10 Lakhs - ₹25 Lakhs</option>
-                          <option value="₹50 Lakhs - ₹75 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
-                          <option value="₹75 Lakhs - ₹1 Crore">₹50 Lakhs - ₹75 Lakhs</option>
-                          <option value="₹1 Crore - ₹2 Crore">₹75 Lakhs - ₹1 Crore</option>
-                          <option value="₹2 Crore - ₹5 Crore">₹1 Crore - ₹3 Crore</option>
-                          <option value="₹2 Crore - ₹5 Crore">₹3 Crore - ₹5 Crore</option>
+                          <option value="Below ₹5 Lakhs">Below ₹5 Lakhs</option>
+                          <option value="₹5 Lakhs - ₹10 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
+                          <option value="₹10 Lakhs - ₹25 Lakhs">₹10 Lakhs - ₹25 Lakhs</option>
+                          <option value="₹25 Lakhs - ₹50 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
+                          <option value="₹50 Lakhs - ₹75 Lakhs">₹50 Lakhs - ₹75 Lakhs</option>
+                          <option value="₹75 Lakhs - ₹1 Crore">₹75 Lakhs - ₹1 Crore</option>
+                          <option value="₹1 Crore - ₹3 Crore">₹1 Crore - ₹3 Crore</option>
+                          <option value="₹3 Crore - ₹5 Crore">₹3 Crore - ₹5 Crore</option>
                           <option value="Above ₹5 Crore">Above ₹5 Crore</option>
                         </select>
                       </div>

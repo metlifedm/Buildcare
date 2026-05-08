@@ -6,7 +6,6 @@ import Button from '@components/ui/Button';
 import SectionHeading from '@components/ui/SectionHeading';
 
 const highlights = [
-  'Award-winning design team',
   '100% customized solutions',
   'Premium quality materials',
   'On-time project delivery',
@@ -16,7 +15,7 @@ const highlights = [
 
 export default function AboutPreview() {
   return (
-    <section className="py-24 relative overflow-hidden" aria-label="About Buildcare">
+    <section className="py-16 relative overflow-hidden" aria-label="About Buildcare">
       
       {/* Background Image */}
       <div 
@@ -76,11 +75,11 @@ export default function AboutPreview() {
             <SectionHeading
               subtitle="About Us"
               title="We Create Spaces That Tell Your Story"
-              description="With over 12 years of experience, Buildcare has established itself as a leading interior design firm, delivering exceptional spaces that combine beauty, functionality, and innovation."
+              description="With over 15 years of experience, Buildcare turkey interior contractor has established itself as a leading interior design firm, delivering exceptional spaces that combine beauty, functionality, and innovation."
               align="left"
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8">
               {highlights.map((item, index) => (
                 <motion.div
                   key={item}

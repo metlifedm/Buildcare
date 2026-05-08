@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: 'Call Us',
-    details: [COMPANY.phone],
+    details: [COMPANY.phone, "+91 8591065804"],
     action: `tel:${COMPANY.phone}`,
     actionLabel: 'Call Now',
     color: 'text-primary-600',
@@ -47,7 +47,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Working Hours',
-    details: [COMPANY.workingHours, 'Sunday: Closed'],
+    details: ["24/7 Customer Support"],
     action: null,
     actionLabel: null,
     color: 'text-purple-600',
@@ -187,7 +187,7 @@ export default function Contact() {
               <Card padding="none" className="overflow-hidden border-gray-200 shadow-sm">
                 <div className="h-64 bg-gray-100 flex items-center justify-center">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.11609823277!2d72.74109995709657!3d19.08219783958221!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1704799200000!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1121.0384012631903!2d72.87100296427774!3d19.076541423708758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c99586d51f59%3A0x1d3bbc110e536d21!2sBuildcare%20Interior%20Designers%20%26%20Modular%20Kitchen%20%7CBest%20Painting%7C%20Plumbing%7C%20Interior%20%26%20exterior%20Designer%20In%20Mumbai!5e0!3m2!1sen!2sin!4v1778237926043!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

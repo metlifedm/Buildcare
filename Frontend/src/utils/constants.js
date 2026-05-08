@@ -4,7 +4,7 @@ export const COMPANY = {
   email: import.meta.env.VITE_COMPANY_EMAIL || 'info@buildcare.in',
   phone: import.meta.env.VITE_COMPANY_PHONE || '+91-98765-43210',
   whatsapp: import.meta.env.VITE_WHATSAPP_NUMBER || '919876543210',
-  address: '123 Design Avenue, Sector 5, Mumbai, Maharashtra 400001',
+  address: '89, Khuraiyya Estate, Behind, Kalisha Prabhat Building, CST Road Kalina, Santacruz (East), Mumbai - 400029',
   siteUrl: import.meta.env.VITE_SITE_URL || 'https://buildcare.in',
   tagline: 'RISK-FREE POSITIONING',
   description: 'Premium Interior Design & Architecture Services',
