@@ -157,7 +157,7 @@ export default function Navbar() {
               iconPosition="left"
               onClick={() => openEnquiry()}
             >
-              Enquiry Now
+              Free Consultation
             </Button>
           </div>
 
@@ -230,7 +230,7 @@ export default function Navbar() {
                       setTimeout(() => openEnquiry(), 300);
                     }}
                   >
-                    Enquiry Now
+                    Free Consultation
                   </Button>
                   <a href={`tel:${COMPANY.phone}`} className="block">
                     <Button variant="secondary" size="md" className="w-full" icon={Phone} iconPosition="left">

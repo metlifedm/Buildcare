@@ -9,6 +9,7 @@ import {
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { COMPANY } from '@utils/constants';
 import navigationData from '@data/navigation.json';
+import BuildcareLogo from '../../assets/images/buildcare-logo.png';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -47,13 +48,7 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                <span className="font-heading text-xl font-bold text-dark-950">B</span>
-              </div>
-              <div>
-                <h3 className="font-heading text-xl font-bold text-gradient">{COMPANY.name}</h3>
-                <p className="text-[10px] text-dark-400 tracking-[0.15em] uppercase font-accent">Interior & Architecture</p>
-              </div>
+              <img src={BuildcareLogo} alt="Buildcare" />
             </Link>
             <p className="text-dark-300 text-sm leading-relaxed mb-6">
               Crafting exceptional interior spaces that inspire, function, and endure. 
