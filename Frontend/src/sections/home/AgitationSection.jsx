@@ -95,14 +95,14 @@ export default function AgitationSection() {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('https://res.cloudinary.com/doo2og4l3/image/upload/v1778244001/april-pethybridge-nN28PjFOOLI-unsplash_s8pedu.jpg')",
+          backgroundImage: "url('https://res.cloudinary.com/doo2og4l3/image/upload/v1778317237/pexels-mike-van-schoonderwalt-1884800-5511133_dp2fre.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
         }}
       >
         {/* White Opacity Overlay - using white with 90% opacity */}
-        <div className="absolute inset-0 bg-white/30"></div>
+        <div className="absolute inset-0 bg-white/20"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +139,7 @@ export default function AgitationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-dark-700/90 text-lg leading-relaxed"
+            className="text-dark-800/90 text-lg leading-relaxed"
           >
             A collective of real challenges homeowners face during interior
             projects — from budget issues to execution failures. Discover what's

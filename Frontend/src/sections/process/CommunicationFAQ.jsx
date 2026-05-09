@@ -103,7 +103,7 @@ export default function CommunicationFAQ() {
 
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-80">
         <img 
           src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=1920&q=80"
           alt="Communication background"

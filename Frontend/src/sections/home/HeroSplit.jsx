@@ -6,14 +6,14 @@ const sections = [
     id: 1,
     title: "Our Story",
     description: "Learn about our passion for creating stylish, functional, and personalized interior spaces.",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1200",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778316957/pexels-jack-davis-86003658-11408618_eajzju.jpg",
     link: "/about/our-story",
   },
   {
     id: 2,
     title: "Our Services",
     description: "From interior design to complete renovation, we provide solutions tailored to your needs.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778317039/pexels-olaseni-omoare-2148436008-30322395_ornfaf.jpg",
     link: "/services",
   },
   // {
@@ -34,14 +34,14 @@ const sections = [
     id: 5,
     title: "Why Choose Us",
     description: "We combine creativity, quality craftsmanship, and attention to detail to deliver exceptional results.",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=1200",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778317139/photo-1505693416388-ac5ce068fe85_ziufny.jpg",
     link: "/about/why-choose-us",
   },
   {
     id: 6,
     title: "Have a Query?",
     description: "Find answers to common questions about our services, process, pricing, and timelines.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=1200",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778317167/photo-1516321318423-f06f85e504b3_zlcuf9.jpg",
     link: "/faq",
   }
 ];

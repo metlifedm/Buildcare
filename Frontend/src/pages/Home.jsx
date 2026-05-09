@@ -34,10 +34,10 @@ export default function Home() {
       <AboutPreview />
       <ServicesPreview />
       <HeroSplit />
+      <HomeEstimate />
       <AgitationSection />
       {/* <ParallaxCTA /> */}
       <PortfolioPreview />
-      <HomeEstimate />
       <TestimonialsSection />
       <StatsSection />
       <CTASection />

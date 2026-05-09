@@ -12,28 +12,28 @@ const slides = [
     link: "/about/our-story"
   },
   {
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778316421/photo-1618221195710-dd6b41faaea6_cne8j9.jpg",
     title: "Modern Renovation",
     desc: "Transforming outdated spaces into modern, functional, and inspiring environments.",
     button: "Explore Services",
     link: "/services"
   },
   {
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778316775/pexels-quark-studio-1159039-3201920_x2mpzu.jpg",
     title: "Luxury Living",
     desc: "Premium interior solutions crafted with attention to detail and timeless elegance.",
     button: "See Our Blogs",
     link: "/blog"
   },
   {
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778316541/photo-1600607687939-ce8a6c25118c_riny0s.jpg",
     title: "Creative Spaces",
     desc: "Unique interior concepts designed to match your lifestyle and personality.",
     button: "How It Works",
     link: "/about/process"
   },
   {
-    image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778316651/jnr-jose-I8Rf3tItuHE-unsplash_epve7d.jpg",
     title: "Smart Design",
     desc: "Combining creativity and functionality to create interiors you'll truly love.",
     button: "Get Started",
