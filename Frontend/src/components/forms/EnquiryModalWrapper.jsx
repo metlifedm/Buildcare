@@ -440,6 +440,15 @@ export default function EnquiryModalWrapper() {
                       </motion.div>
                     )}
 
+                    <FormField label="Carpet Area" error={errors.carpetArea} helpText="Optional">
+                      <div className="relative">
+                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input type="text" placeholder="carpet area in sq.ft"
+                          className={cn(inputStyles, 'pl-10')}
+                          {...register('Carpet Area')} />
+                      </div>
+                    </FormField>
+
                     <FormField label="Budget Range" error={errors.budget?.message} helpText="Optional">
                       <div className="relative">
                         <IndianRupee className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />

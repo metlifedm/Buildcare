@@ -1,266 +1,212 @@
-// src/sections/home/PortfolioPreview.jsx
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Maximize2, X, ChevronLeft, ChevronRight } from 'lucide-react';
-import SectionHeading from '@components/ui/SectionHeading';
-import Button from '@components/ui/Button';
-import portfolioData from '@data/portfolio.json';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  ArrowUpRight,
+  Building2,
+  Home,
+  ChefHat,
+  Sofa,
+} from "lucide-react";
+
+const portfolioItems = [
+  {
+    id: 1,
+    title: "Modern Residential Villa",
+    category: "Residential Interior",
+    icon: Home,
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: 2,
+    title: "Luxury Corporate Office",
+    category: "Commercial Space",
+    icon: Building2,
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: 3,
+    title: "Minimal Contemporary Kitchen",
+    category: "Kitchen Design",
+    icon: ChefHat,
+    image:
+      "https://images.unsplash.com/photo-1556911220-bff31c812dba?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: 4,
+    title: "Elegant Luxury Lounge",
+    category: "Luxury Interior",
+    icon: Sofa,
+    image:
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop",
+  },
+];
 
 export default function PortfolioPreview() {
-  const featuredProjects = portfolioData.projects.filter((p) => p.featured).slice(0, 4);
-  const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isChanging, setIsChanging] = useState(false);
-
-  const openLightbox = (index) => {
-    setCurrentImageIndex(index);
-    setLightboxOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-    document.body.style.overflow = 'unset';
-    setIsChanging(false);
-  };
-
-  const nextImage = () => {
-    if (isChanging) return;
-    setIsChanging(true);
-    setTimeout(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % featuredProjects.length);
-      setTimeout(() => setIsChanging(false), 300);
-    }, 150);
-  };
-
-  const prevImage = () => {
-    if (isChanging) return;
-    setIsChanging(true);
-    setTimeout(() => {
-      setCurrentImageIndex((prev) => (prev - 1 + featuredProjects.length) % featuredProjects.length);
-      setTimeout(() => setIsChanging(false), 300);
-    }, 150);
-  };
-
-  const handleKeyDown = (e) => {
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'ArrowLeft') prevImage();
-  };
+  const [activeProject, setActiveProject] = useState(portfolioItems[0]);
 
   return (
-    <>
-      <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Featured portfolio">
-        
-        <div className="container-custom">
-          <SectionHeading
-            subtitle="Our Portfolio"
-            title="Featured Projects"
-            description="Explore our handpicked selection of transformative interior design projects that showcase our commitment to excellence."
-          />
+    <section className="relative overflow-hidden bg-[#fafafa] py-24">
+      {/* Background Decoration */}
+      <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-[#417aa1]/10 blur-[120px]" />
+      <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-[#115989]/10 blur-[120px]" />
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                onClick={() => openLightbox(index)}
-              >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={`${project.title} - ${project.category} interior design project by Buildcare`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
-                    onLoad={(e) => e.target.classList.add('loaded')}
-                  />
-                </div>
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
-
-                {/* Content */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                  <span className="inline-block px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-medium mb-3">
-                    {project.category}
-                  </span>
-                  <h3 className="font-heading text-xl font-semibold text-white! mb-2">
-                    {project.title}
-                  </h3>
-                  <div className="flex items-center gap-4 text-gray-200 text-sm">
-                    <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3" />
-                      {project.location}
-                    </span>
-                    <span>{project.area}</span>
-                  </div>
-                </div>
-
-                {/* Expand icon */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 cursor-pointer">
-                  <Maximize2 className="w-4 h-4 text-white" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            className="text-center mt-12"
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="mb-20 flex flex-col items-center text-center">
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
+            className="mb-5 rounded-full border border-[#d4d4d4] bg-white px-5 py-2 text-sm font-medium tracking-[0.2em] text-[#115989] shadow-sm"
           >
-            <Link to="/about/our-story">
-              <Button size="lg" icon={ArrowRight}>
-                Our Story & More Projects
-              </Button>
-            </Link>
-          </motion.div>
+            RECENT WORK
+          </motion.span>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-5xl text-4xl font-bold leading-tight text-[#171717] sm:text-5xl lg:text-6xl"
+          >
+            Designing Interiors That
+            <span className="bg-gradient-to-r from-[#417aa1] to-[#115989] bg-clip-text text-transparent">
+              {" "}
+              Elevate Everyday Living
+            </span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-[#525252]"
+          >
+            Discover our thoughtfully designed residential, commercial, and
+            luxury interiors crafted with elegance, functionality, and timeless
+            aesthetics.
+          </motion.p>
         </div>
-      </section>
 
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {lightboxOpen && (
+        {/* Main Grid */}
+        <div className="grid gap-8 lg:grid-cols-[1.4fr_0.6fr]">
+          {/* Main Featured Image */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center"
-            onClick={closeLightbox}
-            onKeyDown={handleKeyDown}
-            tabIndex={0}
+            layout
+            className="group relative h-[500px] overflow-hidden rounded-[36px] border border-[#e5e5e5] bg-white shadow-[0_20px_80px_rgba(0,0,0,0.08)] sm:h-[650px]"
           >
-            {/* Close button */}
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
-              aria-label="Close lightbox"
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={activeProject.image}
+                src={activeProject.image}
+                alt={activeProject.title}
+                initial={{ opacity: 0, scale: 1.08 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1.03 }}
+                transition={{ duration: 0.7 }}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </AnimatePresence>
+
+            {/* Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+            {/* Floating Card */}
+            <motion.div
+              initial={{ y: 40, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="absolute bottom-6 left-6 right-6 rounded-[28px] border border-white/20 bg-white/15 p-6 backdrop-blur-2xl"
             >
-              <X className="w-6 h-6" />
-            </button>
-
-            {/* Navigation buttons */}
-            {featuredProjects.length > 1 && (
-              <>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    prevImage();
-                  }}
-                  className="absolute left-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
-                  aria-label="Previous image"
-                >
-                  <ChevronLeft className="w-6 h-6" />
-                </button>
-
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    nextImage();
-                  }}
-                  className="absolute right-4 z-10 w-12 h-12 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 flex items-center justify-center text-white cursor-pointer"
-                  aria-label="Next image"
-                >
-                  <ChevronRight className="w-6 h-6" />
-                </button>
-              </>
-            )}
-
-            {/* Image counter */}
-            <div className="absolute top-4 left-4 z-10 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm cursor-default">
-              {currentImageIndex + 1} / {featuredProjects.length}
-            </div>
-
-            {/* Main image with fade animation */}
-            <div className="relative max-w-7xl w-full mx-4" onClick={(e) => e.stopPropagation()}>
-              <div className="relative aspect-[16/9] md:aspect-[16/10] rounded-2xl overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.img
-                    key={currentImageIndex}
-                    src={featuredProjects[currentImageIndex].image}
-                    alt={featuredProjects[currentImageIndex].title}
-                    className="w-full h-full object-contain"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 1.05 }}
-                    transition={{ 
-                      duration: 0.4, 
-                      ease: "easeInOut",
-                      opacity: { duration: 0.3 },
-                      scale: { duration: 0.4 }
-                    }}
-                  />
-                </AnimatePresence>
-              </div>
-
-              {/* Image info */}
-              <motion.div 
-                className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 via-black/50 to-transparent rounded-b-2xl"
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.3 }}
-              >
-                <span className="inline-block px-3 py-1 rounded-full bg-primary-600 text-white text-xs font-medium mb-3">
-                  {featuredProjects[currentImageIndex].category}
-                </span>
-                <h3 className="text-white! font-heading text-xl md:text-2xl font-semiboldmb-2">
-                  {featuredProjects[currentImageIndex].title}
-                </h3>
-                <div className="flex flex-wrap items-center gap-4 text-white/80 text-sm">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="w-3 h-3" />
-                    {featuredProjects[currentImageIndex].location}
+              <div className="flex items-end justify-between gap-4">
+                <div>
+                  <span className="mb-3 inline-flex rounded-full bg-white/20 px-4 py-1 text-sm text-white backdrop-blur-xl">
+                    {activeProject.category}
                   </span>
-                  <span>{featuredProjects[currentImageIndex].area}</span>
-                </div>
-              </motion.div>
-            </div>
 
-            {/* Thumbnails */}
-            {featuredProjects.length > 1 && (
-              <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 overflow-x-auto px-4 pb-2">
-                {featuredProjects.map((project, idx) => (
-                  <button
-                    key={project.id}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      if (!isChanging) {
-                        setIsChanging(true);
-                        setTimeout(() => {
-                          setCurrentImageIndex(idx);
-                          setTimeout(() => setIsChanging(false), 300);
-                        }, 150);
-                      }
-                    }}
-                    className={`relative w-16 h-16 rounded-lg overflow-hidden transition-all duration-300 cursor-pointer ${
-                      idx === currentImageIndex
-                        ? 'ring-2 ring-primary-500 scale-110'
-                        : 'opacity-60 hover:opacity-100'
-                    }`}
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                    {idx === currentImageIndex && (
-                      <div className="absolute inset-0 bg-primary-500/20" />
-                    )}
-                  </button>
-                ))}
+                  <h3 className="text-2xl font-bold text-white! sm:text-4xl">
+                    {activeProject.title}
+                  </h3>
+                </div>
+
+                <button className="flex h-14 w-14 items-center justify-center rounded-full bg-white text-[#115989] shadow-lg transition-all duration-300 hover:scale-110 hover:rotate-45">
+                  <ArrowUpRight size={24} />
+                </button>
               </div>
-            )}
+            </motion.div>
           </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+
+          {/* Side Cards */}
+          <div className="grid gap-5">
+            {portfolioItems.map((item, index) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={item.id}
+                  onMouseEnter={() => setActiveProject(item)}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className={`group relative overflow-hidden rounded-[28px] border bg-white p-5 transition-all duration-500 cursor-pointer ${
+                    activeProject.id === item.id
+                      ? "border-[#115989] shadow-[0_20px_60px_rgba(17,89,137,0.18)]"
+                      : "border-[#e5e5e5] hover:border-[#417aa1]/40 hover:shadow-xl"
+                  }`}
+                >
+                  {/* Background Hover Image */}
+                  <div className="absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="h-full w-full scale-110 object-cover blur-[1px] transition-transform duration-700 group-hover:scale-100"
+                    />
+                    <div className="absolute inset-0 bg-white/85 backdrop-blur-sm" />
+                  </div>
+
+                  {/* Content */}
+                  <div className="relative z-10 flex items-center justify-between">
+                    <div className="flex items-center gap-4">
+                      <div
+                        className={`flex h-14 w-14 items-center justify-center rounded-2xl transition-all duration-500 ${
+                          activeProject.id === item.id
+                            ? "bg-[#115989] text-white"
+                            : "bg-[#f5f5f5] text-[#115989] group-hover:bg-[#115989] group-hover:text-white"
+                        }`}
+                      >
+                        <Icon size={26} />
+                      </div>
+
+                      <div>
+                        <p className="text-sm font-medium text-[#737373]">
+                          {item.category}
+                        </p>
+
+                        <h3 className="mt-1 text-lg font-semibold text-[#171717]">
+                          {item.title}
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d4d4d4] bg-white text-[#115989] transition-all duration-300 group-hover:rotate-45 group-hover:border-[#115989] group-hover:bg-[#115989] group-hover:text-white">
+                      <ArrowUpRight size={18} />
+                    </div>
+                  </div>
+
+                  {/* Active Border Glow */}
+                  {activeProject.id === item.id && (
+                    <motion.div
+                      layoutId="activeBorder"
+                      className="absolute inset-0 rounded-[28px] border-2 border-[#115989]"
+                    />
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }

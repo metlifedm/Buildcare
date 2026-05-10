@@ -1,82 +1,144 @@
 // src/pages/Services.jsx
+
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import * as LucideIcons from 'lucide-react';
-import { ArrowRight, CheckCircle, Send, ArrowUpRight } from 'lucide-react';
+
+import {
+  ArrowUpRight,
+  CheckCircle,
+  Send,
+  Sparkles,
+} from 'lucide-react';
+
 import SEOHead from '@seo/SEOHead';
 import SchemaMarkup from '@seo/SchemaMarkup';
 import { pageSEO } from '@seo/seoConfig';
+
 import PageHero from '@components/shared/PageHero';
 import SectionHeading from '@components/ui/SectionHeading';
 import Card from '@components/ui/Card';
 import Button from '@components/ui/Button';
 import CTABanner from '@components/ui/CTABanner';
+
 import { useEnquiry } from '@hooks/useEnquiry';
+
 import servicesData from '@data/services.json';
 
 const iconMap = {
-  home: 'Home', building: 'Building2', grid3x3: 'Grid3X3',
-  layers: 'Layers', chefHat: 'ChefHat', paintbrush: 'Paintbrush',
-  wrench: 'Wrench', doorOpen: 'DoorOpen', zap: 'Zap',
+  home: 'Home',
+  building: 'Building2',
+  grid3x3: 'Grid3X3',
+  layers: 'Layers',
+  chefHat: 'ChefHat',
+  paintbrush: 'Paintbrush',
+  wrench: 'Wrench',
+  doorOpen: 'DoorOpen',
+  zap: 'Zap',
 };
 
 export default function Services() {
   const { openEnquiry } = useEnquiry();
 
+  const [activeService, setActiveService] = useState(
+    servicesData.services[0]?.id
+  );
+
   return (
     <>
+      {/* SEO */}
       <SEOHead
         title={pageSEO.services.title}
         description={pageSEO.services.description}
         url={pageSEO.services.path}
       />
-      <SchemaMarkup type="BreadcrumbList" data={{
-        items: [
-          { name: 'Home', path: '/' },
-          { name: 'Services', path: '/services' },
-        ],
-      }} />
 
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={{
+          items: [
+            { name: 'Home', path: '/' },
+            { name: 'Services', path: '/services' },
+          ],
+        }}
+      />
+
+      {/* HERO */}
       <PageHero
         title="Our Services"
-        subtitle="What We Do"
-        description="From residential dream homes to inspiring commercial spaces, we offer comprehensive interior design and renovation solutions."
+        subtitle="Luxury Interior Solutions"
+        description="Crafting elegant residential and commercial interiors with timeless aesthetics, functionality, and premium quality."
         breadcrumbs={[{ label: 'Services' }]}
         backgroundImage="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80"
       />
 
-      {/* Process */}
-      <section className="py-20 bg-gray-100" aria-label="Our process">
+      {/* ========================= */}
+      {/* PROCESS SECTION */}
+      {/* ========================= */}
+
+      <section className="bg-[#fafafa] py-24">
         <div className="container-custom">
           <SectionHeading
             subtitle="Our Process"
             title="How We Work"
-            description="A streamlined approach to bring your interior vision to life."
+            description="A streamlined design process focused on quality, creativity, and flawless execution."
           />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { step: '01', title: 'Consultation', desc: 'Free initial discussion to understand your vision and budget.' },
-              { step: '02', title: 'Design & Plan', desc: '3D visualization, material selection, and detailed planning.' },
-              { step: '03', title: 'Execution', desc: 'Expert craftsmen bring designs to life with precision.' },
-              { step: '04', title: 'Handover', desc: 'Final quality inspection and joyful handover.' },
+              {
+                step: '01',
+                title: 'Consultation',
+                desc: 'Understanding your vision, lifestyle, and project requirements.',
+              },
+              {
+                step: '02',
+                title: 'Planning & Design',
+                desc: 'Creating layouts, mood boards, and realistic design concepts.',
+              },
+              {
+                step: '03',
+                title: 'Execution',
+                desc: 'Transforming concepts into reality with premium craftsmanship.',
+              },
+              {
+                step: '04',
+                title: 'Final Handover',
+                desc: 'Delivering elegant interiors with complete quality assurance.',
+              },
             ].map((item, index) => (
               <motion.div
                 key={item.step}
-                className="relative"
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.08,
+                }}
               >
-                <Card className="text-center h-full relative overflow-hidden group" padding="lg">
-                  <span className="absolute top-4 right-4 font-heading text-6xl font-bold text-primary-100 group-hover:text-primary-200 transition-colors">
+                <Card
+                  className="group relative h-full overflow-hidden border border-dark-200 bg-white transition-all duration-500 hover:-translate-y-2 hover:border-primary-300 hover:shadow-[0_15px_50px_rgba(0,0,0,0.08)]"
+                  padding="lg"
+                >
+                  <div className="absolute right-5 top-5 text-6xl font-bold text-dark-100 transition-all duration-500 group-hover:text-primary-100">
                     {item.step}
-                  </span>
-                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center mx-auto mb-4">
-                    <span className="font-heading text-lg font-bold text-primary-700">{item.step}</span>
                   </div>
-                  <h3 className="font-heading text-lg font-semibold text-gray-900 mb-3">{item.title}</h3>
-                  <p className="text-gray-600 text-sm">{item.desc}</p>
+
+                  <div className="relative z-10">
+                    <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-lg font-bold text-primary-700 transition-all duration-500 group-hover:bg-primary-500 group-hover:text-white">
+                      {item.step}
+                    </div>
+
+                    <h3 className="font-heading text-2xl font-semibold text-dark-900">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-4 leading-relaxed text-dark-500">
+                      {item.desc}
+                    </p>
+                  </div>
                 </Card>
               </motion.div>
             ))}
@@ -84,95 +146,213 @@ export default function Services() {
         </div>
       </section>
 
-      {/* All Services Grid */}
-      <section className="py-24 bg-white" aria-label="All services">
+      {/* ========================= */}
+      {/* SERVICES SECTION */}
+      {/* ========================= */}
+
+      <section className="bg-white py-24">
         <div className="container-custom">
           <SectionHeading
-            subtitle="All Services"
-            title="Complete Interior Design Solutions"
-            description="Click on any service to view full details, gallery, process, and pricing."
+            subtitle="Our Expertise"
+            title="Interior Design Services"
+            description="Hover over any service to explore our premium interior design solutions."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-20 flex flex-col gap-5">
             {servicesData.services.map((service, index) => {
               const iconName = iconMap[service.icon] || 'Sparkles';
-              const Icon = LucideIcons[iconName] || LucideIcons.Sparkles;
+
+              const Icon =
+                LucideIcons[iconName] || LucideIcons.Sparkles;
+
+              const isActive = activeService === service.id;
 
               return (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0, y: 30 }}
+                  layout
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.08 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
+                  }}
+                  onMouseEnter={() => setActiveService(service.id)}
+                  className={`group relative overflow-hidden rounded-[32px] border bg-[#fafafa] transition-all duration-700 ${
+                    isActive
+                      ? 'border-primary-300 shadow-[0_20px_70px_rgba(0,0,0,0.08)]'
+                      : 'border-dark-200'
+                  }`}
                 >
-                  <Card className="h-full group overflow-hidden flex flex-col" padding="none">
-                    {/* Image */}
-                    <Link to={`/services/${service.slug}`} className="block">
-                      <div className="aspect-[16/10] overflow-hidden relative">
-                        <img
-                          src={service.image}
-                          alt={`${service.title} - interior design service by Buildcare`}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                          loading="lazy"
-                          onLoad={(e) => e.target.classList.add('loaded')}
-                        />
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        
-                        {/* Price badge */}
-                        <div className="absolute bottom-3 left-3 bg-white rounded-lg px-3 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-md">
-                          <span className="text-primary-700 text-xs font-medium">{service.priceRange}</span>
-                        </div>
-                      </div>
-                    </Link>
+                  <div
+                    className={`grid overflow-hidden transition-all duration-700 ease-in-out lg:grid-cols-[0.85fr_1.15fr] cursor-pointer ${
+                      isActive
+                        ? 'h-[550px]'
+                        : 'h-[200px]'
+                    }`}
+                  >
+                    {/* LEFT CONTENT */}
+                    <div
+                      className={`relative flex flex-col justify-between transition-all duration-700 ${
+                        isActive
+                          ? 'p-7 lg:p-10'
+                          : 'p-5 lg:p-6'
+                      }`}
+                    >
+                      <div>
+                        {/* ICON */}
+                        <motion.div
+                          animate={{
+                            scale: isActive ? 1 : 0.95,
+                          }}
+                          transition={{ duration: 0.4 }}
+                          className={`flex items-center justify-center rounded-[24px] transition-all duration-500 ${
+                            isActive
+                              ? 'mb-8 h-20 w-20'
+                              : 'mb-4 h-14 w-14'
+                          } ${
+                            isActive
+                              ? 'bg-primary-500 text-white'
+                              : 'bg-primary-50 text-primary-600'
+                          }`}
+                        >
+                          <Icon
+                            size={isActive ? 34 : 24}
+                          />
+                        </motion.div>
 
-                    {/* Content */}
-                    <div className="p-6 flex flex-col flex-1">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="w-11 h-11 rounded-xl bg-primary-50 flex items-center justify-center group-hover:bg-primary-100 transition-colors">
-                          <Icon className="w-5 h-5 text-primary-600" />
-                        </div>
-                        <div>
-                          <h3 className="font-heading text-lg font-semibold text-gray-900 group-hover:text-primary-700 transition-colors">
-                            {service.title}
-                          </h3>
-                          <span className="text-gray-500 text-xs">{service.duration}</span>
-                        </div>
-                      </div>
+                        {/* CATEGORY */}
+                        <div className="mb-3 flex items-center gap-2">
+                          <Sparkles
+                            size={13}
+                            className="text-primary-500"
+                          />
 
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4 flex-1">
-                        {service.shortDescription}
-                      </p>
+                          <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-dark-500">
+                            {service.category ||
+                              'Interior Design'}
+                          </span>
+                        </div>
 
-                      {/* Top 3 features */}
-                      <div className="space-y-1.5 mb-5">
-                        {service.features.slice(0, 3).map((f) => (
-                          <div key={f} className="flex items-center gap-2 text-xs text-gray-500">
-                            <CheckCircle className="w-3 h-3 text-primary-500" />
-                            {f}
+                        {/* TITLE */}
+                        <h3
+                          className={`font-heading font-bold leading-tight transition-all duration-500 ${
+                            isActive
+                              ? 'text-3xl lg:text-4xl text-primary-700'
+                              : 'text-xl lg:text-2xl text-dark-900'
+                          }`}
+                        >
+                          {service.title}
+                        </h3>
+
+                        {/* DESCRIPTION */}
+                        <p
+                          className={`max-w-lg leading-relaxed text-dark-500 transition-all duration-500 ${
+                            isActive
+                              ? 'mt-5 text-base opacity-100'
+                              : 'mt-3 line-clamp-2 text-sm opacity-80'
+                          }`}
+                        >
+                          {service.shortDescription}
+                        </p>
+
+                        {/* FEATURES */}
+                        <motion.div
+                          initial={false}
+                          animate={{
+                            opacity: isActive ? 1 : 0,
+                            height: isActive ? 'auto' : 0,
+                            marginTop: isActive ? 28 : 0,
+                          }}
+                          transition={{ duration: 0.4 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="grid gap-3 sm:grid-cols-2">
+                            {service.features
+                              ?.slice(0, 4)
+                              .map((feature) => (
+                                <div
+                                  key={feature}
+                                  className="flex items-center gap-2 text-sm text-dark-600"
+                                >
+                                  <CheckCircle className="h-4 w-4 text-primary-500" />
+                                  {feature}
+                                </div>
+                              ))}
                           </div>
-                        ))}
+                        </motion.div>
                       </div>
 
-                      {/* Actions */}
-                      <div className="flex gap-2 mt-auto pt-4 border-t border-gray-100">
-                        <Link to={`/services/${service.slug}`} className="flex-1">
-                          <Button variant="outline" size="sm" className="w-full" icon={ArrowUpRight}>
+                      {/* BUTTONS */}
+                      <motion.div
+                        animate={{
+                          opacity: isActive ? 1 : 0,
+                          y: isActive ? 0 : 20,
+                        }}
+                        transition={{ duration: 0.4 }}
+                        className="mt-8 flex flex-wrap gap-4"
+                      >
+                        <Link to={`/services/${service.slug}`}>
+                          <Button
+                            variant="primary"
+                            size="lg"
+                            icon={ArrowUpRight}
+                            className="rounded-full px-8"
+                          >
                             View Details
                           </Button>
                         </Link>
+
                         <Button
-                          variant="primary"
-                          size="sm"
+                          variant="outline"
+                          size="lg"
                           icon={Send}
                           iconPosition="left"
-                          onClick={() => openEnquiry(service.title)}
+                          className="rounded-full border-primary-300 px-8"
+                          onClick={() =>
+                            openEnquiry(service.title)
+                          }
                         >
                           Enquiry
                         </Button>
+                      </motion.div>
+                    </div>
+
+                    {/* RIGHT IMAGE */}
+                    <div
+                      className={`relative overflow-hidden transition-all duration-700 ${
+                        isActive
+                          ? 'opacity-100'
+                          : 'opacity-90'
+                      }`}
+                    >
+                      {/* IMAGE */}
+                      <motion.img
+                        src={service.image}
+                        alt={service.title}
+                        animate={{
+                          scale: isActive ? 1.06 : 1,
+                        }}
+                        transition={{
+                          duration: 0.7,
+                        }}
+                        className={`h-full w-full object-cover transition-all duration-700 ${
+                          isActive
+                            ? 'opacity-100'
+                            : 'opacity-85 grayscale-[10%]'
+                        }`}
+                      />
+
+                      {/* OVERLAY */}
+                      <div className="absolute inset-0 bg-black/10" />
+
+                      {/* SHINE EFFECT */}
+                      <div className="absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100">
+                        <div className="absolute -left-[120%] top-0 h-full w-[40%] rotate-12 bg-white/20 blur-3xl transition-all duration-1000 group-hover:left-[130%]" />
                       </div>
                     </div>
-                  </Card>
+                  </div>
                 </motion.div>
               );
             })}
@@ -180,10 +360,14 @@ export default function Services() {
         </div>
       </section>
 
+      {/* CTA */}
       <CTABanner
-        title="Not Sure Which Service You Need?"
-        description="No worries! Send us an enquiry and our experts will guide you to the perfect solution for your space."
-        primaryAction={{ label: 'Send Enquiry', link: '/contact' }}
+        title="Ready To Transform Your Space?"
+        description="Let our experts craft luxurious and functional interiors tailored perfectly to your lifestyle."
+        primaryAction={{
+          label: 'Get Free Consultation',
+          link: '/contact',
+        }}
         variant="default"
       />
     </>
