@@ -95,9 +95,9 @@ export default function AboutPreview() {
               ))}
             </div>
 
-            <Link to="/about">
+            <Link to="/about/process">
               <Button variant="primary" size="lg" icon={ArrowRight}>
-                Learn More About Us
+                How It Works
               </Button>
             </Link>
           </motion.div>

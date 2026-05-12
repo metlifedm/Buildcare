@@ -8,6 +8,7 @@ const sections = [
     description: "Learn about our passion for creating stylish, functional, and personalized interior spaces.",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778316957/pexels-jack-davis-86003658-11408618_eajzju.jpg",
     link: "/about/our-story",
+    button: "More About Us"
   },
   {
     id: 2,
@@ -15,6 +16,7 @@ const sections = [
     description: "From interior design to complete renovation, we provide solutions tailored to your needs.",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778317039/pexels-olaseni-omoare-2148436008-30322395_ornfaf.jpg",
     link: "/services",
+    button: "Explore Services"
   },
   // {
   //   id: 3,
@@ -36,6 +38,7 @@ const sections = [
     description: "We combine creativity, quality craftsmanship, and attention to detail to deliver exceptional results.",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778317139/photo-1505693416388-ac5ce068fe85_ziufny.jpg",
     link: "/about/why-choose-us",
+    button: "our advantages"
   },
   {
     id: 6,
@@ -43,6 +46,7 @@ const sections = [
     description: "Find answers to common questions about our services, process, pricing, and timelines.",
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778317167/photo-1516321318423-f06f85e504b3_zlcuf9.jpg",
     link: "/faq",
+    button: "View FAQs"
   }
 ];
 
@@ -96,7 +100,7 @@ export default function HeroSplit() {
                 <Link to={section.link}>
                   <button className="group relative px-6 py-2 md:px-8 md:py-3 overflow-hidden border border-white/50 text-white rounded-full transition-all duration-300 cursor-pointer">
                     <span className="relative z-10 text-xs md:text-sm uppercase tracking-widest group-hover:text-black transition-colors">
-                      Learn More
+                      {section.button}
                     </span>
                     <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                   </button>

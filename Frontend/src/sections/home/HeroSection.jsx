@@ -8,7 +8,7 @@ const slides = [
     image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1776269611/2151008741_q3kybz.jpg",
     title: "Elegant Interiors",
     desc: "Beautifully designed interiors that bring comfort, style, and warmth to every space.",
-    button: "Learn More",
+    button: "Our Story",
     link: "/about/our-story"
   },
   {
