@@ -11,9 +11,9 @@ export const COMPANY = {
   workingHours: '24/7 Customer Support',
   mapUrl: 'https://maps.google.com/?q=19.0760,72.8777',
   social: {
-    facebook: 'https://facebook.com/buildcare',
-    instagram: 'https://instagram.com/buildcare',
-    linkedin: 'https://linkedin.com/company/buildcare',
+    facebook: 'https://www.facebook.com/buildcareinteriors?mibextid=ZbWKwL',
+    instagram: 'https://instagram.com/buildcareinteriors?igshid=ZDdkNTZiNTM=',
+    linkedin: 'https://www.linkedin.com/company/buildcare-interiors/',
     youtube: 'https://youtube.com/@buildcare',
     twitter: 'https://twitter.com/buildcare',
     pinterest: 'https://pinterest.com/buildcare',

@@ -9,7 +9,7 @@ import {
   X, MessageCircle, User, Phone, Mail,
   Wrench, MessageSquare, CheckCircle, Send,
   Loader2, Sparkles, Home, IndianRupee, Calendar,
-  MapPin, Clock, FileText, StickyNote
+  MapPin, Clock, FileText, StickyNote, Ruler
 } from 'lucide-react';
 import Button from '@components/ui/Button';
 import FormField from '@components/ui/FormField';
@@ -26,6 +26,7 @@ const enquirySchema = z.object({
   propertyType: z.string().optional(),
   propertySubType: z.string().optional(),
   customPropertySubType: z.string().optional(),
+  carpetArea: z.string().optional(),
   budget: z.string().optional(),
   timeline: z.string().optional(),
   address: z.string().optional(),
@@ -63,6 +64,7 @@ export default function EnquiryModalWrapper() {
       propertyType: '',
       propertySubType: '',
       customPropertySubType: '',
+      carpetArea: '',
       budget: '',
       timeline: '',
       address: '',
@@ -159,6 +161,7 @@ export default function EnquiryModalWrapper() {
       }
     }
     
+    if (data.carpetArea) lines.push(`📏 *Carpet Area:* ${data.carpetArea}`);
     if (data.budget) lines.push(`💰 *Budget:* ${data.budget}`);
     if (data.timeline) lines.push(`⏱️ *Timeline:* ${data.timeline}`);
     if (data.address) lines.push(`📍 *Address:* ${data.address}`);
@@ -440,12 +443,16 @@ export default function EnquiryModalWrapper() {
                       </motion.div>
                     )}
 
-                    <FormField label="Carpet Area" error={errors.carpetArea} helpText="Optional">
+                    {/* Carpet Area Field */}
+                    <FormField label="Carpet Area" error={errors.carpetArea?.message} helpText="Optional (in sq.ft)">
                       <div className="relative">
-                        <Mail className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
-                        <input type="text" placeholder="carpet area in sq.ft"
+                        <Ruler className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                        <input 
+                          type="text" 
+                          placeholder="e.g., 1200 sq.ft"
                           className={cn(inputStyles, 'pl-10')}
-                          {...register('Carpet Area')} />
+                          {...register('carpetArea')} 
+                        />
                       </div>
                     </FormField>
 
@@ -456,8 +463,8 @@ export default function EnquiryModalWrapper() {
                           className={cn(inputStyles, 'pl-10 cursor-pointer appearance-none')}
                           {...register('budget')}>
                           <option value="">Select budget range</option>
-                          <option value="Below ₹5 Lakhs">Below ₹3 Lakhs</option>
-                          <option value="₹5 Lakhs - ₹10 Lakhs">₹3 Lakhs - ₹5 Lakhs</option>
+                          <option value="Below ₹3 Lakhs">Below ₹3 Lakhs</option>
+                          <option value="₹3 Lakhs - ₹5 Lakhs">₹3 Lakhs - ₹5 Lakhs</option>
                           <option value="₹5 Lakhs - ₹10 Lakhs">₹5 Lakhs - ₹10 Lakhs</option>
                           <option value="₹10 Lakhs - ₹25 Lakhs">₹10 Lakhs - ₹25 Lakhs</option>
                           <option value="₹25 Lakhs - ₹50 Lakhs">₹25 Lakhs - ₹50 Lakhs</option>
