@@ -177,7 +177,7 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-40 lg:hidden"
+            className="fixed inset-0 lg:hidden z-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -191,7 +191,7 @@ export default function Navbar() {
             />
 
             <motion.nav
-              className="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white border-l border-gray-200 shadow-xl overflow-y-auto"
+              className="absolute right-0 top-0 pt-5 h-full w-80 max-w-[85vw] bg-white border-l border-gray-200 shadow-xl overflow-y-auto"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
