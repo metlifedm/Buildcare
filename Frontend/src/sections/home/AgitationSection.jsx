@@ -139,7 +139,7 @@ export default function AgitationSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-dark-800/90 text-lg leading-relaxed"
+            className="text-dark-800/90 bg-accent-50 p-4 border-l-5 border-primary-500 rounded-2xl text-lg leading-relaxed"
           >
             A collective of real challenges homeowners face during interior
             projects — from budget issues to execution failures. Discover what's

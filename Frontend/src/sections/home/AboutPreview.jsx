@@ -28,7 +28,7 @@ export default function AboutPreview() {
         }}
       >
         {/* Dark Overlay for better contrast */}
-        <div className="absolute inset-0 bg-white/90"></div>
+        <div className="absolute inset-0 bg-white/70"></div>
       </div>
 
       <div className="container-custom relative z-10">

@@ -15,7 +15,6 @@ import { useEnquiry } from '@hooks/useEnquiry';
 import { cn } from '@utils/helpers';
 import Button from '@components/ui/Button';
 import FormField from '@components/ui/FormField';
-import ContactImg from '@assets/images/contact-bg.jpg';
 
 // Form validation schema
 const estimateSchema = z.object({
@@ -279,7 +278,7 @@ export default function HomeEstimate() {
             {/* Main Image */}
             <div className="relative rounded-2xl overflow-hidden shadow-xl mb-8 flex-shrink-0 h-[400px] lg:h-[500px]">
               <img
-                src={ContactImg}
+                src="https://res.cloudinary.com/doo2og4l3/image/upload/v1778921090/contact-bg_utnisa.jpg"
                 alt="Luxury interior design consultation"
                 className="w-full h-full object-cover"
               />

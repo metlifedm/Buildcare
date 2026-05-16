@@ -29,7 +29,7 @@ export default function Testimonials() {
           { label: 'About Us', path: '/about' },
           { label: 'Testimonials' }
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1778921555/photo-1600607687644-c7171b42498f_usmeln.jpg"
       />
       <TestimonialsGrid />
       

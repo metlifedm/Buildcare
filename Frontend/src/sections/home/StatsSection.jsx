@@ -5,16 +5,16 @@ import { useInView } from "framer-motion";
 
 const stats = [
   {
-    value: 4500,
+    value: 200,
     suffix: "+",
     title: "Projects Completed",
     desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
   },
   {
-    value: 42,
+    value: 10,
     suffix: "+",
-    title: "Design Experts",
-    desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
+    title: "Services Offered",
+    desc: "We offer a comprehensive range of interior design and renovation services.",
   },
   {
     value: 98,
@@ -23,7 +23,7 @@ const stats = [
     desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
   },
   {
-    value: 25,
+    value: 15,
     suffix: "+",
     title: "Years Experience",
     desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",

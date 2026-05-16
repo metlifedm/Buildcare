@@ -31,7 +31,7 @@ export default function OurStory() {
           { label: 'About Us', path: '/about' },
           { label: 'Our Story' }
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1778921448/id-interiors-VWt1BBQwwtU-unsplash_gxdq5m.jpg"
       />
 
       <WhoWeAre />

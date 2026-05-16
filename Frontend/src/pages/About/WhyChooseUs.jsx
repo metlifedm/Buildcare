@@ -30,7 +30,7 @@ export default function WhyChooseUs() {
           { label: 'About Us', path: '/about' },
           { label: 'Why Choose Us' }
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1778921644/musemind-ux-agency-srTPWPbK0Dg-unsplash_ujqecm.jpg"
       />
 
       <WhyChooseUsSection />

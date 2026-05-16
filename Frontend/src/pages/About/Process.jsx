@@ -41,7 +41,7 @@ export default function Process() {
           { label: 'About Us', path: '/about' },
           { label: 'How Its Works' }
         ]}
-        backgroundImage="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1778921523/photo-1616486338812-3dadae4b4ace_uh9nzq.jpg"
       />
       <WhyProcessMatters />
       <VisualTimeline />

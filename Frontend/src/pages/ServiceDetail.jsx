@@ -1116,7 +1116,7 @@ export default function ServiceDetail() {
       >
         <div className="absolute inset-0 overflow-hidden">
           <img
-            src={extended.heroImage || service.image}
+            src={service.image}
             alt={service.title}
             className="parallax-img w-full h-[120%] object-cover object-center"
             loading="eager"
