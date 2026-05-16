@@ -85,7 +85,7 @@ export default function Contact() {
         subtitle="Get In Touch"
         description="Have a project in mind? Ready to transform your space? Reach out to us for a free consultation and let's create something extraordinary together."
         breadcrumbs={[{ label: 'Contact Us' }]}
-        backgroundImage="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1778924908/photo-1600607687939-ce8a6c25118c_j4mxf4.jpg"
       />
 
       {/* Contact Info Cards */}

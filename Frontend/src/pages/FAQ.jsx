@@ -63,7 +63,7 @@ export default function FAQ() {
         subtitle="Got Questions?"
         description="Find answers to the most common questions about our interior design services, process, pricing, and more."
         breadcrumbs={[{ label: 'FAQ' }]}
-        backgroundImage="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1778924827/photo-1621293954908-907159247fc8_v4uckf.jpg"
       />
 
       <section className="py-24 bg-white" aria-label="FAQ section">

@@ -13,7 +13,7 @@ const steps = [
     bgColor: "bg-primary-500",
     description: "We understand your space, needs, budget.",
     details: "Initial meeting to discuss your vision, measure the space, understand your lifestyle, and establish a realistic budget range that aligns with your goals.",
-    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=800&q=80"
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778923689/photo-1503174971373-b1f69850bded_innmwb.jpg"
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const steps = [
     bgColor: "bg-primary-500",
     description: "Layout planning + design concept finalized.",
     details: "Our team creates 2D layouts, 3D renderings, and mood boards. You review and provide feedback until the design perfectly matches your vision.",
-    image: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&q=80"
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778923745/photo-1603533867307-b354255e3c32_rkkglr.jpg"
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ const steps = [
     bgColor: "bg-primary-500",
     description: "You select materials with our guidance (no surprises).",
     details: "Visit our material library or browse curated options online. We explain pros/cons of each material and provide transparent pricing.",
-    image: "https://images.unsplash.com/photo-1615529328331-f891f6b8fad8?w=800&q=80"
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778923781/photo-1755771984341-546c2a04f236_op3ul9.jpg"
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const steps = [
     bgColor: "bg-primary-500",
     description: "Weekly updates. WhatsApp support. No delays.",
     details: "Dedicated project manager handles everything. Daily progress tracking, weekly photo updates, and direct WhatsApp support for quick questions.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778923921/pexels-photo-5538715_u68s4u.jpg"
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const steps = [
     bgColor: "bg-primary-500",
     description: "Quality check + final walkthrough.",
     details: "Thorough quality inspection, final walkthrough with you, addressing any last-minute concerns, and handing over all warranties and documentation.",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778924073/pexels-photo-8143711_h5urvy.jpg"
   }
 ];
 

@@ -95,7 +95,7 @@ const WhyChooseUs = () => {
 
           <div className="mt-6">
             <img
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e"
+              src="https://res.cloudinary.com/doo2og4l3/image/upload/v1778921907/photo-1503387762-592deb58ef4e_iiwkk4.jpg"
               alt="interior"
               className="w-full h-[400px] object-cover rounded-[150px]"
             />
