@@ -19,7 +19,7 @@ const slides = [
     link: "/services"
   },
   {
-    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778316775/pexels-quark-studio-1159039-3201920_x2mpzu.jpg",
+    image: "https://res.cloudinary.com/doo2og4l3/image/upload/v1778921523/photo-1616486338812-3dadae4b4ace_uh9nzq.jpg",
     title: "Luxury Living",
     desc: "Premium interior solutions crafted with attention to detail and timeless elegance.",
     button: "See Our Blogs",

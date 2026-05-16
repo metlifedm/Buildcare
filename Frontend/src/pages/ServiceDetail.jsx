@@ -545,7 +545,7 @@ const serviceExtendedData = {
     ],
   },
   'tile-flooring': {
-    heroImage: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778940874/photo-1560185893-a55cbc8c57e8_gyplfz.jpg',
     gallery: [
       { src: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=600&q=80', alt: 'Premium tile flooring installation' },
       { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=600&q=80', alt: 'Large format porcelain tiles' },
@@ -565,7 +565,7 @@ const serviceExtendedData = {
     ],
   },
   'false-ceiling': {
-    heroImage: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941005/pexels-photo-18246428_lz5dpy.jpg',
     gallery: [
       { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', alt: 'Gypsum false ceiling with lighting' },
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Modern false ceiling design' },
@@ -585,7 +585,7 @@ const serviceExtendedData = {
     ],
   },
   'modular-kitchen': {
-    heroImage: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941120/pexels-photo-32177983_lhshh2.jpg',
     gallery: [
       { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80', alt: 'Modular kitchen with island' },
       { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80', alt: 'Modern kitchen cabinet design' },
@@ -605,7 +605,7 @@ const serviceExtendedData = {
     ],
   },
   'painting-works': {
-    heroImage: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941379/photo-1562259949-e8e7689d7828_voijds.jpg',
     gallery: [
       { src: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80', alt: 'Interior painting work in progress' },
       { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80', alt: 'Finished painting premium interior' },
@@ -625,7 +625,7 @@ const serviceExtendedData = {
     ],
   },
   'fabrication-works': {
-    heroImage: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941438/photo-1504328345606-18bbc8c9d7d1_wowlqs.jpg',
     gallery: [
       { src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80', alt: 'Steel fabrication workshop' },
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Custom metal gate fabrication' },
@@ -645,7 +645,7 @@ const serviceExtendedData = {
     ],
   },
   'aluminum-glass': {
-    heroImage: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941529/pexels-photo-8134763_xirfie.jpg',
     gallery: [
       { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Aluminum sliding door installation' },
       { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', alt: 'Glass partition office design' },
@@ -665,7 +665,7 @@ const serviceExtendedData = {
     ],
   },
   'plumbing-electrical': {
-    heroImage: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941583/photo-1621905251189-08b45d6a269e_d25b4a.jpg',
     gallery: [
       { src: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80', alt: 'Plumbing installation work' },
       { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&q=80', alt: 'Electrical wiring installation' },

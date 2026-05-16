@@ -45,7 +45,7 @@
       "shortDescription": "Premium tile and flooring solutions for residential and commercial spaces.",
       "description": "From Italian marble to porcelain tiles, we offer comprehensive flooring solutions that combine durability with aesthetic excellence. Our expert team ensures precision installation with premium materials and finishes.",
       "icon": "grid3x3",
-      "image": "https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?w=800&q=80",
+      "image": "https://res.cloudinary.com/doo2og4l3/image/upload/v1778940874/photo-1560185893-a55cbc8c57e8_gyplfz.jpg",
       "features": [
         "Italian Marble Flooring",
         "Porcelain & Ceramic Tiles",
@@ -64,7 +64,7 @@
       "shortDescription": "Elegant false ceiling designs that add dimension and character to any space.",
       "description": "Our false ceiling solutions include gypsum board, PVC panels, wooden finishes, and designer ceilings with integrated lighting. We create stunning overhead designs that transform the entire ambiance of your space.",
       "icon": "layers",
-      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "image": "https://res.cloudinary.com/doo2og4l3/image/upload/v1778941005/pexels-photo-18246428_lz5dpy.jpg",
       "features": [
         "Gypsum Board Ceiling",
         "PVC Panel Ceiling",
@@ -83,7 +83,7 @@
       "shortDescription": "Sleek, functional modular kitchens designed for modern living and culinary excellence.",
       "description": "Our modular kitchen designs combine European aesthetics with Indian cooking requirements. We offer customized solutions with premium hardware, soft-close mechanisms, and optimized storage to make your kitchen the heart of your home.",
       "icon": "chefHat",
-      "image": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80",
+      "image": "https://res.cloudinary.com/doo2og4l3/image/upload/v1778941120/pexels-photo-32177983_lhshh2.jpg",
       "features": [
         "L-Shape & U-Shape Layouts",
         "Island Kitchen Design",
@@ -102,7 +102,7 @@
       "shortDescription": "Professional painting services with premium finishes and artistic textures.",
       "description": "From basic emulsions to luxury texture finishes, our painting services cover interior and exterior painting, wallpaper installation, and decorative wall treatments. We use only premium branded paints for lasting beauty.",
       "icon": "paintbrush",
-      "image": "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&q=80",
+      "image": "https://res.cloudinary.com/doo2og4l3/image/upload/v1778941379/photo-1562259949-e8e7689d7828_voijds.jpg",
       "features": [
         "Interior & Exterior Painting",
         "Texture Painting",
@@ -121,7 +121,7 @@
       "shortDescription": "Custom metal fabrication for gates, railings, structures, and architectural elements.",
       "description": "Our fabrication division handles custom metalwork including gates, railings, structural steel, MS/SS fabrication, canopies, and architectural metal elements. We combine strength with aesthetic design.",
       "icon": "wrench",
-      "image": "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80",
+      "image": "https://res.cloudinary.com/doo2og4l3/image/upload/v1778941438/photo-1504328345606-18bbc8c9d7d1_wowlqs.jpg",
       "features": [
         "MS & SS Gates",
         "Staircase Railings",
@@ -140,7 +140,7 @@
       "shortDescription": "Modern aluminum and glass solutions for a contemporary, open-space aesthetic.",
       "description": "We specialize in premium aluminum sliding doors, glass partitions, shower enclosures, and curtain walls. Our solutions use high-quality profiles and toughened glass for safety, elegance, and energy efficiency.",
       "icon": "doorOpen",
-      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "image": "https://res.cloudinary.com/doo2og4l3/image/upload/v1778941529/pexels-photo-8134763_xirfie.jpg",
       "features": [
         "Sliding & Folding Doors",
         "Glass Partitions",
@@ -159,7 +159,7 @@
       "shortDescription": "Complete plumbing and electrical solutions with modern technology and safety standards.",
       "description": "Our plumbing and electrical services cover new installations, renovations, and maintenance. We use ISI-certified materials and follow all safety codes to ensure reliable, long-lasting infrastructure for your property.",
       "icon": "zap",
-      "image": "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80",
+      "image": "https://res.cloudinary.com/doo2og4l3/image/upload/v1778941583/photo-1621905251189-08b45d6a269e_d25b4a.jpg",
       "features": [
         "Complete Plumbing Setup",
         "Electrical Wiring & Points",
