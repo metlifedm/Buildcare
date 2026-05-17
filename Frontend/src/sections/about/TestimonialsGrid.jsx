@@ -11,8 +11,10 @@ export function TestimonialsGrid() {
   const testimonials = testimonialsData.testimonials;
   const [visibleCount, setVisibleCount] = useState(4);
 
+  const avatarImg = 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779017035/149071_iacjfb.png';
+
   return (
-    <section className="py-24 bg-white" aria-label="Client testimonials">
+    <section className="py-24 bg-dark-100" aria-label="Client testimonials">
       <div className="container-custom">
         <SectionHeading
           subtitle="Testimonials"
@@ -32,7 +34,7 @@ export function TestimonialsGrid() {
               <Card className="h-full" padding="lg" variant="solid">
                 <div className="flex items-start gap-4 mb-6">
                   <img
-                    src={testimonial.avatar}
+                    src={testimonial.avatar || avatarImg}
                     alt={testimonial.name}
                     className="w-14 h-14 rounded-full object-cover border-2 border-primary-200 flex-shrink-0"
                     loading="lazy"
@@ -42,7 +44,6 @@ export function TestimonialsGrid() {
                     <h4 className="font-heading font-semibold text-gray-900">
                       {testimonial.name}
                     </h4>
-                    <p className="text-gray-500 text-sm">{testimonial.designation}</p>
                     <p className="text-primary-600 text-xs mt-0.5">{testimonial.location}</p>
                   </div>
                   <Quote className="w-10 h-10 text-primary-100 ml-auto flex-shrink-0" />
@@ -56,7 +57,7 @@ export function TestimonialsGrid() {
 
                 <div className="mt-4 pt-4 border-t border-gray-100">
                   <span className="text-xs text-primary-600 font-accent">
-                    Project: {testimonial.project}
+                    {testimonial.date}
                   </span>
                 </div>
               </Card>

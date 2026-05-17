@@ -13,58 +13,80 @@
     },
     {
       "id": 2,
-      "name": "Rajesh Kapoor",
+      "name": "Aaiman Shaikh",
       "designation": "CEO, TechStart Inc.",
-      "location": "Bangalore",
+      "location": "Mumbai",
       "rating": 5,
-      "review": "Our new office space designed by Buildcare has significantly improved team productivity and morale. The modern design perfectly represents our brand values. Exceptional work!",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
+      "review": "A big appreciation to the interior designer for their incredible creativity and eye for detail. Their ability to transform ordinary spaces into stunning, functional, and welcoming environments is truly inspiring. Every corner reflects thoughtful planning, harmony in colors, and a perfect blend of style and comfort. The way they balance aesthetics with practicality shows true expertise and passion for their craft. Their design has not only enhanced the look of the space but has also brought a fresh energy and charm that uplifts everyone who walks in.",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjUK3WzcJFNH9ISKfs_SK2-Oupri2V-bz2aaN4r3Y2IJKfeAqQ=w90-h90-p-rp-mo-br100",
       "project": "Commercial Interior",
-      "date": "2 months ago"
+      "date": "9 months ago"
     },
     {
       "id": 3,
-      "name": "Anita Desai",
+      "name": "Zamiruddin Shah",
       "designation": "Restaurant Owner",
-      "location": "Delhi",
+      "location": "Mumbai",
       "rating": 5,
-      "review": "The restaurant interior by Buildcare has become a talking point among our customers. The ambiance they created perfectly complements our cuisine. Revenue has increased by 40% since the renovation!",
-      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
+      "review": "From drab to fab! My experience with Buildcare interiors was nothing short of exceptional. Their keen eye for detail and impeccable taste transformed my space into a masterpiece. From concept to completion, they exceeded my expectations. Professionalism, creativity, and flawless execution - they've got it all!",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjWHY4olvhdTp9mH7lBbquLgM0HmWV22HgmkDLTcEEwz5-EeTr3w=w90-h90-p-rp-mo-br100",
       "project": "Commercial Interior",
-      "date": "1 month ago"
+      "date": "2 years ago"
     },
     {
       "id": 4,
-      "name": "Vikram Malhotra",
+      "name": "Mehmood Alam Khan",
       "designation": "Architect",
-      "location": "Pune",
+      "location": "Mumbai",
       "rating": 5,
-      "review": "As a fellow architect, I'm impressed by Buildcare's execution quality. They turned our design concepts into reality with precision. Their modular kitchen work is world-class.",
-      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80",
+      "review": "One of the best interior designer in reasonable rates affordable price thank u build care team.",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjXKiuka6TRHij9o136k-RKaRMpm2AD8kK4Ckw8tylR4B_kvMMe5=w90-h90-p-rp-mo-br100",
       "project": "Modular Kitchen",
-      "date": "1 month ago"
+      "date": "3 months ago"
     },
     {
       "id": 5,
-      "name": "Sneha Patel",
+      "name": "Tahseen Fatima",
       "designation": "Interior Designer",
-      "location": "Ahmedabad",
-      "rating": 4,
-      "review": "Collaborated with Buildcare on multiple projects. Their craftsmanship in false ceiling and fabrication work is outstanding. Professional team with great project management skills.",
-      "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80",
+      "location": "Mumbai",
+      "rating": 5,
+      "review": "I absolutely loved the work. I would definitely recommend Buildcare Interiors to anyone. They are very professional and made the entire experience amazing. The best part is that they clearly understood our requirements and budget, and provided the best possible home......they are very co-operative......",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjU9ltpN5D7sUkRW4XhnQfj3rD3kMUtmfmk7DmIaOkFfdvHqjwk=w90-h90-p-rp-mo-br100",
       "project": "False Ceiling",
-      "date": "2 weeks ago"
+      "date": "a year ago"
     },
     {
       "id": 6,
-      "name": "Arjun Nair",
+      "name": "Noorjahan Shaikh",
       "designation": "Homeowner",
-      "location": "Chennai",
+      "location": "Mumbai",
       "rating": 5,
-      "review": "From design consultation to final handover, Buildcare made the entire process seamless. Our villa looks straight out of a design magazine. Highly recommend their services!",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
+      "review": "If you are looking for interior design or renovation service for your home, then Buildcare Mumbai is your perfect choice for sure. We have seen their work, high quality delivery, great team & very understanding. Design choice they offer are best in Mumbai, their labor team is also easy to work with.",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIwEGbdi1xVi6pj9QId0B5ua0n4FCdUebhAZ0cqtfZFuLSbvQ=w90-h90-p-rp-mo-br100",
       "project": "Residential Interior",
       "date": "3 weeks ago"
+    },
+    {
+      "id": 7,
+      "name": "Rafiq Chaudhry",
+      "designation": "Homeowner",
+      "location": "Mumbai",
+      "rating": 5,
+      "review": "I have renovated my office with buildcare interior, he did work in my budget, planning and workmanship was good also good, he also gave me time for payment.",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjWbTP0CbTEPmsO5t0yaf7R-BMNPnHBgTFSU5EnyH4qRjKr245nY=w90-h90-p-rp-mo-br100",
+      "project": "Residential Interior",
+      "date": "2 years ago"
+    },
+    {
+      "id": 8,
+      "name": "Abhijit Jadhav",
+      "designation": "Business Owner",
+      "location": "Mumbai",
+      "rating": 4,
+      "review": "Honest and Transparent | I was impressed with Build Care's honesty. They broke down the costs and took only a 10% margin. My 3 BHK interior looks amazing!",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLJeDVcBMBYgmQj5KfxD-ucXubRm3PeCsooOR8WLZtToYpIqg=w90-h90-p-rp-mo-br100",
+      "project": "Commercial Interior",
+      "date": "a year ago"
     }
   ]
 }

@@ -22,6 +22,8 @@ export default function TestimonialsSection() {
   const prev = () => setCurrent((c) => (c - 1 + testimonials.length) % testimonials.length);
   const next = () => setCurrent((c) => (c + 1) % testimonials.length);
 
+  const avatarImg = 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779017035/149071_iacjfb.png';
+
   return (
     <section className="py-24 bg-gray-50 relative overflow-hidden" aria-label="Client testimonials">
       {/* Simple dot and plus background animation */}
@@ -78,19 +80,17 @@ export default function TestimonialsSection() {
                   <StarRating rating={testimonials[current].rating} size="lg" />
                 </div>
 
-                <div className="flex items-center justify-center gap-4">
+                <div className="w-full flex items-center justify-center gap-4">
                   <img
-                    src={testimonials[current].avatar}
+                    src={testimonials[current].avatar || avatarImg}
                     alt={testimonials[current].name}
                     className="w-14 h-14 rounded-full object-cover border-2 border-primary-300"
-                    loading="lazy"
                   />
                   <div className="text-left">
                     <h4 className="font-heading font-semibold text-gray-900">
                       {testimonials[current].name}
                     </h4>
-                    <p className="text-gray-500 text-sm">
-                      {testimonials[current].designation} • {testimonials[current].location}
+                    <p className="text-gray-500 text-sm">{testimonials[current].location}
                     </p>
                   </div>
                 </div>
