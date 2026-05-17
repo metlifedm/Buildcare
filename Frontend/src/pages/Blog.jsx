@@ -51,7 +51,7 @@ export default function Blog() {
         subtitle="Our Blog"
         description="Expert tips, trends, and inspiration from our team of professional interior designers and architects."
         breadcrumbs={[{ label: 'Blog' }]}
-        backgroundImage="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1779012342/pexels-photo-12289391_av7ffb.jpg"
       />
 
       <section className="py-24 bg-white" aria-label="Blog posts">
@@ -116,10 +116,6 @@ export default function Blog() {
 
                       <div className="flex items-center gap-4 text-sm text-gray-500 mb-6">
                         <span className="flex items-center gap-1.5">
-                          <User className="w-3.5 h-3.5" />
-                          {featuredPost.author}
-                        </span>
-                        <span className="flex items-center gap-1.5">
                           <Calendar className="w-3.5 h-3.5" />
                           {formatDate(featuredPost.date)}
                         </span>
@@ -180,10 +176,6 @@ export default function Blog() {
                       </p>
 
                       <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
-                        <div className="flex items-center gap-2 text-xs text-gray-500">
-                          <User className="w-3 h-3" />
-                          {post.author}
-                        </div>
                         <span className="text-xs text-gray-400">
                           {formatDate(post.date)}
                         </span>

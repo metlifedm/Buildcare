@@ -2,13 +2,14 @@
   "testimonials": [
     {
       "id": 1,
-      "name": "Priya Sharma",
+      "name": "Shamil Khan",
       "designation": "Homeowner",
       "location": "Mumbai",
       "rating": 5,
-      "review": "Buildcare transformed our 3BHK into a dream home. The attention to detail was extraordinary. Every corner tells a story of craftsmanship and care. We couldn't be happier with the results!",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
-      "project": "Residential Interior"
+      "review": "We hired Buildcare Interiors for our commercial project and had a great experience. The work was completed on time, the team worked efficiently and the materials used feel strong and durable. Project management was smooth with clear communication and proper site supervision. Very professional service overall. I will recommend buildcare specially for commercial project",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjVyjglXgXDATu2QYtlBkoWrDPCtp0N-P9qA7V92dEW_R8U_7mk=w90-h90-p-rp-mo-br100",
+      "project": "Residential Interior",
+      "date": "3 months ago"
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "rating": 5,
       "review": "Our new office space designed by Buildcare has significantly improved team productivity and morale. The modern design perfectly represents our brand values. Exceptional work!",
       "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
-      "project": "Commercial Interior"
+      "project": "Commercial Interior",
+      "date": "2 months ago"
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "rating": 5,
       "review": "The restaurant interior by Buildcare has become a talking point among our customers. The ambiance they created perfectly complements our cuisine. Revenue has increased by 40% since the renovation!",
       "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&q=80",
-      "project": "Commercial Interior"
+      "project": "Commercial Interior",
+      "date": "1 month ago"
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "rating": 5,
       "review": "As a fellow architect, I'm impressed by Buildcare's execution quality. They turned our design concepts into reality with precision. Their modular kitchen work is world-class.",
       "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&q=80",
-      "project": "Modular Kitchen"
+      "project": "Modular Kitchen",
+      "date": "1 month ago"
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "rating": 4,
       "review": "Collaborated with Buildcare on multiple projects. Their craftsmanship in false ceiling and fabrication work is outstanding. Professional team with great project management skills.",
       "avatar": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&q=80",
-      "project": "False Ceiling"
+      "project": "False Ceiling",
+      "date": "2 weeks ago"
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "rating": 5,
       "review": "From design consultation to final handover, Buildcare made the entire process seamless. Our villa looks straight out of a design magazine. Highly recommend their services!",
       "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
-      "project": "Residential Interior"
+      "project": "Residential Interior",
+      "date": "3 weeks ago"
     }
   ]
 }
