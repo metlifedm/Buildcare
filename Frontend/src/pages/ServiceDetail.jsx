@@ -37,28 +37,28 @@ const furnitureSubSections = [
     description: 'Factory-engineered modular kitchens with premium finishes, soft-close hardware, and intelligent storage designed for Indian cooking.',
     images: [
       {
-        src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008392/sunriseforever-kitchen-4043098_1920_ni5zus.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008392/sunriseforever-kitchen-4043098_1920_ni5zus.jpg',
         alt: 'Modern modular kitchen with island',
       },
       {
-        src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008405/photo-1484154218962-a197022b5858_ppuw6y.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008405/photo-1484154218962-a197022b5858_ppuw6y.jpg',
         alt: 'Open plan kitchen with white cabinets',
       },
       {
-        src: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1556909172-54557c7e4fb7?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008417/photo-1556909172-54557c7e4fb7_r8wyr3.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008417/photo-1556909172-54557c7e4fb7_r8wyr3.jpg',
         alt: 'Contemporary handleless kitchen design',
       },
       {
-        src: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1565538810643-b5bdb714032a?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008462/photo-1565538810643-b5bdb714032a_lhmkfq.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008462/photo-1565538810643-b5bdb714032a_lhmkfq.jpg',
         alt: 'Sleek modular kitchen with quartz countertop',
       },
       {
-        src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008520/pexels-artbovich-7587804_p7xlin.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008520/pexels-artbovich-7587804_p7xlin.jpg',
         alt: 'Modern kitchen with premium appliances',
       },
     ],
@@ -70,28 +70,28 @@ const furnitureSubSections = [
     description: 'Custom modular wardrobes maximizing every inch of space with smart compartments, soft-close shutters, and elegant finishes.',
     images: [
       {
-        src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008638/photo-1672137233327-37b0c1049e77_cfzpsm.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008638/photo-1672137233327-37b0c1049e77_cfzpsm.jpg',
         alt: 'Floor-to-ceiling modular wardrobe',
       },
       {
-        src: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1631679706909-1844bbd07221?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008681/photo-1649361811423-a55616f7ab11_xoebes.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008681/photo-1649361811423-a55616f7ab11_xoebes.jpg',
         alt: 'Walk-in wardrobe with LED lighting',
       },
       {
-        src: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008669/pexels-photo-32331029_htqnkz.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008669/pexels-photo-32331029_htqnkz.jpg',
         alt: 'Organized wardrobe interior with drawers',
       },
       {
-        src: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008691/photo-1662454419622-a41092ecd245_nmw07s.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008691/photo-1662454419622-a41092ecd245_nmw07s.jpg',
         alt: 'Sliding door wardrobe bedroom',
       },
       {
-        src: 'https://images.unsplash.com/photo-1556020685-ae41abfc9365?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1556020685-ae41abfc9365?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008697/photo-1722650364570-90bf509d7dff_traifk.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008697/photo-1722650364570-90bf509d7dff_traifk.jpg',
         alt: 'Built-in wardrobe with mirror panel',
       },
     ],
@@ -103,28 +103,28 @@ const furnitureSubSections = [
     description: 'Versatile modular furniture systems — sofas, shelving, beds and storage units crafted for modern living with adaptable configurations.',
     images: [
       {
-        src: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008975/pexels-photo-439227_yqywds.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008975/pexels-photo-439227_yqywds.jpg',
         alt: 'Modern sectional sofa living room',
       },
       {
-        src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008982/photo-1555041469-a586c61ea9bc_ukqkpy.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008982/photo-1555041469-a586c61ea9bc_ukqkpy.jpg',
         alt: 'Contemporary living room furniture set',
       },
       {
-        src: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009004/photo-1493663284031-b7e3aefcae8e_vdvjfa.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009004/photo-1493663284031-b7e3aefcae8e_vdvjfa.jpg',
         alt: 'Modular shelving and storage unit',
       },
       {
-        src: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009074/pexels-photo-7148849_ytoqix.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009074/pexels-photo-7148849_ytoqix.jpg',
         alt: 'Modern bedroom furniture with storage',
       },
       {
-        src: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009080/pexels-photo-1571460_aicdfc.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009080/pexels-photo-1571460_aicdfc.jpg',
         alt: 'Modular bookcase and display unit',
       },
     ],
@@ -136,28 +136,28 @@ const furnitureSubSections = [
     description: 'Ergonomic modular workstations for home offices and corporate spaces — designed for productivity, cable management, and comfort.',
     images: [
       {
-        src: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009226/photo-1667646590380-670b53b8c393_bwwgvo.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009226/photo-1667646590380-670b53b8c393_bwwgvo.jpg',
         alt: 'Modern home office dual monitor setup',
       },
       {
-        src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009313/photo-1524758631624-e2822e304c36_urjhfi.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009313/photo-1524758631624-e2822e304c36_urjhfi.jpg',
         alt: 'Open plan office workstation design',
       },
       {
-        src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009248/photo-1631193816258-28b44b21e78b_ej5hor.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009248/photo-1631193816258-28b44b21e78b_ej5hor.jpg',
         alt: 'Corporate modular desk arrangement',
       },
       {
-        src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009288/pexels-photo-35203642_avk5uj.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009288/pexels-photo-35203642_avk5uj.jpg',
         alt: 'Collaborative office workspace pods',
       },
       {
-        src: 'https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1542621334-a254cf47733d?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009307/photo-1593642632559-0c6d3fc62b89_v85ncw.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009307/photo-1593642632559-0c6d3fc62b89_v85ncw.jpg',
         alt: 'Minimalist modern workstation setup',
       },
     ],
@@ -169,28 +169,28 @@ const furnitureSubSections = [
     description: 'Bespoke furniture crafted to your exact specifications — from statement dining tables to hand-carved headboards and one-of-a-kind accent pieces.',
     images: [
       {
-        src: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009677/pexels-photo-36887756_dcvu7f.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009677/pexels-photo-36887756_dcvu7f.jpg',
         alt: 'Custom solid wood dining table',
       },
       {
-        src: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009647/pexels-photo-12289388_kxitmy.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009647/pexels-photo-12289388_kxitmy.jpg',
         alt: 'Bespoke upholstered headboard',
       },
       {
-        src: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009637/pexels-photo-12277129_dawspq.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009637/pexels-photo-12277129_dawspq.jpg',
         alt: 'Custom accent chair with premium fabric',
       },
       {
-        src: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009492/pexels-photo-35547043_iw8bjh.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009492/pexels-photo-35547043_iw8bjh.jpg',
         alt: 'Custom TV unit with storage',
       },
       {
-        src: 'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1530018607912-eff2daa1bac4?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009426/photo-1538688525198-9b88f6f53126_pmjm31.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009426/photo-1538688525198-9b88f6f53126_pmjm31.jpg',
         alt: 'Hand-crafted wooden sideboard',
       },
     ],
@@ -205,8 +205,8 @@ const falseCeilingSubSections = [
     description: 'Smooth, paintable gypsum board ceilings ideal for living rooms and bedrooms — perfect for integrated cove lighting and modern profiles.',
     images: [
       {
-        src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90',
-        thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=80',
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009426/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779009426/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=500&q=80',
         alt: 'Gypsum false ceiling with cove LED lighting',
       },
       {
@@ -588,10 +588,10 @@ const serviceExtendedData = {
   'false-ceiling': {
     heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941005/pexels-photo-18246428_lz5dpy.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', alt: 'Gypsum false ceiling with lighting' },
-      { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Modern false ceiling design' },
-      { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80', alt: 'False ceiling with cove lighting' },
-      { src: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80', alt: 'Luxury false ceiling interior' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006767/pexels-photo-7148779_gvxmsm.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006767/pexels-photo-7148779_gvxmsm.jpg', alt: 'Gypsum false ceiling with lighting' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006805/pexels-photo-13083032_r93mmf.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006805/pexels-photo-13083032_r93mmf.jpg', alt: 'Modern false ceiling design' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006849/pexels-photo-8141964_taqnio.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006849/pexels-photo-8141964_taqnio.jpg', alt: 'False ceiling with cove lighting' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006760/pexels-photo-37172472_uki0m2.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779006760/pexels-photo-37172472_uki0m2.jpg', alt: 'Luxury false ceiling interior' },
     ],
     process: [
       { step: '01', title: 'Design Selection', desc: 'Choose from our catalog or get a custom ceiling design.' },
@@ -608,10 +608,10 @@ const serviceExtendedData = {
   'painting-works': {
     heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941379/photo-1562259949-e8e7689d7828_voijds.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=600&q=80', alt: 'Interior painting work in progress' },
-      { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80', alt: 'Finished painting premium interior' },
-      { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Texture painting wall finish' },
-      { src: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80', alt: 'Designer wall painting work' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007064/photo-1615876063860-d971f6dca5dc_nydahv.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007064/photo-1615876063860-d971f6dca5dc_nydahv.jpg', alt: 'Interior painting work in progress' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007058/photo-1625585598750-3535fe40efb3_ijug3w.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007058/photo-1625585598750-3535fe40efb3_ijug3w.jpg', alt: 'Finished painting premium interior' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007116/photo-1596205574145-faae55a9b3da_gsco9r.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007116/photo-1596205574145-faae55a9b3da_gsco9r.jpg', alt: 'Texture painting wall finish' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007121/photo-1747227567987-c1e414b1634d_qr1tli.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007121/photo-1747227567987-c1e414b1634d_qr1tli.jpg', alt: 'Designer wall painting work' },
     ],
     process: [
       { step: '01', title: 'Surface Inspection', desc: 'Evaluating wall conditions and repairs needed.' },
@@ -628,10 +628,10 @@ const serviceExtendedData = {
   'fabrication-works': {
     heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941438/photo-1504328345606-18bbc8c9d7d1_wowlqs.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80', alt: 'Steel fabrication workshop' },
-      { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Custom metal gate fabrication' },
-      { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', alt: 'Stainless steel railing work' },
-      { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80', alt: 'Metal structure fabrication' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007351/pexels-photo-16243157_sbfs3z.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007351/pexels-photo-16243157_sbfs3z.jpg', alt: 'Steel fabrication workshop' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007328/photo-1558442074-3c19857bc1dc_okuvb9.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007328/photo-1558442074-3c19857bc1dc_okuvb9.jpg', alt: 'Custom metal gate fabrication' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007374/pexels-photo-5657432_rkdrc6.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007374/pexels-photo-5657432_rkdrc6.jpg', alt: 'Stainless steel railing work' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007342/pexels-photo-10395741_bzw6wh.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007342/pexels-photo-10395741_bzw6wh.jpg', alt: 'Metal structure fabrication' },
     ],
     process: [
       { step: '01', title: 'Design & Drawing', desc: 'Technical drawings with measurements.' },
@@ -648,10 +648,10 @@ const serviceExtendedData = {
   'aluminum-glass': {
     heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941529/pexels-photo-8134763_xirfie.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Aluminum sliding door installation' },
-      { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', alt: 'Glass partition office design' },
-      { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80', alt: 'Frameless glass partition' },
-      { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80', alt: 'Modern aluminum door system' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007627/pexels-photo-31267704_eqfc0s.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007627/pexels-photo-31267704_eqfc0s.jpg', alt: 'Aluminum sliding door installation' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007624/pexels-photo-36777961_mipmxd.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007624/pexels-photo-36777961_mipmxd.jpg', alt: 'Glass partition office design' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007617/pexels-photo-23916837_i3fwdv.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007617/pexels-photo-23916837_i3fwdv.jpg', alt: 'Frameless glass partition' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007591/pexels-photo-8134753_gcnc6b.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007591/pexels-photo-8134753_gcnc6b.jpg', alt: 'Modern aluminum door system' },
     ],
     process: [
       { step: '01', title: 'Site Survey', desc: 'Precise measurements and structural assessment.' },
@@ -668,10 +668,10 @@ const serviceExtendedData = {
   'plumbing-electrical': {
     heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941583/photo-1621905251189-08b45d6a269e_d25b4a.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80', alt: 'Plumbing installation work' },
-      { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=600&q=80', alt: 'Electrical wiring installation' },
-      { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', alt: 'Modern bathroom plumbing' },
-      { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Smart home electrical setup' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008001/pexels-photo-15124970_uh64k3.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008001/pexels-photo-15124970_uh64k3.jpg', alt: 'Plumbing installation work' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008018/pexels-photo-7533924_hao2et.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008018/pexels-photo-7533924_hao2et.jpg', alt: 'Electrical wiring installation' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008065/pexels-photo-4048080_mknnux.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008065/pexels-photo-4048080_mknnux.jpg', alt: 'Modern bathroom plumbing' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008118/pexels-photo-973505_ring97.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008118/pexels-photo-973505_ring97.jpg', alt: 'Smart home electrical setup' },
     ],
     process: [
       { step: '01', title: 'Planning', desc: 'Complete layout planning for plumbing and electrical points.' },
