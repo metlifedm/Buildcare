@@ -467,6 +467,42 @@ const flooringSubSections = [
   },
 ];
 
+const commercialSubSections = [
+  {
+    id: 'sales-office',
+    title: 'Sales Office',
+    icon: 'BuildingStore',
+    description: 'Contemporary sales office interiors that create a lasting impression — designed for functionality, brand identity, and customer engagement.',
+    images: [
+      {
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035116/pexels-photo-33827309_psgxaz.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035116/pexels-photo-33827309_psgxaz.jpg',
+        alt: 'White marble flooring living room',
+      },
+      {
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035154/pexels-photo-7750123_otyqe0.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035154/pexels-photo-7750123_otyqe0.jpg',
+        alt: 'Large format porcelain tile floor',
+      },
+      {
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035188/pexels-photo-33342702_jlsobr.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035188/pexels-photo-33342702_jlsobr.jpg',
+        alt: 'Herringbone tile pattern flooring',
+      },
+      {
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035139/pexels-photo-8606292_z6u09b.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035139/pexels-photo-8606292_z6u09b.jpg',
+        alt: 'Natural marble bathroom flooring',
+      },
+      {
+        src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035225/photo-1560264280-88b68371db39_ak4qfo.jpg',
+        thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779035225/photo-1560264280-88b68371db39_ak4qfo.jpg',
+        alt: 'Premium tile flooring in hall',
+      },
+    ],
+  }
+];
+
 // Map service IDs to sub-sections
 const serviceSubSections = {
   'residential-interior': {
@@ -487,6 +523,12 @@ const serviceSubSections = {
     icon: 'Grid3X3',
     items: flooringSubSections,
   },
+  'commercial-interior': {
+    sectionLabel: 'Commercial Interior Types',
+    sectionDesc: 'Design solutions for various commercial spaces — from offices to retail stores and hospitality venues.',
+    icon: 'Building',
+    items: commercialSubSections,
+  }
 };
 
 // ─── Extended service data ────────────────────────────────────────────────────
@@ -566,11 +608,11 @@ const serviceExtendedData = {
     ],
   },
   'tile-flooring': {
-    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778940874/photo-1560185893-a55cbc8c57e8_gyplfz.jpg',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034763/bui-hoang-lien-IFLFhUeFjmM-unsplash_nxu2sp.jpg',
     gallery: [
       { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000869/photo-1653972233229-1b8c042d6d8e_kmrrdb.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000869/photo-1653972233229-1b8c042d6d8e_kmrrdb.jpg', alt: 'Premium tile flooring installation' },
       { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001392/pexels-photo-14213939_cvfufy.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001392/pexels-photo-14213939_cvfufy.jpg', alt: 'Large format porcelain tiles' },
-      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001398/pexels-photo-18246436_hypot4.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001398/pexels-photo-18246436_hypot4.jpg', alt: 'Designer tile pattern flooring' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778940874/photo-1560185893-a55cbc8c57e8_gyplfz.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778940874/photo-1560185893-a55cbc8c57e8_gyplfz.jpg', alt: 'Designer tile pattern flooring' },
       { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000863/photo-1771239048293-72abf673adb2_guehne.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000863/photo-1771239048293-72abf673adb2_guehne.jpg', alt: 'Marble tile flooring luxury' },
     ],
     process: [
@@ -626,12 +668,12 @@ const serviceExtendedData = {
     ],
   },
   'fabrication-works': {
-    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941438/photo-1504328345606-18bbc8c9d7d1_wowlqs.jpg',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779031977/pexels-photo-30990849_wmouf9.jpg',
     gallery: [
-      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007351/pexels-photo-16243157_sbfs3z.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007351/pexels-photo-16243157_sbfs3z.jpg', alt: 'Steel fabrication workshop' },
-      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007328/photo-1558442074-3c19857bc1dc_okuvb9.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007328/photo-1558442074-3c19857bc1dc_okuvb9.jpg', alt: 'Custom metal gate fabrication' },
-      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007374/pexels-photo-5657432_rkdrc6.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007374/pexels-photo-5657432_rkdrc6.jpg', alt: 'Stainless steel railing work' },
-      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007342/pexels-photo-10395741_bzw6wh.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779007342/pexels-photo-10395741_bzw6wh.jpg', alt: 'Metal structure fabrication' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034023/pexels-photo-19544248_kqyisz.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034023/pexels-photo-19544248_kqyisz.jpg', alt: 'Steel fabrication workshop' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034183/pexels-photo-29224601_x73frg.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034183/pexels-photo-29224601_x73frg.jpg', alt: 'Custom metal gate fabrication' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034202/pexels-photo-22717514_i6iuf4.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034202/pexels-photo-22717514_i6iuf4.jpg', alt: 'Stainless steel railing work' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034149/pexels-photo-15947587_m4sndk.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034149/pexels-photo-15947587_m4sndk.jpg', alt: 'Metal structure fabrication' },
     ],
     process: [
       { step: '01', title: 'Design & Drawing', desc: 'Technical drawings with measurements.' },
@@ -666,7 +708,7 @@ const serviceExtendedData = {
     ],
   },
   'plumbing-electrical': {
-    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941583/photo-1621905251189-08b45d6a269e_d25b4a.jpg',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779034436/pexels-photo-8089084_r0yfdx.jpg',
     gallery: [
       { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008001/pexels-photo-15124970_uh64k3.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008001/pexels-photo-15124970_uh64k3.jpg', alt: 'Plumbing installation work' },
       { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008018/pexels-photo-7533924_hao2et.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779008018/pexels-photo-7533924_hao2et.jpg', alt: 'Electrical wiring installation' },
