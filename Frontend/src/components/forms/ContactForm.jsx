@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { motion } from 'framer-motion';
-import { Send, MessageCircle, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa6";
 import Button from '@components/ui/Button';
 import FormField from '@components/ui/FormField';
 import { sendEmail } from '@utils/emailService';
@@ -233,7 +234,7 @@ export default function ContactForm({
             type="button"
             variant="whatsapp"
             size="lg"
-            icon={MessageCircle}
+            icon={FaWhatsapp}
             iconPosition="left"
             onClick={handleSubmit(onSubmitWhatsApp)}
             className={isCompact ? '' : 'sm:flex-1'}

@@ -1,7 +1,8 @@
 // src/components/ui/FloatingWhatsApp.jsx
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X } from 'lucide-react';
+import { X } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa6";
 import { openWhatsApp } from '@utils/whatsappService';
 import { COMPANY } from '@utils/constants';
 
@@ -61,8 +62,7 @@ export default function FloatingWhatsApp() {
         {/* Pulse animation */}
         <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-30" />
         <span className="absolute inset-0 rounded-full bg-green-500 animate-pulse opacity-20" />
-        
-        <MessageCircle className="w-7 h-7 text-white relative z-10" fill="currentColor" />
+        <FaWhatsapp className="w-7 h-7 text-white relative z-10" />
       </motion.button>
     </div>
   );

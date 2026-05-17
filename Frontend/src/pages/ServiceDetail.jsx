@@ -5,10 +5,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import * as LucideIcons from 'lucide-react';
 import {
   CheckCircle, ArrowRight, ArrowLeft, Send,
-  Phone, MessageCircle,
+  Phone,
   Star, Shield, Sparkles, Clock, ZoomIn,
   X, ChevronLeft, ChevronRight
 } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa6";
 import SEOHead from '@seo/SEOHead';
 import SchemaMarkup from '@seo/SchemaMarkup';
 import SectionHeading from '@components/ui/SectionHeading';
@@ -1232,7 +1233,7 @@ export default function ServiceDetail() {
                 <Button
                   variant="whatsapp"
                   className="w-full"
-                  icon={MessageCircle}
+                  icon={FaWhatsapp}
                   iconPosition="left"
                   onClick={() => {
                     const msg = `Hi! I'm interested in your *${service.title}* service. Please share details and pricing.`;

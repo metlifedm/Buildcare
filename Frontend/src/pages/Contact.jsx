@@ -1,10 +1,11 @@
 // src/pages/Contact.jsx
 import { motion } from 'framer-motion';
 import {
-  Phone, Mail, MapPin, Clock, MessageCircle,
+  Phone, Mail, MapPin, Clock,
   Navigation
 } from 'lucide-react';
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
+import { FaWhatsapp } from "react-icons/fa6";
 import SEOHead from '@seo/SEOHead';
 import SchemaMarkup from '@seo/SchemaMarkup';
 import { pageSEO } from '@seo/seoConfig';
@@ -160,7 +161,7 @@ export default function Contact() {
               <Card padding="lg" className="bg-green-50 border-green-200">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center">
-                    <MessageCircle className="w-6 h-6 text-green-600" />
+                    <FaWhatsapp className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
                     <h3 className="font-heading text-lg font-semibold text-gray-900">
@@ -175,7 +176,7 @@ export default function Contact() {
                 <Button
                   variant="whatsapp"
                   className="w-full"
-                  icon={MessageCircle}
+                  icon={FaWhatsapp}
                   iconPosition="left"
                   onClick={() => openWhatsApp()}
                 >
@@ -276,7 +277,7 @@ export default function Contact() {
               whileHover={{ y: -5 }}
             >
               <div className="w-16 h-16 rounded-2xl bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
-                <MessageCircle className="w-8 h-8 text-green-600" />
+                <FaWhatsapp className="w-8 h-8 text-green-600" />
               </div>
               <div>
                 <p className="text-gray-500 text-sm">WhatsApp</p>
