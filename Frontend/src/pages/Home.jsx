@@ -10,7 +10,6 @@ import TestimonialsSection from '@sections/home/TestimonialsSection';
 import StatsSection from '@sections/home/StatsSection';
 import CTASection from '@sections/home/CTASection';
 import BrandsMarquee from '@sections/home/BrandsMarquee';
-import AgitationSection from '@sections/home/AgitationSection';
 import HomeEstimate from '@sections/home/HomeEstimate';
 import HeroSplit from '../sections/home/HeroSplit';
 
@@ -34,7 +33,6 @@ export default function Home() {
       <ServicesPreview />
       <HeroSplit />
       <HomeEstimate />
-      <AgitationSection />
       <PortfolioPreview />
       <TestimonialsSection />
       <StatsSection />

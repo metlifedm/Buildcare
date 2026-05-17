@@ -11,7 +11,7 @@ const stats = [
     desc: "Sollicitudin at habitasse eget integer pretium natoque cursus",
   },
   {
-    value: 10,
+    value: 15,
     suffix: "+",
     title: "Services Offered",
     desc: "We offer a comprehensive range of interior design and renovation services.",

@@ -492,12 +492,12 @@ const serviceSubSections = {
 
 const serviceExtendedData = {
   'residential-interior': {
-    heroImage: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778682829/pankaj-kanti-ghosh-tN2PUhQQWgc-unsplash_qb3cn3.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80', alt: 'Luxury residential interior living room' },
-      { src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80', alt: 'Modern bedroom interior design' },
-      { src: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80', alt: 'Contemporary dining room design' },
-      { src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80', alt: 'Premium home interior design' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998799/photo-1600210492486-724fe5c67fb0_xdbsnn.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998799/photo-1600210492486-724fe5c67fb0_xdbsnn.jpg', alt: 'Luxury residential interior living room' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998816/photo-1586023492125-27b2c045efd7_nfsu7s.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998816/photo-1586023492125-27b2c045efd7_nfsu7s.jpg', alt: 'Modern bedroom interior design' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998823/photo-1600607687939-ce8a6c25118c_wnkufo.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998823/photo-1600607687939-ce8a6c25118c_wnkufo.jpg', alt: 'Contemporary dining room design' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998852/pexels-pragyanbezbo-34769968_h0ria8.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778998852/pexels-pragyanbezbo-34769968_h0ria8.jpg', alt: 'Premium home interior design' },
     ],
     process: [
       { step: '01', title: 'Consultation', desc: 'We visit your home, understand your lifestyle, preferences, and budget.' },
@@ -525,12 +525,12 @@ const serviceExtendedData = {
     ],
   },
   'commercial-interior': {
-    heroImage: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=90',
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778682830/hammer-group-bEBLQQPhqi8-unsplash_jmfxbz.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80', alt: 'Modern corporate office interior' },
-      { src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=600&q=80', alt: 'Open plan commercial space' },
-      { src: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?auto=format&fit=crop&w=600&q=80', alt: 'Retail store interior design' },
-      { src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80', alt: 'Professional commercial workspace' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999465/pexels-essentia-media-2154502099-33342702_v8s6bl.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999465/pexels-essentia-media-2154502099-33342702_v8s6bl.jpg', alt: 'Modern corporate office interior' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999440/photo-1590381105924-c72589b9ef3f_z3dbaq.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999440/photo-1590381105924-c72589b9ef3f_z3dbaq.jpg', alt: 'Open plan commercial space' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999434/photo-1497366811353-6870744d04b2_kcddwq.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999434/photo-1497366811353-6870744d04b2_kcddwq.jpg', alt: 'Retail store interior design' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999390/photo-1524758631624-e2822e304c36_yk3j2g.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778999390/photo-1524758631624-e2822e304c36_yk3j2g.jpg', alt: 'Professional commercial workspace' },
     ],
     process: [
       { step: '01', title: 'Brand Analysis', desc: 'Understanding your brand, business goals, and spatial requirements.' },
@@ -544,13 +544,33 @@ const serviceExtendedData = {
       { q: 'What types of commercial spaces do you design?', a: 'We design offices, retail stores, restaurants, hotels, hospitals, showrooms, co-working spaces, and more.' },
     ],
   },
+  'modular-kitchen': {
+    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941120/pexels-photo-32177983_lhshh2.jpg',
+    gallery: [
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000105/pexels-ahmed-khaled-930559652-20036481_gntqfh.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000105/pexels-ahmed-khaled-930559652-20036481_gntqfh.jpg', alt: 'Modular kitchen with island' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000301/clickerhappy-kitchen-2165756_1920_ruyhti.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000301/clickerhappy-kitchen-2165756_1920_ruyhti.jpg', alt: 'Modern kitchen cabinet design' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000100/addigibson-kitchen-3564506_1920_mqc1ex.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000100/addigibson-kitchen-3564506_1920_mqc1ex.jpg', alt: 'White modular kitchen setup' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000323/pexels-souranshi-fashion-and-lifestyle-magazine-2959920-7148841_kuq8y8.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000323/pexels-souranshi-fashion-and-lifestyle-magazine-2959920-7148841_kuq8y8.jpg', alt: 'Open plan kitchen design' },
+    ],
+    process: [
+      { step: '01', title: 'Kitchen Measurement', desc: 'Precise measurements of your kitchen space.' },
+      { step: '02', title: 'Layout Design', desc: 'Designing the optimal layout with 3D visualization.' },
+      { step: '03', title: 'Manufacturing', desc: 'Factory-precision manufacturing of all components.' },
+      { step: '04', title: 'Installation', desc: 'On-site assembly with appliance integration.' },
+    ],
+    benefits: ['Factory-precision manufacturing', 'Soft-close mechanisms', 'Optimized storage solutions', 'Premium countertop options', 'Built-in appliance integration', '10-year structural warranty'],
+    faqs: [
+      { q: 'What countertop material is best?', a: 'Quartz offers the best balance of durability, aesthetics, and maintenance. Granite is a natural option, while Corian allows seamless joints.' },
+      { q: 'How long does kitchen installation take?', a: 'Manufacturing takes 15-20 days, and on-site installation takes 5-7 days for a standard kitchen.' },
+    ],
+  },
   'tile-flooring': {
     heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778940874/photo-1560185893-a55cbc8c57e8_gyplfz.jpg',
     gallery: [
-      { src: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?auto=format&fit=crop&w=600&q=80', alt: 'Premium tile flooring installation' },
-      { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=600&q=80', alt: 'Large format porcelain tiles' },
-      { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80', alt: 'Designer tile pattern flooring' },
-      { src: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80', alt: 'Marble tile flooring luxury' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000869/photo-1653972233229-1b8c042d6d8e_kmrrdb.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000869/photo-1653972233229-1b8c042d6d8e_kmrrdb.jpg', alt: 'Premium tile flooring installation' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001392/pexels-photo-14213939_cvfufy.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001392/pexels-photo-14213939_cvfufy.jpg', alt: 'Large format porcelain tiles' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001398/pexels-photo-18246436_hypot4.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779001398/pexels-photo-18246436_hypot4.jpg', alt: 'Designer tile pattern flooring' },
+      { src: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000863/photo-1771239048293-72abf673adb2_guehne.jpg', thumb: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1779000863/photo-1771239048293-72abf673adb2_guehne.jpg', alt: 'Marble tile flooring luxury' },
     ],
     process: [
       { step: '01', title: 'Site Assessment', desc: 'Evaluating existing flooring and subfloor conditions.' },
@@ -582,26 +602,6 @@ const serviceExtendedData = {
     faqs: [
       { q: 'Which is better - Gypsum or PVC?', a: 'Gypsum offers a smoother finish and is ideal for living rooms. PVC is waterproof and better for kitchens and bathrooms.' },
       { q: 'Can false ceiling hide AC ducts?', a: 'Yes, false ceilings are perfect for concealing AC ducts, wiring, and plumbing while maintaining a clean look.' },
-    ],
-  },
-  'modular-kitchen': {
-    heroImage: 'https://res.cloudinary.com/doo2og4l3/image/upload/v1778941120/pexels-photo-32177983_lhshh2.jpg',
-    gallery: [
-      { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=600&q=80', alt: 'Modular kitchen with island' },
-      { src: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80', alt: 'Modern kitchen cabinet design' },
-      { src: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=600&q=80', alt: 'White modular kitchen setup' },
-      { src: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=90', thumb: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=600&q=80', alt: 'Open plan kitchen design' },
-    ],
-    process: [
-      { step: '01', title: 'Kitchen Measurement', desc: 'Precise measurements of your kitchen space.' },
-      { step: '02', title: 'Layout Design', desc: 'Designing the optimal layout with 3D visualization.' },
-      { step: '03', title: 'Manufacturing', desc: 'Factory-precision manufacturing of all components.' },
-      { step: '04', title: 'Installation', desc: 'On-site assembly with appliance integration.' },
-    ],
-    benefits: ['Factory-precision manufacturing', 'Soft-close mechanisms', 'Optimized storage solutions', 'Premium countertop options', 'Built-in appliance integration', '10-year structural warranty'],
-    faqs: [
-      { q: 'What countertop material is best?', a: 'Quartz offers the best balance of durability, aesthetics, and maintenance. Granite is a natural option, while Corian allows seamless joints.' },
-      { q: 'How long does kitchen installation take?', a: 'Manufacturing takes 15-20 days, and on-site installation takes 5-7 days for a standard kitchen.' },
     ],
   },
   'painting-works': {
@@ -751,7 +751,7 @@ function ImageLightbox({ images, initialIndex, onClose }) {
         <button
           onClick={onClose}
           className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:text-gray-900 hover:border-gray-300 transition-all"
-          aria-label="Close"
+          aria-label="Close cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
@@ -763,7 +763,7 @@ function ImageLightbox({ images, initialIndex, onClose }) {
         <button
           onClick={prev}
           className="absolute left-3 md:left-6 z-20 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-700 hover:border-primary-300 hover:text-primary-600 transition-all"
-          aria-label="Previous"
+          aria-label="Previous cursor-pointer"
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
@@ -804,7 +804,7 @@ function ImageLightbox({ images, initialIndex, onClose }) {
         <button
           onClick={next}
           className="absolute right-3 md:right-6 z-20 w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-gray-700 hover:border-primary-300 hover:text-primary-600 transition-all"
-          aria-label="Next"
+          aria-label="Next cursor-pointer"
         >
           <ChevronRight className="w-6 h-6" />
         </button>
@@ -1475,7 +1475,7 @@ export default function ServiceDetail() {
                 to={`/services/${prevService.slug}`}
                 className="flex items-center gap-3 text-gray-600 hover:text-primary-600 transition-colors group"
               >
-                <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary-300 group-hover:bg-primary-50 transition-all">
+                <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary-300 group-hover:bg-primary-50 transition-all cursor-pointer">
                   <ArrowLeft className="w-4 h-4" />
                 </div>
                 <div>
@@ -1495,7 +1495,7 @@ export default function ServiceDetail() {
                   <span className="text-xs text-gray-400 block">Next</span>
                   <span className="font-medium text-sm">{nextService.title}</span>
                 </div>
-                <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary-300 group-hover:bg-primary-50 transition-all">
+                <div className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center group-hover:border-primary-300 group-hover:bg-primary-50 transition-all cursor-pointer">
                   <ArrowRight className="w-4 h-4" />
                 </div>
               </Link>

@@ -160,7 +160,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-dark-300 text-sm">
                 <Clock className="w-4 h-4 text-primary-500 flex-shrink-0" />
-                24/7 Customer Support
+                Sat-Sun: 09:00 AM - 09:00 PM
               </li>
             </ul>
           </motion.div>

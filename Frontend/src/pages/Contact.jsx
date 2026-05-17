@@ -47,7 +47,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Working Hours',
-    details: ["24/7 Customer Support"],
+    details: ["Sat-Sun: 09:00 AM - 09:00 PM"],
     action: null,
     actionLabel: null,
     color: 'text-purple-600',

@@ -70,7 +70,7 @@ export default function Services() {
         subtitle="Luxury Interior Solutions"
         description="Crafting elegant residential and commercial interiors with timeless aesthetics, functionality, and premium quality."
         breadcrumbs={[{ label: 'Services' }]}
-        backgroundImage="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1920&q=80"
+        backgroundImage="https://res.cloudinary.com/doo2og4l3/image/upload/v1778999952/pexels-myhq-workspaces-3638298-5444186_wph4s2.jpg"
       />
 
       {/* ========================= */}
