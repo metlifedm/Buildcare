@@ -34,10 +34,9 @@ export function TestimonialsGrid() {
               <Card className="h-full" padding="lg" variant="solid">
                 <div className="flex items-start gap-4 mb-6">
                   <img
-                    src={testimonial.avatar || avatarImg}
+                    src={testimonial?.avatar || avatarImg}
                     alt={testimonial.name}
                     className="w-14 h-14 rounded-full object-cover border-2 border-primary-200 flex-shrink-0"
-                    loading="lazy"
                     onLoad={(e) => e.target.classList.add('loaded')}
                   />
                   <div>

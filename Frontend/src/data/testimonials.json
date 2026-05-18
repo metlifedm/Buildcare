@@ -1,6 +1,39 @@
 {
   "testimonials": [
     {
+      "id": 8,
+      "name": "Abhijit Jadhav",
+      "designation": "Business Owner",
+      "location": "Mumbai",
+      "rating": 4,
+      "review": "Honest and Transparent | I was impressed with Build Care's honesty. They broke down the costs and took only a 10% margin. My 3 BHK interior looks amazing!",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLJeDVcBMBYgmQj5KfxD-ucXubRm3PeCsooOR8WLZtToYpIqg=w90-h90-p-rp-mo-br100",
+      "project": "Commercial Interior",
+      "date": "a year ago"
+    },
+    {
+      "id": 9,
+      "name": "Sadiya Khan",
+      "designation": "Homeowner",
+      "location": "Mumbai",
+      "rating": 5,
+      "review": "Very good interior work. Very cooperative and understanding. Mera 2bhk flat from scratch he did. In 3.5months civil, furniture and repair all done.",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocL8Y1arTg65cE1HZdgNbu6UzJ5bOKlEO_SITfKzwPq3YyahOA=w90-h90-p-rp-mo-br100",
+      "project": "Residential Interior",
+      "date": "a year ago"
+    },
+    {
+      "id": 5,
+      "name": "Tahseen Fatima",
+      "designation": "Interior Designer",
+      "location": "Mumbai",
+      "rating": 5,
+      "review": "I absolutely loved the work. I would definitely recommend Buildcare Interiors to anyone. They are very professional and made the entire experience amazing. The best part is that they clearly understood our requirements and budget, and provided the best possible home......they are very co-operative......",
+      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjU9ltpN5D7sUkRW4XhnQfj3rD3kMUtmfmk7DmIaOkFfdvHqjwk=w90-h90-p-rp-mo-br100",
+      "project": "False Ceiling",
+      "date": "a year ago"
+    },
+    {
       "id": 1,
       "name": "Shamil Khan",
       "designation": "Homeowner",
@@ -45,17 +78,6 @@
       "date": "3 months ago"
     },
     {
-      "id": 5,
-      "name": "Tahseen Fatima",
-      "designation": "Interior Designer",
-      "location": "Mumbai",
-      "rating": 5,
-      "review": "I absolutely loved the work. I would definitely recommend Buildcare Interiors to anyone. They are very professional and made the entire experience amazing. The best part is that they clearly understood our requirements and budget, and provided the best possible home......they are very co-operative......",
-      "avatar": "https://lh3.googleusercontent.com/a-/ALV-UjU9ltpN5D7sUkRW4XhnQfj3rD3kMUtmfmk7DmIaOkFfdvHqjwk=w90-h90-p-rp-mo-br100",
-      "project": "False Ceiling",
-      "date": "a year ago"
-    },
-    {
       "id": 6,
       "name": "Noorjahan Shaikh",
       "designation": "Homeowner",
@@ -78,15 +100,15 @@
       "date": "2 years ago"
     },
     {
-      "id": 8,
-      "name": "Abhijit Jadhav",
-      "designation": "Business Owner",
+      "id": 10,
+      "name": "Riffat Kapadia",
+      "designation": "Interior Designer",
       "location": "Mumbai",
       "rating": 4,
-      "review": "Honest and Transparent | I was impressed with Build Care's honesty. They broke down the costs and took only a 10% margin. My 3 BHK interior looks amazing!",
-      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocLJeDVcBMBYgmQj5KfxD-ucXubRm3PeCsooOR8WLZtToYpIqg=w90-h90-p-rp-mo-br100",
+      "review": "Interior design quality acchi hai & their modular kitchen designs are very great. Really like the way the whole team works, they are really good for office & homes. Must go with them even if your budget is high or less.",
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocIRZzBrBNSapovZmPBnszVB4rGr-LNkXRYJAOSvvgCCgc92EsY=w90-h90-p-rp-mo-br100",
       "project": "Commercial Interior",
-      "date": "a year ago"
+      "date": "2 years ago"
     }
   ]
 }
